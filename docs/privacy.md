@@ -54,9 +54,9 @@ Before publishing an example or fixture:
 
 Removing a file from the current tree does **not** remove it from Git history. A public repository exposes the full history.
 
-Earlier revisions of this repository contained real named client audit artifacts and cross-model eval snapshots, including third-party scheduler embed keys and public business contact details. They were removed from the current tree, and the public branch history was rewritten on **2026-10-26**. The old branch tip is no longer reachable from `origin/main`.
+Earlier revisions of this repository contained real named client audit artifacts and cross-model eval snapshots, including third-party scheduler embed keys and public business contact details. They were removed from the current tree, and the public repository was **deleted and recreated from a clean root commit on 2026-10-26**. The old commit is not available in the new repository.
 
-Old clones, forks, and caches may still contain the earlier revision. Delete and re-clone any old clone, and delete or recreate any fork. GitHub may retain unreachable objects in its internal caches for a period; contact GitHub Support if a complete purge is required.
+Old clones, forks, browser caches, and third-party mirrors may still contain the earlier revision. Delete and re-clone any old clone, and delete or recreate any fork. A full purge cannot reach copies that were already cloned or forked.
 
 If sensitive material is ever committed again:
 

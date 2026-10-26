@@ -291,9 +291,8 @@ This is a **public** repository.
 - Client reports are local by default in `reports/` and are gitignored.
 - Never commit credentials, customer PII, private screenshots, or production data.
 - Public examples must be synthetic or sanitized and labeled as such.
-- The public history was rewritten on 2026-10-26 to remove earlier real-client audit artifacts. The old branch tip is no longer reachable from `origin/main`.
-- GitHub may still serve the old commit by direct SHA until GitHub Support purges cached/unreachable objects.
-- Old clones, forks, and caches may still contain the earlier revision. Delete your old clone and re-clone. If you forked the repository, delete or recreate the fork.
+- The public repository was deleted and recreated from a clean root commit on 2026-10-26 to remove earlier real-client audit artifacts. The old commit is not available in the new repository.
+- Old clones, forks, browser caches, and third-party mirrors may still contain the earlier revision. Delete your old clone and re-clone. If you forked the repository, delete or recreate the fork.
 - Any third-party keys that appeared in the old history should be treated as exposed. Read [docs/privacy.md](docs/privacy.md).
 
 ## License

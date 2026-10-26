@@ -42,7 +42,7 @@ All notable changes to the Website Scorecard are documented here.
 - Removed real named client audits, reports, and cross-model eval snapshots from the current tree.
 - Replaced client fixtures with sanitized placeholders.
 - Added a privacy scan and public-repository data rules.
-- **Public history was rewritten on 2026-10-26.** The old branch tip is no longer reachable from `origin/main`; GitHub may still serve it by direct SHA until Support purges cached objects. Earlier revisions contained real client audit artifacts, public business contact details, and two third-party scheduler embed keys; old clones and forks may still retain copies. Delete and re-clone, and treat the old embed keys as exposed. See `docs/privacy.md`.
+- **Public repository was deleted and recreated from a clean root commit on 2026-10-26.** The old commit is not available in the new repository. Earlier revisions contained real client audit artifacts, public business contact details, and two third-party scheduler embed keys; old clones and forks may still retain copies. Delete and re-clone, and treat the old embed keys as exposed. See `docs/privacy.md`.
 
 ## 1.1.3 — 2026-10-24
 

@@ -51,6 +51,6 @@ Use this before changing the repository from private to public or before a major
 - [ ] `main` protected after the history decision.
 - [ ] Social preview image added.
 - [ ] If history was rewritten, collaborators have been told to re-clone.
-- [ ] GitHub Support has been asked to purge cached/unreachable old objects if direct-SHA access remains.
+- [ ] Old clones and forks have been told to re-clone or recreate.
 
 See [`github-settings.md`](github-settings.md) for the recommended values.
