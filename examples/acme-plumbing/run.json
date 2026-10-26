@@ -1,0 +1,68 @@
+{
+  "run_id": "2026-10-26T1000",
+  "schema_version": "2.0",
+  "framework": "revenue-leak",
+  "rubric_version": "2.0.0",
+  "collector_version": "2.0.0",
+  "url": "https://acme-plumbing.example/",
+  "started_at": "2026-10-26T10:00:00Z",
+  "run_timestamp": "2026-10-26T10:00:00Z",
+  "finished_at": "2026-10-26T10:12:00Z",
+  "city": "Example City, CA",
+  "service": "plumbing",
+  "max_pages": 5,
+  "configuration": {
+    "preferredLanguages": [
+      "en"
+    ],
+    "optionalChecks": {
+      "language_access": false,
+      "sms": false,
+      "chat_callback": false,
+      "after_hours": true,
+      "licensing": true
+    },
+    "excludedChecks": []
+  },
+  "pages": [
+    "https://acme-plumbing.example/",
+    "https://acme-plumbing.example/services/drain-cleaning",
+    "https://acme-plumbing.example/services/water-heaters",
+    "https://acme-plumbing.example/contact",
+    "https://acme-plumbing.example/reviews"
+  ],
+  "viewports": {
+    "desktop": "1440x900",
+    "mobile": "390x844 (mobile UA)"
+  },
+  "lighthouse": {
+    "lcp_ms": 3100,
+    "raw_lcps": [
+      3000,
+      3100,
+      3250
+    ],
+    "runs": [
+      {
+        "run": 1,
+        "lcp_ms": 3000
+      },
+      {
+        "run": 2,
+        "lcp_ms": 3100
+      },
+      {
+        "run": 3,
+        "lcp_ms": 3250
+      }
+    ]
+  },
+  "scheduler": {
+    "url": "https://acme-plumbing.example/book",
+    "state": "scheduler",
+    "text": "Synthetic scheduler state"
+  },
+  "site_map": "site-map.json",
+  "path_traces": "paths.json",
+  "synthetic": true
+}

@@ -1,0 +1,3801 @@
+{
+  "schema_version": "2.0",
+  "framework": "revenue-leak",
+  "meta": {
+    "client": "Acme Plumbing (synthetic)",
+    "slug": "acme-plumbing",
+    "url": "https://acme-plumbing.example/",
+    "date": "2026-10-26",
+    "city": "Example City, CA",
+    "market": "Example County, CA",
+    "trade": "plumbing",
+    "service": "plumbing",
+    "run_id": "2026-10-26T1000",
+    "run_timestamp": "2026-10-26T10:00:00Z",
+    "generated_at": "2026-10-26T10:00:00Z",
+    "collector": "collect.mjs",
+    "collector_version": "2.0.0",
+    "rubric_version": "2.0.0",
+    "configuration": {
+      "preferredLanguages": [
+        "en"
+      ],
+      "optionalChecks": {
+        "language_access": false,
+        "sms": false,
+        "chat_callback": false,
+        "after_hours": true,
+        "licensing": true
+      },
+      "excludedChecks": []
+    },
+    "synthetic": true,
+    "note": "Synthetic fixture. No real business, customer, phone number, or evidence is represented.",
+    "scorer_version": "2.0.0"
+  },
+  "rubric_version": "2.0.0",
+  "rubric_title": "Website Revenue Leak Scorecard",
+  "scorer_version": "2.0.0",
+  "categories": [
+    {
+      "id": "A",
+      "name": "Understand",
+      "question": "Can a visitor understand what is offered, where, for whom, and what to do next?",
+      "earned": 13,
+      "max": 20,
+      "applicable_max": 18,
+      "normalized": 14.44,
+      "applicable": true,
+      "na_items": [
+        "RL-UND-08"
+      ],
+      "percent": 72.2
+    },
+    {
+      "id": "B",
+      "name": "Contact",
+      "question": "Can a ready visitor become a lead without friction or a dead end?",
+      "earned": 17,
+      "max": 22,
+      "applicable_max": 20,
+      "normalized": 18.7,
+      "applicable": true,
+      "na_items": [
+        "RL-CON-03",
+        "RL-CON-09"
+      ],
+      "percent": 85.0
+    },
+    {
+      "id": "C",
+      "name": "Respond and Book",
+      "question": "Does the visible experience support a fast, qualified continuation?",
+      "earned": 11,
+      "max": 16,
+      "applicable_max": 16,
+      "normalized": 11.0,
+      "applicable": true,
+      "na_items": [],
+      "percent": 68.8
+    },
+    {
+      "id": "D",
+      "name": "Trust",
+      "question": "Does the business provide enough credible proof to act?",
+      "earned": 9,
+      "max": 15,
+      "applicable_max": 15,
+      "normalized": 9.0,
+      "applicable": true,
+      "na_items": [],
+      "percent": 60.0
+    },
+    {
+      "id": "E",
+      "name": "Mobile and Technical",
+      "question": "Can the customer actually use the experience on a phone?",
+      "earned": 8,
+      "max": 15,
+      "applicable_max": 15,
+      "normalized": 8.0,
+      "applicable": true,
+      "na_items": [],
+      "percent": 53.3
+    },
+    {
+      "id": "F",
+      "name": "Findability",
+      "question": "Can a qualified local prospect discover useful pages?",
+      "earned": 5,
+      "max": 8,
+      "applicable_max": 8,
+      "normalized": 5.0,
+      "applicable": true,
+      "na_items": [],
+      "percent": 62.5
+    },
+    {
+      "id": "G",
+      "name": "Measurement",
+      "question": "Can lead-generation activity be measured?",
+      "earned": 2,
+      "max": 4,
+      "applicable_max": 4,
+      "normalized": 2.0,
+      "applicable": true,
+      "na_items": [],
+      "percent": 50.0
+    }
+  ],
+  "checks": [
+    {
+      "id": "RL-UND-01",
+      "title": "Service clarity",
+      "category": "A",
+      "stage": "understanding",
+      "max": 4,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01: hero says \"Plumbing done right\" but not the service or city above the fold."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-02",
+      "title": "Location and service-area clarity",
+      "category": "A",
+      "stage": "understanding",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01 and contact page: Example City and a 25-mile service area are visible."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "State the city/service area and add local proof.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-UND-03",
+      "title": "Customer problem and outcome clarity",
+      "category": "A",
+      "stage": "understanding",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-04",
+      "title": "Primary action clarity",
+      "category": "A",
+      "stage": "understanding",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01, D-01: one \"Get an estimate\" button dominates the hero."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Use one dominant next step above the fold.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-05",
+      "title": "Offer specificity and price anchor",
+      "category": "A",
+      "stage": "understanding",
+      "max": 2,
+      "score": 0,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01, service pages: no price, starting-at price, or range."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-06",
+      "title": "Service navigation",
+      "category": "A",
+      "stage": "understanding",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Mobile menu: Services opens a list; drain and water-heater pages are two taps away."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Put the top services in the main navigation.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-UND-07",
+      "title": "Service-area eligibility navigation",
+      "category": "A",
+      "stage": "understanding",
+      "max": 1,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Service-area page lists Example City and four neighboring cities."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "low",
+      "recommendedIntervention": "Add a service-area list, map, or ZIP check.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-UND-08",
+      "title": "Language access",
+      "category": "A",
+      "stage": "understanding",
+      "max": 2,
+      "score": null,
+      "applicable": false,
+      "na_reason": "multilingual access not configured for this market",
+      "confidence": "not_applicable",
+      "evidence": [
+        "N/A: the synthetic audit is configured for English only."
+      ],
+      "evaluation": "deterministic",
+      "severity": "high",
+      "recommendedIntervention": "Add the configured language path and translate conversion pages.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-CON-01",
+      "title": "Phone visible and consistent",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01, contact page, footer: (555) 010-0200 appears consistently."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Use one visible phone number consistently.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-02",
+      "title": "Click-to-call on mobile",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01 DOM: tel:+15550100200 in the sticky action bar."
+      ],
+      "evaluation": "deterministic",
+      "severity": "critical",
+      "recommendedIntervention": "Make the mobile phone a tel: link in a persistent action.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-03",
+      "title": "Text/SMS path",
+      "category": "B",
+      "stage": "lead",
+      "max": 1,
+      "score": null,
+      "applicable": false,
+      "na_reason": "optional module disabled for this market",
+      "confidence": "not_applicable",
+      "evidence": [
+        "N/A: SMS module disabled for this audit."
+      ],
+      "evaluation": "deterministic",
+      "severity": "low",
+      "recommendedIntervention": "Add a working sms: link when SMS is enabled.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-04",
+      "title": "Form exists and is reachable",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Contact page is one tap from the header and renders a six-field form."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Make the lead form reachable in two taps.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-05",
+      "title": "Form friction",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Contact form: name, phone, email, ZIP, service, message; message is not required."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-06",
+      "title": "Form usability",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-07",
+      "title": "Online scheduler or booking",
+      "category": "B",
+      "stage": "lead",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Book path: scheduler iframe loads and shows availability; no appointment selected."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Add a working scheduler with live availability.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-CON-08",
+      "title": "No conversion dead end",
+      "category": "B",
+      "stage": "lead",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01, service page, about page: each ends with a next step; reviews page relies on the persistent header action."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "End every high-intent page with a next step.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-CON-09",
+      "title": "Chat or callback request",
+      "category": "B",
+      "stage": "lead",
+      "max": 1,
+      "score": null,
+      "applicable": false,
+      "na_reason": "optional module disabled for this market",
+      "confidence": "not_applicable",
+      "evidence": [
+        "N/A: chat/callback module disabled for this audit."
+      ],
+      "evaluation": "deterministic",
+      "severity": "low",
+      "recommendedIntervention": "Add a human-backed chat or callback when enabled.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-01",
+      "title": "Response and acknowledgement promise",
+      "category": "C",
+      "stage": "response",
+      "max": 3,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "strong_signal",
+      "evidence": [
+        "Form area: \"We will be in touch soon.\" No time, channel, or hours."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-02",
+      "title": "After-hours or emergency path",
+      "category": "C",
+      "stage": "response",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Header: \"Mon-Sat 7am-7pm\" plus an emergency call link."
+      ],
+      "evaluation": "deterministic",
+      "severity": "high",
+      "recommendedIntervention": "State hours and the after-hours or emergency path.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-03",
+      "title": "Booking path steps and mobile usability",
+      "category": "C",
+      "stage": "booking",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-04",
+      "title": "Confirmation expectations",
+      "category": "C",
+      "stage": "booking",
+      "max": 2,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "strong_signal",
+      "evidence": [
+        "Form area: generic \"we will contact you\" only."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-05",
+      "title": "Qualification context without over-asking",
+      "category": "C",
+      "stage": "qualification",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Form asks service, ZIP, problem, and phone; no account required."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-06",
+      "title": "Estimate or quote request workflow",
+      "category": "C",
+      "stage": "estimate",
+      "max": 3,
+      "score": 3,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Service pages link to \"Request an estimate\" with a scope field and photo upload."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Add an estimate request with scope and a clear next step.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-01",
+      "title": "Review volume, source, and profile link",
+      "category": "D",
+      "stage": "review",
+      "max": 4,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "high",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-02",
+      "title": "Specific testimonials and case studies",
+      "category": "D",
+      "stage": "review",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Two named testimonials with job type; no photos or specific numbers."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-03",
+      "title": "Real project proof",
+      "category": "D",
+      "stage": "understanding",
+      "max": 2,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Gallery has four uncaptioned job photos."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-04",
+      "title": "License, insurance, and certifications",
+      "category": "D",
+      "stage": "booking",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Footer: license number, insured statement, and manufacturer badge."
+      ],
+      "evaluation": "deterministic",
+      "severity": "medium",
+      "recommendedIntervention": "Show license, insurance, and relevant certifications.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-05",
+      "title": "Guarantee and warranty specificity",
+      "category": "D",
+      "stage": "booking",
+      "max": 2,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Service page: \"warranty\" with no term or scope."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-06",
+      "title": "Identity and differentiation consistency",
+      "category": "D",
+      "stage": "understanding",
+      "max": 2,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "medium",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-MOB-01",
+      "title": "Mobile LCP",
+      "category": "E",
+      "stage": "visitor",
+      "max": 4,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Lighthouse mobile median LCP 3.1 s across 3 runs."
+      ],
+      "evaluation": "deterministic",
+      "severity": "high",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-02",
+      "title": "Mobile layout usability",
+      "category": "E",
+      "stage": "visitor",
+      "max": 4,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01: one hero heading clips at 390px; menu opens; form fields visible."
+      ],
+      "evaluation": "deterministic",
+      "severity": "critical",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-03",
+      "title": "Tap targets and persistent action",
+      "category": "E",
+      "stage": "lead",
+      "max": 3,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "M-01: sticky call button; three footer links are under 44px."
+      ],
+      "evaluation": "deterministic",
+      "severity": "high",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-MOB-04",
+      "title": "HTTPS and security",
+      "category": "E",
+      "stage": "visitor",
+      "max": 1,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "URL loads over HTTPS with a valid certificate."
+      ],
+      "evaluation": "deterministic",
+      "severity": "critical",
+      "recommendedIntervention": "Serve HTTPS with a valid certificate.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-05",
+      "title": "Broken links, CTAs, and conversion-blocking errors",
+      "category": "E",
+      "stage": "lead",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "One service page link 404s; the primary estimate path still works."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "critical",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-FND-01",
+      "title": "Title, meta description, and H1",
+      "category": "F",
+      "stage": "visitor",
+      "max": 3,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Title and meta include plumbing and Example City; H1 is brand-only."
+      ],
+      "evaluation": "deterministic",
+      "severity": "medium",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-02",
+      "title": "Indexability",
+      "category": "F",
+      "stage": "visitor",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "Canonical present, robots allow indexing, sitemap.xml returns 200."
+      ],
+      "evaluation": "deterministic",
+      "severity": "high",
+      "recommendedIntervention": "Fix canonical, robots, and sitemap.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-03",
+      "title": "Local schema and NAP consistency",
+      "category": "F",
+      "stage": "visitor",
+      "max": 2,
+      "score": 1,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "LocalBusiness schema present; visible NAP matches the footer."
+      ],
+      "evaluation": "deterministic",
+      "severity": "medium",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-04",
+      "title": "Service and location pages with unique content",
+      "category": "F",
+      "stage": "understanding",
+      "max": 1,
+      "score": 0,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "No dedicated city pages; one service-area list only."
+      ],
+      "evaluation": "model_judgment",
+      "severity": "low",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-MSR-01",
+      "title": "Analytics present",
+      "category": "G",
+      "stage": "lead",
+      "max": 2,
+      "score": 2,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "GA4 and Google Tag Manager are present."
+      ],
+      "evaluation": "deterministic",
+      "severity": "medium",
+      "recommendedIntervention": "Install GA4, GTM, or an equivalent analytics platform.",
+      "serviceMapping": "marketing_intelligence"
+    },
+    {
+      "id": "RL-MSR-02",
+      "title": "Conversion and paid-traffic measurement",
+      "category": "G",
+      "stage": "lead",
+      "max": 2,
+      "score": 0,
+      "applicable": true,
+      "na_reason": "",
+      "confidence": "verified",
+      "evidence": [
+        "No conversion events or ads tags detected."
+      ],
+      "evaluation": "deterministic",
+      "severity": "medium",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence"
+    }
+  ],
+  "findings": [
+    {
+      "id": "RL-UND-01",
+      "title": "Service clarity",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "understanding",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01: hero says \"Plumbing done right\" but not the service or city above the fold."
+      ]
+    },
+    {
+      "id": "RL-UND-02",
+      "title": "Location and service-area clarity",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "understanding",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "State the city/service area and add local proof.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "M-01 and contact page: Example City and a 25-mile service area are visible."
+      ]
+    },
+    {
+      "id": "RL-UND-03",
+      "title": "Customer problem and outcome clarity",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague."
+      ]
+    },
+    {
+      "id": "RL-UND-04",
+      "title": "Primary action clarity",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "understanding",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Use one dominant next step above the fold.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01, D-01: one \"Get an estimate\" button dominates the hero."
+      ]
+    },
+    {
+      "id": "RL-UND-05",
+      "title": "Offer specificity and price anchor",
+      "score": 0,
+      "max": 2,
+      "lost": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01, service pages: no price, starting-at price, or range."
+      ]
+    },
+    {
+      "id": "RL-UND-06",
+      "title": "Service navigation",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "understanding",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Put the top services in the main navigation.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "Mobile menu: Services opens a list; drain and water-heater pages are two taps away."
+      ]
+    },
+    {
+      "id": "RL-UND-07",
+      "title": "Service-area eligibility navigation",
+      "score": 1,
+      "max": 1,
+      "lost": 0,
+      "stage": "understanding",
+      "severity": "low",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add a service-area list, map, or ZIP check.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "Service-area page lists Example City and four neighboring cities."
+      ]
+    },
+    {
+      "id": "RL-CON-01",
+      "title": "Phone visible and consistent",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Use one visible phone number consistently.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "M-01, contact page, footer: (555) 010-0200 appears consistently."
+      ]
+    },
+    {
+      "id": "RL-CON-02",
+      "title": "Click-to-call on mobile",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Make the mobile phone a tel: link in a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "M-01 DOM: tel:+15550100200 in the sticky action bar."
+      ]
+    },
+    {
+      "id": "RL-CON-04",
+      "title": "Form exists and is reachable",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Make the lead form reachable in two taps.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Contact page is one tap from the header and renders a six-field form."
+      ]
+    },
+    {
+      "id": "RL-CON-05",
+      "title": "Form friction",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Contact form: name, phone, email, ZIP, service, message; message is not required."
+      ]
+    },
+    {
+      "id": "RL-CON-06",
+      "title": "Form usability",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible."
+      ]
+    },
+    {
+      "id": "RL-CON-07",
+      "title": "Online scheduler or booking",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add a working scheduler with live availability.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Book path: scheduler iframe loads and shows availability; no appointment selected."
+      ]
+    },
+    {
+      "id": "RL-CON-08",
+      "title": "No conversion dead end",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "End every high-intent page with a next step.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01, service page, about page: each ends with a next step; reviews page relies on the persistent header action."
+      ]
+    },
+    {
+      "id": "RL-RSP-01",
+      "title": "Response and acknowledgement promise",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "response",
+      "severity": "high",
+      "confidence": "strong_signal",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form area: \"We will be in touch soon.\" No time, channel, or hours."
+      ]
+    },
+    {
+      "id": "RL-RSP-02",
+      "title": "After-hours or emergency path",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "response",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "State hours and the after-hours or emergency path.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Header: \"Mon-Sat 7am-7pm\" plus an emergency call link."
+      ]
+    },
+    {
+      "id": "RL-RSP-03",
+      "title": "Booking path steps and mobile usability",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page."
+      ]
+    },
+    {
+      "id": "RL-RSP-04",
+      "title": "Confirmation expectations",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "medium",
+      "confidence": "strong_signal",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form area: generic \"we will contact you\" only."
+      ]
+    },
+    {
+      "id": "RL-RSP-05",
+      "title": "Qualification context without over-asking",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "qualification",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form asks service, ZIP, problem, and phone; no account required."
+      ]
+    },
+    {
+      "id": "RL-RSP-06",
+      "title": "Estimate or quote request workflow",
+      "score": 3,
+      "max": 3,
+      "lost": 0,
+      "stage": "estimate",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add an estimate request with scope and a clear next step.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Service pages link to \"Request an estimate\" with a scope field and photo upload."
+      ]
+    },
+    {
+      "id": "RL-TRU-01",
+      "title": "Review volume, source, and profile link",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "review",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile."
+      ]
+    },
+    {
+      "id": "RL-TRU-02",
+      "title": "Specific testimonials and case studies",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "review",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Two named testimonials with job type; no photos or specific numbers."
+      ]
+    },
+    {
+      "id": "RL-TRU-03",
+      "title": "Real project proof",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Gallery has four uncaptioned job photos."
+      ]
+    },
+    {
+      "id": "RL-TRU-04",
+      "title": "License, insurance, and certifications",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "booking",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Show license, insurance, and relevant certifications.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Footer: license number, insured statement, and manufacturer badge."
+      ]
+    },
+    {
+      "id": "RL-TRU-05",
+      "title": "Guarantee and warranty specificity",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Service page: \"warranty\" with no term or scope."
+      ]
+    },
+    {
+      "id": "RL-TRU-06",
+      "title": "Identity and differentiation consistency",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name."
+      ]
+    },
+    {
+      "id": "RL-MOB-01",
+      "title": "Mobile LCP",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "visitor",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "Lighthouse mobile median LCP 3.1 s across 3 runs."
+      ]
+    },
+    {
+      "id": "RL-MOB-02",
+      "title": "Mobile layout usability",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "visitor",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "M-01: one hero heading clips at 390px; menu opens; form fields visible."
+      ]
+    },
+    {
+      "id": "RL-MOB-03",
+      "title": "Tap targets and persistent action",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "M-01: sticky call button; three footer links are under 44px."
+      ]
+    },
+    {
+      "id": "RL-MOB-04",
+      "title": "HTTPS and security",
+      "score": 1,
+      "max": 1,
+      "lost": 0,
+      "stage": "visitor",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Serve HTTPS with a valid certificate.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "URL loads over HTTPS with a valid certificate."
+      ]
+    },
+    {
+      "id": "RL-MOB-05",
+      "title": "Broken links, CTAs, and conversion-blocking errors",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "lead",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "One service page link 404s; the primary estimate path still works."
+      ]
+    },
+    {
+      "id": "RL-FND-01",
+      "title": "Title, meta description, and H1",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "visitor",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "Title and meta include plumbing and Example City; H1 is brand-only."
+      ]
+    },
+    {
+      "id": "RL-FND-02",
+      "title": "Indexability",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "visitor",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Fix canonical, robots, and sitemap.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "Canonical present, robots allow indexing, sitemap.xml returns 200."
+      ]
+    },
+    {
+      "id": "RL-FND-03",
+      "title": "Local schema and NAP consistency",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "visitor",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "LocalBusiness schema present; visible NAP matches the footer."
+      ]
+    },
+    {
+      "id": "RL-FND-04",
+      "title": "Service and location pages with unique content",
+      "score": 0,
+      "max": 1,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "low",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "No dedicated city pages; one service-area list only."
+      ]
+    },
+    {
+      "id": "RL-MSR-01",
+      "title": "Analytics present",
+      "score": 2,
+      "max": 2,
+      "lost": 0,
+      "stage": "lead",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Install GA4, GTM, or an equivalent analytics platform.",
+      "serviceMapping": "marketing_intelligence",
+      "evidence": [
+        "GA4 and Google Tag Manager are present."
+      ]
+    },
+    {
+      "id": "RL-MSR-02",
+      "title": "Conversion and paid-traffic measurement",
+      "score": 0,
+      "max": 2,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence",
+      "evidence": [
+        "No conversion events or ads tags detected."
+      ]
+    }
+  ],
+  "verifiedFindings": [
+    {
+      "id": "RL-UND-01",
+      "title": "Service clarity",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "understanding",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01: hero says \"Plumbing done right\" but not the service or city above the fold."
+      ]
+    },
+    {
+      "id": "RL-UND-03",
+      "title": "Customer problem and outcome clarity",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague."
+      ]
+    },
+    {
+      "id": "RL-UND-05",
+      "title": "Offer specificity and price anchor",
+      "score": 0,
+      "max": 2,
+      "lost": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "M-01, service pages: no price, starting-at price, or range."
+      ]
+    },
+    {
+      "id": "RL-CON-05",
+      "title": "Form friction",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Contact form: name, phone, email, ZIP, service, message; message is not required."
+      ]
+    },
+    {
+      "id": "RL-CON-06",
+      "title": "Form usability",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible."
+      ]
+    },
+    {
+      "id": "RL-RSP-03",
+      "title": "Booking path steps and mobile usability",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page."
+      ]
+    },
+    {
+      "id": "RL-RSP-05",
+      "title": "Qualification context without over-asking",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "qualification",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form asks service, ZIP, problem, and phone; no account required."
+      ]
+    },
+    {
+      "id": "RL-TRU-01",
+      "title": "Review volume, source, and profile link",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "review",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile."
+      ]
+    },
+    {
+      "id": "RL-TRU-02",
+      "title": "Specific testimonials and case studies",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "review",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Two named testimonials with job type; no photos or specific numbers."
+      ]
+    },
+    {
+      "id": "RL-TRU-03",
+      "title": "Real project proof",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Gallery has four uncaptioned job photos."
+      ]
+    },
+    {
+      "id": "RL-TRU-05",
+      "title": "Guarantee and warranty specificity",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "Service page: \"warranty\" with no term or scope."
+      ]
+    },
+    {
+      "id": "RL-TRU-06",
+      "title": "Identity and differentiation consistency",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery",
+      "evidence": [
+        "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name."
+      ]
+    },
+    {
+      "id": "RL-MOB-01",
+      "title": "Mobile LCP",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "visitor",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "Lighthouse mobile median LCP 3.1 s across 3 runs."
+      ]
+    },
+    {
+      "id": "RL-MOB-02",
+      "title": "Mobile layout usability",
+      "score": 2,
+      "max": 4,
+      "lost": 2,
+      "stage": "visitor",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "M-01: one hero heading clips at 390px; menu opens; form fields visible."
+      ]
+    },
+    {
+      "id": "RL-MOB-03",
+      "title": "Tap targets and persistent action",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "high",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "M-01: sticky call button; three footer links are under 44px."
+      ]
+    },
+    {
+      "id": "RL-MOB-05",
+      "title": "Broken links, CTAs, and conversion-blocking errors",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "lead",
+      "severity": "critical",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression",
+      "evidence": [
+        "One service page link 404s; the primary estimate path still works."
+      ]
+    },
+    {
+      "id": "RL-FND-01",
+      "title": "Title, meta description, and H1",
+      "score": 2,
+      "max": 3,
+      "lost": 1,
+      "stage": "visitor",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "Title and meta include plumbing and Example City; H1 is brand-only."
+      ]
+    },
+    {
+      "id": "RL-FND-03",
+      "title": "Local schema and NAP consistency",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "visitor",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "LocalBusiness schema present; visible NAP matches the footer."
+      ]
+    },
+    {
+      "id": "RL-FND-04",
+      "title": "Service and location pages with unique content",
+      "score": 0,
+      "max": 1,
+      "lost": 1,
+      "stage": "understanding",
+      "severity": "low",
+      "confidence": "verified",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence",
+      "evidence": [
+        "No dedicated city pages; one service-area list only."
+      ]
+    },
+    {
+      "id": "RL-MSR-02",
+      "title": "Conversion and paid-traffic measurement",
+      "score": 0,
+      "max": 2,
+      "lost": 2,
+      "stage": "lead",
+      "severity": "medium",
+      "confidence": "verified",
+      "evaluation": "deterministic",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence",
+      "evidence": [
+        "No conversion events or ads tags detected."
+      ]
+    }
+  ],
+  "strongSignals": [
+    {
+      "id": "RL-RSP-01",
+      "title": "Response and acknowledgement promise",
+      "score": 1,
+      "max": 3,
+      "lost": 2,
+      "stage": "response",
+      "severity": "high",
+      "confidence": "strong_signal",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form area: \"We will be in touch soon.\" No time, channel, or hours."
+      ]
+    },
+    {
+      "id": "RL-RSP-04",
+      "title": "Confirmation expectations",
+      "score": 1,
+      "max": 2,
+      "lost": 1,
+      "stage": "booking",
+      "severity": "medium",
+      "confidence": "strong_signal",
+      "evaluation": "model_judgment",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead",
+      "evidence": [
+        "Form area: generic \"we will contact you\" only."
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "RL-CON-06",
+      "title": "Form usability",
+      "lost": 2,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-MOB-01",
+      "title": "Mobile LCP",
+      "lost": 2,
+      "max": 4,
+      "stage": "visitor",
+      "severity": "high",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-02",
+      "title": "Mobile layout usability",
+      "lost": 2,
+      "max": 4,
+      "stage": "visitor",
+      "severity": "critical",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-03",
+      "title": "Tap targets and persistent action",
+      "lost": 2,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-MSR-02",
+      "title": "Conversion and paid-traffic measurement",
+      "lost": 2,
+      "max": 2,
+      "stage": "lead",
+      "severity": "medium",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence"
+    },
+    {
+      "id": "RL-RSP-01",
+      "title": "Response and acknowledgement promise",
+      "lost": 2,
+      "max": 3,
+      "stage": "response",
+      "severity": "high",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-TRU-01",
+      "title": "Review volume, source, and profile link",
+      "lost": 2,
+      "max": 4,
+      "stage": "review",
+      "severity": "high",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-01",
+      "title": "Service clarity",
+      "lost": 2,
+      "max": 4,
+      "stage": "understanding",
+      "severity": "critical",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-05",
+      "title": "Offer specificity and price anchor",
+      "lost": 2,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-CON-05",
+      "title": "Form friction",
+      "lost": 1,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-FND-01",
+      "title": "Title, meta description, and H1",
+      "lost": 1,
+      "max": 3,
+      "stage": "visitor",
+      "severity": "medium",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-03",
+      "title": "Local schema and NAP consistency",
+      "lost": 1,
+      "max": 2,
+      "stage": "visitor",
+      "severity": "medium",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-04",
+      "title": "Service and location pages with unique content",
+      "lost": 1,
+      "max": 1,
+      "stage": "understanding",
+      "severity": "low",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-MOB-05",
+      "title": "Broken links, CTAs, and conversion-blocking errors",
+      "lost": 1,
+      "max": 3,
+      "stage": "lead",
+      "severity": "critical",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-RSP-03",
+      "title": "Booking path steps and mobile usability",
+      "lost": 1,
+      "max": 3,
+      "stage": "booking",
+      "severity": "critical",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-04",
+      "title": "Confirmation expectations",
+      "lost": 1,
+      "max": 2,
+      "stage": "booking",
+      "severity": "medium",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-05",
+      "title": "Qualification context without over-asking",
+      "lost": 1,
+      "max": 3,
+      "stage": "qualification",
+      "severity": "high",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-TRU-02",
+      "title": "Specific testimonials and case studies",
+      "lost": 1,
+      "max": 3,
+      "stage": "review",
+      "severity": "medium",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-03",
+      "title": "Real project proof",
+      "lost": 1,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-05",
+      "title": "Guarantee and warranty specificity",
+      "lost": 1,
+      "max": 2,
+      "stage": "booking",
+      "severity": "medium",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-06",
+      "title": "Identity and differentiation consistency",
+      "lost": 1,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-03",
+      "title": "Customer problem and outcome clarity",
+      "lost": 1,
+      "max": 3,
+      "stage": "understanding",
+      "severity": "high",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery"
+    }
+  ],
+  "evidence": [
+    {
+      "checkId": "RL-UND-01",
+      "confidence": "verified",
+      "items": [
+        "M-01: hero says \"Plumbing done right\" but not the service or city above the fold."
+      ]
+    },
+    {
+      "checkId": "RL-UND-02",
+      "confidence": "verified",
+      "items": [
+        "M-01 and contact page: Example City and a 25-mile service area are visible."
+      ]
+    },
+    {
+      "checkId": "RL-UND-03",
+      "confidence": "verified",
+      "items": [
+        "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague."
+      ]
+    },
+    {
+      "checkId": "RL-UND-04",
+      "confidence": "verified",
+      "items": [
+        "M-01, D-01: one \"Get an estimate\" button dominates the hero."
+      ]
+    },
+    {
+      "checkId": "RL-UND-05",
+      "confidence": "verified",
+      "items": [
+        "M-01, service pages: no price, starting-at price, or range."
+      ]
+    },
+    {
+      "checkId": "RL-UND-06",
+      "confidence": "verified",
+      "items": [
+        "Mobile menu: Services opens a list; drain and water-heater pages are two taps away."
+      ]
+    },
+    {
+      "checkId": "RL-UND-07",
+      "confidence": "verified",
+      "items": [
+        "Service-area page lists Example City and four neighboring cities."
+      ]
+    },
+    {
+      "checkId": "RL-CON-01",
+      "confidence": "verified",
+      "items": [
+        "M-01, contact page, footer: (555) 010-0200 appears consistently."
+      ]
+    },
+    {
+      "checkId": "RL-CON-02",
+      "confidence": "verified",
+      "items": [
+        "M-01 DOM: tel:+15550100200 in the sticky action bar."
+      ]
+    },
+    {
+      "checkId": "RL-CON-04",
+      "confidence": "verified",
+      "items": [
+        "Contact page is one tap from the header and renders a six-field form."
+      ]
+    },
+    {
+      "checkId": "RL-CON-05",
+      "confidence": "verified",
+      "items": [
+        "Contact form: name, phone, email, ZIP, service, message; message is not required."
+      ]
+    },
+    {
+      "checkId": "RL-CON-06",
+      "confidence": "verified",
+      "items": [
+        "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible."
+      ]
+    },
+    {
+      "checkId": "RL-CON-07",
+      "confidence": "verified",
+      "items": [
+        "Book path: scheduler iframe loads and shows availability; no appointment selected."
+      ]
+    },
+    {
+      "checkId": "RL-CON-08",
+      "confidence": "verified",
+      "items": [
+        "M-01, service page, about page: each ends with a next step; reviews page relies on the persistent header action."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-01",
+      "confidence": "strong_signal",
+      "items": [
+        "Form area: \"We will be in touch soon.\" No time, channel, or hours."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-02",
+      "confidence": "verified",
+      "items": [
+        "Header: \"Mon-Sat 7am-7pm\" plus an emergency call link."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-03",
+      "confidence": "verified",
+      "items": [
+        "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-04",
+      "confidence": "strong_signal",
+      "items": [
+        "Form area: generic \"we will contact you\" only."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-05",
+      "confidence": "verified",
+      "items": [
+        "Form asks service, ZIP, problem, and phone; no account required."
+      ]
+    },
+    {
+      "checkId": "RL-RSP-06",
+      "confidence": "verified",
+      "items": [
+        "Service pages link to \"Request an estimate\" with a scope field and photo upload."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-01",
+      "confidence": "verified",
+      "items": [
+        "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-02",
+      "confidence": "verified",
+      "items": [
+        "Two named testimonials with job type; no photos or specific numbers."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-03",
+      "confidence": "verified",
+      "items": [
+        "Gallery has four uncaptioned job photos."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-04",
+      "confidence": "verified",
+      "items": [
+        "Footer: license number, insured statement, and manufacturer badge."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-05",
+      "confidence": "verified",
+      "items": [
+        "Service page: \"warranty\" with no term or scope."
+      ]
+    },
+    {
+      "checkId": "RL-TRU-06",
+      "confidence": "verified",
+      "items": [
+        "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name."
+      ]
+    },
+    {
+      "checkId": "RL-MOB-01",
+      "confidence": "verified",
+      "items": [
+        "Lighthouse mobile median LCP 3.1 s across 3 runs."
+      ]
+    },
+    {
+      "checkId": "RL-MOB-02",
+      "confidence": "verified",
+      "items": [
+        "M-01: one hero heading clips at 390px; menu opens; form fields visible."
+      ]
+    },
+    {
+      "checkId": "RL-MOB-03",
+      "confidence": "verified",
+      "items": [
+        "M-01: sticky call button; three footer links are under 44px."
+      ]
+    },
+    {
+      "checkId": "RL-MOB-04",
+      "confidence": "verified",
+      "items": [
+        "URL loads over HTTPS with a valid certificate."
+      ]
+    },
+    {
+      "checkId": "RL-MOB-05",
+      "confidence": "verified",
+      "items": [
+        "One service page link 404s; the primary estimate path still works."
+      ]
+    },
+    {
+      "checkId": "RL-FND-01",
+      "confidence": "verified",
+      "items": [
+        "Title and meta include plumbing and Example City; H1 is brand-only."
+      ]
+    },
+    {
+      "checkId": "RL-FND-02",
+      "confidence": "verified",
+      "items": [
+        "Canonical present, robots allow indexing, sitemap.xml returns 200."
+      ]
+    },
+    {
+      "checkId": "RL-FND-03",
+      "confidence": "verified",
+      "items": [
+        "LocalBusiness schema present; visible NAP matches the footer."
+      ]
+    },
+    {
+      "checkId": "RL-FND-04",
+      "confidence": "verified",
+      "items": [
+        "No dedicated city pages; one service-area list only."
+      ]
+    },
+    {
+      "checkId": "RL-MSR-01",
+      "confidence": "verified",
+      "items": [
+        "GA4 and Google Tag Manager are present."
+      ]
+    },
+    {
+      "checkId": "RL-MSR-02",
+      "confidence": "verified",
+      "items": [
+        "No conversion events or ads tags detected."
+      ]
+    }
+  ],
+  "topLeaks": [
+    {
+      "title": "Mobile estimate form is difficult to complete",
+      "confidence": "verified",
+      "checkId": "RL-CON-05",
+      "stage": "lead"
+    },
+    {
+      "title": "No observable immediate acknowledgement after a form submit",
+      "confidence": "strong_signal",
+      "checkId": "RL-RSP-01",
+      "stage": "response"
+    },
+    {
+      "title": "Unclosed estimates may not receive follow-up",
+      "confidence": "owner_data_required",
+      "ownerDataId": "OD-ESTIMATE-FOLLOWUP",
+      "stage": "follow_up"
+    }
+  ],
+  "ownerDataRequired": [
+    {
+      "id": "OD-SPEED-TO-LEAD",
+      "stage": "response",
+      "title": "Speed-to-lead",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "whyItMatters": "A fast first response is often the difference between a booked job and a competitor's job. The public site cannot prove response time.",
+      "questions": [
+        "What is the median time from lead to first human response?",
+        "How does that change by lead source (call, form, chat, text, ads)?",
+        "Who owns new leads during business hours and after hours?",
+        "How many contact attempts are made before a lead is abandoned?",
+        "How many inbound calls are missed or abandoned each week?"
+      ]
+    },
+    {
+      "id": "OD-AFTER-HOURS",
+      "stage": "response",
+      "title": "After-hours and emergency handling",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "whyItMatters": "Emergency demand does not wait for office hours. A visible emergency path is not proof that a human answers it.",
+      "questions": [
+        "What happens to a call or form submitted after hours?",
+        "Is there an on-call rotation or answering service?",
+        "What percentage of after-hours leads become jobs?",
+        "Are emergency jobs priced or prioritized differently?"
+      ]
+    },
+    {
+      "id": "OD-LEAD-QUALITY",
+      "stage": "qualification",
+      "title": "Lead quality and routing",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "whyItMatters": "A form can collect data and still fail to route the right job to the right person.",
+      "questions": [
+        "Which form fields are actually used to qualify or route a lead?",
+        "What percentage of form leads are spam, out of area, or the wrong service?",
+        "Where do form leads land, and who sees them?",
+        "What information is missing most often when the office calls back?"
+      ]
+    },
+    {
+      "id": "OD-BOOKING-CAPACITY",
+      "stage": "booking",
+      "title": "Booking capacity and confirmation",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "whyItMatters": "An online booking can create a bad customer experience if the calendar is wrong or the office cannot absorb the slot.",
+      "questions": [
+        "How many booked jobs are rescheduled or cancelled each week?",
+        "Is the online calendar connected to real crew capacity?",
+        "Who confirms appointments, and when?",
+        "What happens when the requested slot is unavailable?"
+      ]
+    },
+    {
+      "id": "OD-ESTIMATE-PIPELINE",
+      "stage": "estimate",
+      "title": "Estimate pipeline",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "whyItMatters": "Open estimates are often the largest recoverable revenue pool. The website cannot show how many exist.",
+      "questions": [
+        "How many estimates are currently open?",
+        "What is the total value of open estimates?",
+        "What is the average time from request to estimate delivered?",
+        "What percentage of estimates are accepted?",
+        "What percentage of estimate requests never receive an estimate?"
+      ]
+    },
+    {
+      "id": "OD-CLOSE-RATE",
+      "stage": "estimate",
+      "title": "Estimate close rate by source and size",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "whyItMatters": "The same website can produce very different revenue depending on close rate, job size, and lead source.",
+      "questions": [
+        "What is the close rate by lead source?",
+        "What is the close rate by job size or service line?",
+        "What is the average job value?",
+        "Which objections appear most often on estimates?",
+        "Which lost reasons are recorded?"
+      ]
+    },
+    {
+      "id": "OD-ESTIMATE-FOLLOWUP",
+      "stage": "follow_up",
+      "title": "Estimate follow-up",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "whyItMatters": "Unclosed estimates are a high-value opportunity that a public website audit cannot observe.",
+      "questions": [
+        "What percentage of open estimates receive follow-up?",
+        "How quickly is the first follow-up made?",
+        "How many attempts are made before follow-up stops?",
+        "Which channels are used (call, text, email)?",
+        "Are estimates segmented by size, service, or age?",
+        "Are stale estimates reactivated on a schedule?"
+      ]
+    },
+    {
+      "id": "OD-CUSTOMER-HISTORY",
+      "stage": "customer",
+      "title": "Customer history and job completion",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "whyItMatters": "Repeat and referral revenue depends on knowing who bought, what was installed, and when the next service is due.",
+      "questions": [
+        "How many past customers are in the CRM?",
+        "Is job history, equipment age, and service date recorded?",
+        "Is there a post-job check-in?",
+        "How many customers buy a second service within 12 months?"
+      ]
+    },
+    {
+      "id": "OD-REVIEW-REQUEST",
+      "stage": "review",
+      "title": "Review requests",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "whyItMatters": "A strong review profile is public, but the review-request process is not.",
+      "questions": [
+        "Are customers automatically asked for a review?",
+        "How soon after the job is the ask made?",
+        "Is the ask sent by SMS, email, or in person?",
+        "Is the process measured by technician or job type?",
+        "Is negative feedback captured before it becomes a public review?"
+      ]
+    },
+    {
+      "id": "OD-REFERRAL",
+      "stage": "referral",
+      "title": "Referral operations",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "whyItMatters": "Referrals are often the lowest-cost lead source, but they are rarely visible on the website.",
+      "questions": [
+        "Do you ask for referrals? When and how?",
+        "Is there a referral offer or tracking method?",
+        "What percentage of new customers come from referrals?",
+        "Are referral partners (realtors, property managers, adjacent trades) tracked?",
+        "Is referral follow-up owned by someone?"
+      ]
+    },
+    {
+      "id": "OD-REACTIVATION",
+      "stage": "reactivation",
+      "title": "Reactivation and repeat business",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "whyItMatters": "Old leads, unsold estimates, and inactive customers can produce revenue without new ad spend.",
+      "questions": [
+        "How many past customers are inactive for 12+ months?",
+        "How many unsold estimates are older than 30, 60, or 90 days?",
+        "Are seasonal services or maintenance visits scheduled automatically?",
+        "Is there a maintenance plan or membership list?",
+        "Has anyone contacted the inactive list in the last year?"
+      ]
+    },
+    {
+      "id": "OD-MARKETING-ATTRIBUTION",
+      "stage": "response",
+      "title": "Marketing attribution and channel profitability",
+      "confidence": "owner_data_required",
+      "serviceMapping": "marketing_intelligence",
+      "whyItMatters": "Tags can show that traffic arrived; only business data can show which channel produces closed revenue.",
+      "questions": [
+        "Is lead source recorded on every lead and job?",
+        "Can you report cost per lead, cost per booked job, and cost per closed job by channel?",
+        "Do you know revenue by channel?",
+        "Which campaigns produced jobs in the last 90 days?",
+        "How much is spent on ads, and what is the return?"
+      ]
+    }
+  ],
+  "journey": [
+    {
+      "id": "visitor",
+      "order": 1,
+      "label": "Visitor",
+      "customerQuestion": "Can I find and load the right page?",
+      "status": "scored",
+      "checks": [
+        "RL-MOB-01",
+        "RL-MOB-02",
+        "RL-MOB-04",
+        "RL-FND-01",
+        "RL-FND-02",
+        "RL-FND-03"
+      ],
+      "na_checks": [],
+      "ownerData": [],
+      "earned": 10,
+      "max": 16,
+      "percent": 62.5
+    },
+    {
+      "id": "understanding",
+      "order": 2,
+      "label": "Understanding",
+      "customerQuestion": "Do I understand what this business does, where, for whom, and what to do next?",
+      "status": "scored",
+      "checks": [
+        "RL-UND-01",
+        "RL-UND-02",
+        "RL-UND-03",
+        "RL-UND-04",
+        "RL-UND-05",
+        "RL-UND-06",
+        "RL-UND-07",
+        "RL-TRU-03",
+        "RL-TRU-06",
+        "RL-FND-04"
+      ],
+      "na_checks": [
+        "RL-UND-08"
+      ],
+      "ownerData": [],
+      "earned": 15,
+      "max": 23,
+      "percent": 65.2
+    },
+    {
+      "id": "lead",
+      "order": 3,
+      "label": "Lead",
+      "customerQuestion": "Can I contact this business without friction or a dead end?",
+      "status": "scored",
+      "checks": [
+        "RL-CON-01",
+        "RL-CON-02",
+        "RL-CON-04",
+        "RL-CON-05",
+        "RL-CON-06",
+        "RL-CON-07",
+        "RL-CON-08",
+        "RL-MOB-03",
+        "RL-MOB-05",
+        "RL-MSR-01",
+        "RL-MSR-02"
+      ],
+      "na_checks": [
+        "RL-CON-03",
+        "RL-CON-09"
+      ],
+      "ownerData": [],
+      "earned": 22,
+      "max": 30,
+      "percent": 73.3
+    },
+    {
+      "id": "response",
+      "order": 4,
+      "label": "Response",
+      "customerQuestion": "What happens after I reach out, and how fast?",
+      "status": "scored_plus_owner_data",
+      "checks": [
+        "RL-RSP-01",
+        "RL-RSP-02"
+      ],
+      "na_checks": [],
+      "ownerData": [
+        "OD-SPEED-TO-LEAD",
+        "OD-AFTER-HOURS"
+      ],
+      "earned": 3,
+      "max": 5,
+      "percent": 60.0
+    },
+    {
+      "id": "qualification",
+      "order": 5,
+      "label": "Qualification",
+      "customerQuestion": "Does the lead flow capture enough context to route the job without over-asking?",
+      "status": "scored_plus_owner_data",
+      "checks": [
+        "RL-RSP-05"
+      ],
+      "na_checks": [],
+      "ownerData": [
+        "OD-LEAD-QUALITY"
+      ],
+      "earned": 2,
+      "max": 3,
+      "percent": 66.7
+    },
+    {
+      "id": "booking",
+      "order": 6,
+      "label": "Booking",
+      "customerQuestion": "Can I book or request an appointment without confusion?",
+      "status": "scored_plus_owner_data",
+      "checks": [
+        "RL-RSP-03",
+        "RL-RSP-04",
+        "RL-TRU-04",
+        "RL-TRU-05"
+      ],
+      "na_checks": [],
+      "ownerData": [
+        "OD-BOOKING-CAPACITY"
+      ],
+      "earned": 6,
+      "max": 9,
+      "percent": 66.7
+    },
+    {
+      "id": "estimate",
+      "order": 7,
+      "label": "Estimate / Opportunity",
+      "customerQuestion": "Can I request an estimate and understand what happens next?",
+      "status": "scored_plus_owner_data",
+      "checks": [
+        "RL-RSP-06"
+      ],
+      "na_checks": [],
+      "ownerData": [
+        "OD-ESTIMATE-PIPELINE",
+        "OD-CLOSE-RATE"
+      ],
+      "earned": 3,
+      "max": 3,
+      "percent": 100.0
+    },
+    {
+      "id": "follow_up",
+      "order": 8,
+      "label": "Follow-up",
+      "customerQuestion": "Are open estimates and quiet leads followed up until a decision?",
+      "status": "owner_data_required",
+      "checks": [],
+      "na_checks": [],
+      "ownerData": [
+        "OD-ESTIMATE-FOLLOWUP"
+      ],
+      "earned": 0,
+      "max": 0,
+      "percent": null
+    },
+    {
+      "id": "customer",
+      "order": 9,
+      "label": "Customer",
+      "customerQuestion": "What happens after the job is sold and completed?",
+      "status": "owner_data_required",
+      "checks": [],
+      "na_checks": [],
+      "ownerData": [
+        "OD-CUSTOMER-HISTORY"
+      ],
+      "earned": 0,
+      "max": 0,
+      "percent": null
+    },
+    {
+      "id": "review",
+      "order": 10,
+      "label": "Review",
+      "customerQuestion": "Does the public experience show credible customer proof?",
+      "status": "scored_plus_owner_data",
+      "checks": [
+        "RL-TRU-01",
+        "RL-TRU-02"
+      ],
+      "na_checks": [],
+      "ownerData": [
+        "OD-REVIEW-REQUEST"
+      ],
+      "earned": 4,
+      "max": 7,
+      "percent": 57.1
+    },
+    {
+      "id": "referral",
+      "order": 11,
+      "label": "Referral",
+      "customerQuestion": "Is there a visible path for a happy customer to refer someone?",
+      "status": "owner_data_required",
+      "checks": [],
+      "na_checks": [],
+      "ownerData": [
+        "OD-REFERRAL"
+      ],
+      "earned": 0,
+      "max": 0,
+      "percent": null
+    },
+    {
+      "id": "reactivation",
+      "order": 12,
+      "label": "Reactivation",
+      "customerQuestion": "Are past customers and unsold estimates brought back?",
+      "status": "owner_data_required",
+      "checks": [],
+      "na_checks": [],
+      "ownerData": [
+        "OD-REACTIVATION"
+      ],
+      "earned": 0,
+      "max": 0,
+      "percent": null
+    }
+  ],
+  "coverage": [
+    {
+      "id": "RL-UND-01",
+      "name": "Service clarity",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "confused_visitor",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-02",
+      "name": "Location and service-area clarity",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unqualified_or_out_of_area_visitor",
+      "evidenceType": [
+        "screenshot",
+        "copy",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State the city/service area and add local proof.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-03",
+      "name": "Customer problem and outcome clarity",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_value",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-04",
+      "name": "Primary action clarity",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_next_step",
+      "evidenceType": [
+        "screenshot",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one dominant next step above the fold.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-05",
+      "name": "Offer specificity and price anchor",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_offer",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-06",
+      "name": "Service navigation",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "high_intent_visitor_cannot_find_service",
+      "evidenceType": [
+        "link",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Put the top services in the main navigation.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-07",
+      "name": "Service-area eligibility navigation",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "out_of_area_lead",
+      "evidenceType": [
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "low",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a service-area list, map, or ZIP check.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-UND-08",
+      "name": "Language access",
+      "category": "A",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "language_barrier",
+      "evidenceType": [
+        "screenshot",
+        "link",
+        "source"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "applicable": false,
+      "naReason": "multilingual access not configured for this market",
+      "severity": "high",
+      "confidence": "not_applicable",
+      "recommendedIntervention": "Add the configured language path and translate conversion pages.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "excluded"
+    },
+    {
+      "id": "RL-CON-01",
+      "name": "Phone visible and consistent",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "phone_hidden_or_inconsistent",
+      "evidenceType": [
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one visible phone number consistently.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-02",
+      "name": "Click-to-call on mobile",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "phone_not_tappable",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified",
+      "recommendedIntervention": "Make the mobile phone a tel: link in a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-03",
+      "name": "Text/SMS path",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_text_channel",
+      "evidenceType": [
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "applicable": false,
+      "naReason": "optional module disabled: sms",
+      "severity": "low",
+      "confidence": "not_applicable",
+      "recommendedIntervention": "Add a working sms: link when SMS is enabled.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "excluded"
+    },
+    {
+      "id": "RL-CON-04",
+      "name": "Form exists and is reachable",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_form_path",
+      "evidenceType": [
+        "screenshot",
+        "dom",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Make the lead form reachable in two taps.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-05",
+      "name": "Form friction",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "form_friction",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-06",
+      "name": "Form usability",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "form_usability",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-07",
+      "name": "Online scheduler or booking",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_booking_path",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a working scheduler with live availability.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-08",
+      "name": "No conversion dead end",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "conversion_dead_end",
+      "evidenceType": [
+        "screenshot",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "End every high-intent page with a next step.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-CON-09",
+      "name": "Chat or callback request",
+      "category": "B",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_alternate_channel",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "applicable": false,
+      "naReason": "optional module disabled: chat_callback",
+      "severity": "low",
+      "confidence": "not_applicable",
+      "recommendedIntervention": "Add a human-backed chat or callback when enabled.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "excluded"
+    },
+    {
+      "id": "RL-RSP-01",
+      "name": "Response and acknowledgement promise",
+      "category": "C",
+      "journeyStage": "response",
+      "revenueLeakCategory": "no_response_expectation",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-RSP-02",
+      "name": "After-hours or emergency path",
+      "category": "C",
+      "journeyStage": "response",
+      "revenueLeakCategory": "after_hours_leak",
+      "evidenceType": [
+        "copy",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified",
+      "recommendedIntervention": "State hours and the after-hours or emergency path.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-RSP-03",
+      "name": "Booking path steps and mobile usability",
+      "category": "C",
+      "journeyStage": "booking",
+      "revenueLeakCategory": "booking_friction",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-RSP-04",
+      "name": "Confirmation expectations",
+      "category": "C",
+      "journeyStage": "booking",
+      "revenueLeakCategory": "uncertain_after_submit",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-RSP-05",
+      "name": "Qualification context without over-asking",
+      "category": "C",
+      "journeyStage": "qualification",
+      "revenueLeakCategory": "poor_lead_context_or_friction",
+      "evidenceType": [
+        "dom",
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-RSP-06",
+      "name": "Estimate or quote request workflow",
+      "category": "C",
+      "journeyStage": "estimate",
+      "revenueLeakCategory": "no_estimate_path",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add an estimate request with scope and a clear next step.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-01",
+      "name": "Review volume, source, and profile link",
+      "category": "D",
+      "journeyStage": "review",
+      "revenueLeakCategory": "weak_public_proof",
+      "evidenceType": [
+        "screenshot",
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-02",
+      "name": "Specific testimonials and case studies",
+      "category": "D",
+      "journeyStage": "review",
+      "revenueLeakCategory": "generic_proof",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-03",
+      "name": "Real project proof",
+      "category": "D",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "no_real_proof",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-04",
+      "name": "License, insurance, and certifications",
+      "category": "D",
+      "journeyStage": "booking",
+      "revenueLeakCategory": "trust_gap",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified",
+      "recommendedIntervention": "Show license, insurance, and relevant certifications.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-05",
+      "name": "Guarantee and warranty specificity",
+      "category": "D",
+      "journeyStage": "booking",
+      "revenueLeakCategory": "risk_objection",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-TRU-06",
+      "name": "Identity and differentiation consistency",
+      "category": "D",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "anonymous_or_generic_business",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MOB-01",
+      "name": "Mobile LCP",
+      "category": "E",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "slow_mobile_page",
+      "evidenceType": [
+        "lighthouse"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MOB-02",
+      "name": "Mobile layout usability",
+      "category": "E",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "mobile_layout_failure",
+      "evidenceType": [
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MOB-03",
+      "name": "Tap targets and persistent action",
+      "category": "E",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "hard_to_act_on_mobile",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MOB-04",
+      "name": "HTTPS and security",
+      "category": "E",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "security_failure",
+      "evidenceType": [
+        "source",
+        "url"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified",
+      "recommendedIntervention": "Serve HTTPS with a valid certificate.",
+      "serviceMapping": "cost_compression",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MOB-05",
+      "name": "Broken links, CTAs, and conversion-blocking errors",
+      "category": "E",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "broken_conversion_path",
+      "evidenceType": [
+        "link",
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "critical",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-FND-01",
+      "name": "Title, meta description, and H1",
+      "category": "F",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "poor_search_snippet",
+      "evidenceType": [
+        "source",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-FND-02",
+      "name": "Indexability",
+      "category": "F",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "indexing_blocker",
+      "evidenceType": [
+        "source",
+        "url"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "high",
+      "confidence": "verified",
+      "recommendedIntervention": "Fix canonical, robots, and sitemap.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-FND-03",
+      "name": "Local schema and NAP consistency",
+      "category": "F",
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "weak_local_entity_signal",
+      "evidenceType": [
+        "source",
+        "copy"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-FND-04",
+      "name": "Service and location pages with unique content",
+      "category": "F",
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "thin_local_content",
+      "evidenceType": [
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "low",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MSR-01",
+      "name": "Analytics present",
+      "category": "G",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "unmeasured_marketing",
+      "evidenceType": [
+        "source",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified",
+      "recommendedIntervention": "Install GA4, GTM, or an equivalent analytics platform.",
+      "serviceMapping": "marketing_intelligence",
+      "scoring": "scored"
+    },
+    {
+      "id": "RL-MSR-02",
+      "name": "Conversion and paid-traffic measurement",
+      "category": "G",
+      "journeyStage": "lead",
+      "revenueLeakCategory": "unattributed_leads",
+      "evidenceType": [
+        "source",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "recommended",
+      "applicable": true,
+      "naReason": "",
+      "severity": "medium",
+      "confidence": "verified",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence",
+      "scoring": "scored"
+    }
+  ],
+  "serviceMappings": [
+    {
+      "id": "revenue_recovery",
+      "label": "Revenue Recovery",
+      "description": "Recover revenue from open estimates, unsold opportunities, and conversion leaks."
+    },
+    {
+      "id": "speed_to_lead",
+      "label": "Speed-to-Lead",
+      "description": "Improve response time, routing, booking, and lead handling."
+    },
+    {
+      "id": "customer_reactivation",
+      "label": "Customer Reactivation",
+      "description": "Bring back inactive customers and past opportunities."
+    },
+    {
+      "id": "market_intelligence",
+      "label": "Market Intelligence",
+      "description": "Improve local visibility, service-area clarity, and market positioning."
+    },
+    {
+      "id": "marketing_intelligence",
+      "label": "Marketing Intelligence",
+      "description": "Connect lead sources, measurement, and channel profitability."
+    },
+    {
+      "id": "cost_compression",
+      "label": "Cost Compression",
+      "description": "Reduce waste from slow, broken, or unusable digital experiences."
+    }
+  ],
+  "normalization": {
+    "method": "applicability_aware_category_normalization",
+    "applicable_weight": 100,
+    "raw_total": 68.14,
+    "na_checks": [
+      "RL-UND-08",
+      "RL-CON-03",
+      "RL-CON-09"
+    ]
+  },
+  "total": 68.1,
+  "total_max": 100,
+  "percent": 68.1,
+  "cap": 100,
+  "cap_active": false,
+  "cap_binding": false,
+  "cap_applied": false,
+  "caps": [],
+  "final": 68.1,
+  "display": 68,
+  "band": "C",
+  "band_label": "Average",
+  "recoverable": [
+    {
+      "id": "RL-CON-06",
+      "title": "Form usability",
+      "lost": 2,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-MOB-01",
+      "title": "Mobile LCP",
+      "lost": 2,
+      "max": 4,
+      "stage": "visitor",
+      "severity": "high",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-02",
+      "title": "Mobile layout usability",
+      "lost": 2,
+      "max": 4,
+      "stage": "visitor",
+      "severity": "critical",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-MOB-03",
+      "title": "Tap targets and persistent action",
+      "lost": 2,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-MSR-02",
+      "title": "Conversion and paid-traffic measurement",
+      "lost": 2,
+      "max": 2,
+      "stage": "lead",
+      "severity": "medium",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence"
+    },
+    {
+      "id": "RL-RSP-01",
+      "title": "Response and acknowledgement promise",
+      "lost": 2,
+      "max": 3,
+      "stage": "response",
+      "severity": "high",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-TRU-01",
+      "title": "Review volume, source, and profile link",
+      "lost": 2,
+      "max": 4,
+      "stage": "review",
+      "severity": "high",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-01",
+      "title": "Service clarity",
+      "lost": 2,
+      "max": 4,
+      "stage": "understanding",
+      "severity": "critical",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-05",
+      "title": "Offer specificity and price anchor",
+      "lost": 2,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-CON-05",
+      "title": "Form friction",
+      "lost": 1,
+      "max": 3,
+      "stage": "lead",
+      "severity": "high",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-FND-01",
+      "title": "Title, meta description, and H1",
+      "lost": 1,
+      "max": 3,
+      "stage": "visitor",
+      "severity": "medium",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-03",
+      "title": "Local schema and NAP consistency",
+      "lost": 1,
+      "max": 2,
+      "stage": "visitor",
+      "severity": "medium",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-FND-04",
+      "title": "Service and location pages with unique content",
+      "lost": 1,
+      "max": 1,
+      "stage": "understanding",
+      "severity": "low",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence"
+    },
+    {
+      "id": "RL-MOB-05",
+      "title": "Broken links, CTAs, and conversion-blocking errors",
+      "lost": 1,
+      "max": 3,
+      "stage": "lead",
+      "severity": "critical",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression"
+    },
+    {
+      "id": "RL-RSP-03",
+      "title": "Booking path steps and mobile usability",
+      "lost": 1,
+      "max": 3,
+      "stage": "booking",
+      "severity": "critical",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-04",
+      "title": "Confirmation expectations",
+      "lost": 1,
+      "max": 2,
+      "stage": "booking",
+      "severity": "medium",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-RSP-05",
+      "title": "Qualification context without over-asking",
+      "lost": 1,
+      "max": 3,
+      "stage": "qualification",
+      "severity": "high",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead"
+    },
+    {
+      "id": "RL-TRU-02",
+      "title": "Specific testimonials and case studies",
+      "lost": 1,
+      "max": 3,
+      "stage": "review",
+      "severity": "medium",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-03",
+      "title": "Real project proof",
+      "lost": 1,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-05",
+      "title": "Guarantee and warranty specificity",
+      "lost": 1,
+      "max": 2,
+      "stage": "booking",
+      "severity": "medium",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-TRU-06",
+      "title": "Identity and differentiation consistency",
+      "lost": 1,
+      "max": 2,
+      "stage": "understanding",
+      "severity": "medium",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery"
+    },
+    {
+      "id": "RL-UND-03",
+      "title": "Customer problem and outcome clarity",
+      "lost": 1,
+      "max": 3,
+      "stage": "understanding",
+      "severity": "high",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery"
+    }
+  ],
+  "missing": [],
+  "errors": [],
+  "complete": true
+}

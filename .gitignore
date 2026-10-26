@@ -1,0 +1,51 @@
+# macOS / editor
+.DS_Store
+*.log
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+coverage/
+.nyc_output/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+
+# Raw audit evidence and client work stay local
+.audit/
+audit-screens/
+reports/*.md
+!reports/README.md
+
+# Cross-model eval runs may contain client evidence; only the README is public
+evals/*
+!evals/README.md
+
+# Browser/session artifacts
+*.har
+cookies.txt
+browser-profile/
+playwright-report/
+test-results/
+
+# OS/runtime temp
+*.tmp
+*.temp

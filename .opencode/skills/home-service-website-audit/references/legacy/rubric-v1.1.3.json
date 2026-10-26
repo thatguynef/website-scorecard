@@ -1,0 +1,1048 @@
+{
+  "version": "1.1.3",
+  "updated": "2026-10-24",
+  "total": 100,
+  "categories": [
+    {
+      "id": "A",
+      "name": "Offer and positioning",
+      "max": 20
+    },
+    {
+      "id": "B",
+      "name": "Conversion path",
+      "max": 20
+    },
+    {
+      "id": "C",
+      "name": "Proof and trust",
+      "max": 15
+    },
+    {
+      "id": "D",
+      "name": "Pricing and offer architecture",
+      "max": 15
+    },
+    {
+      "id": "E",
+      "name": "Mobile experience and speed",
+      "max": 15
+    },
+    {
+      "id": "F",
+      "name": "Local SEO",
+      "max": 10
+    },
+    {
+      "id": "G",
+      "name": "Content and objections",
+      "max": 5
+    }
+  ],
+  "caps": [
+    {
+      "id": "no_contact",
+      "max": 30,
+      "label": "No phone number or contact path anywhere"
+    },
+    {
+      "id": "broken_cta",
+      "max": 50,
+      "label": "Primary CTA broken (404, dead scheduler, form error)"
+    },
+    {
+      "id": "mobile_unusable",
+      "max": 60,
+      "label": "Mobile site unusable (menu broken, horizontal scroll on home)"
+    },
+    {
+      "id": "no_mobile_offer",
+      "max": 75,
+      "label": "No service/offer clarity above the fold on mobile"
+    },
+    {
+      "id": "no_https",
+      "max": 40,
+      "label": "Not HTTPS, or obvious malware/redirect"
+    }
+  ],
+  "bands": [
+    {
+      "min": 90,
+      "band": "A",
+      "label": "Elite"
+    },
+    {
+      "min": 75,
+      "band": "B",
+      "label": "Strong"
+    },
+    {
+      "min": 60,
+      "band": "C",
+      "label": "Average"
+    },
+    {
+      "min": 40,
+      "band": "D",
+      "label": "Weak"
+    },
+    {
+      "min": 0,
+      "band": "F",
+      "label": "Critical"
+    }
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "cat": "A",
+      "title": "Above-fold clarity",
+      "max": 4,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "allowed": [
+        4,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "4": "Service + city + outcome in the first viewport. Score the copy, not the rendering; visual clipping is E2.",
+        "2": "Service + city, no outcome; or outcome + service, no location.",
+        "1": "Brand name or slogan only.",
+        "0": "None of the three."
+      },
+      "evidence": "M-01, D-01",
+      "principle": "Offer clarity"
+    },
+    {
+      "id": "A2",
+      "cat": "A",
+      "title": "One primary offer",
+      "max": 3,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        0
+      ],
+      "anchors": {
+        "3": "One dominant CTA, repeated; no more than two secondary header links.",
+        "2": "Two CTAs of equal visual weight.",
+        "0": "Three or more equal CTAs, or no CTA."
+      },
+      "evidence": "Header and hero",
+      "principle": "Narrow offer"
+    },
+    {
+      "id": "A3",
+      "cat": "A",
+      "title": "Specific offer with a price anchor",
+      "max": 3,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Named offer with a price, starting-at price, or range.",
+        "2": "Named offer with no price.",
+        "1": "Free estimate or call-for-quote only.",
+        "0": "No offer."
+      },
+      "evidence": "Hero, offer section, pricing page",
+      "principle": "Price to the buyer"
+    },
+    {
+      "id": "A4",
+      "cat": "A",
+      "title": "Risk reversal near the CTA",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Specific guarantee with terms within one scroll of the primary CTA.",
+        "1": "Generic satisfaction guarantee, or warranty buried in the footer.",
+        "0": "None."
+      },
+      "evidence": "CTA block, offer section",
+      "principle": "Risk reversal"
+    },
+    {
+      "id": "A5",
+      "cat": "A",
+      "title": "Specific differentiation",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Verifiable differentiator in the hero or first scroll.",
+        "1": "Generic claims only (family owned, best in town, quality service).",
+        "0": "None."
+      },
+      "evidence": "Hero, why-us section",
+      "principle": "Differentiation"
+    },
+    {
+      "id": "A6",
+      "cat": "A",
+      "title": "Service area and local proof",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "City/radius plus local proof (address, local job photo, local review).",
+        "1": "City named only.",
+        "0": "No location signal."
+      },
+      "evidence": "Hero, footer, contact page",
+      "principle": "Local proof"
+    },
+    {
+      "id": "A7",
+      "cat": "A",
+      "title": "Spanish-language access",
+      "max": 4,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "split": {
+        "mobile": 3,
+        "desktop": 1
+      },
+      "allowed": {
+        "mobile": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "desktop": [
+          1,
+          0
+        ]
+      },
+      "anchors": {
+        "mobile": {
+          "3": "Espanol reachable in two taps or fewer; Spanish home, service, and contact/book pages.",
+          "2": "Spanish home and one conversion page; switcher buried or key pages English-only.",
+          "1": "Only a 'Se habla espanol' phone note, or one Spanish page with no booking path.",
+          "0": "No Spanish content, link, or notice."
+        },
+        "desktop": {
+          "1": "Visible switcher or Spanish page with Spanish conversion content.",
+          "0": "Absent."
+        }
+      },
+      "evidence": "Mobile menu/footer first, then desktop; /es/, hreflang, switcher, notice",
+      "principle": "Language access (mobile-weighted 3:1)"
+    },
+    {
+      "id": "B1",
+      "cat": "B",
+      "title": "Primary CTA above the fold",
+      "max": 4,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "allowed": [
+        4,
+        2,
+        0
+      ],
+      "anchors": {
+        "4": "Visible without scrolling on desktop and mobile.",
+        "2": "Visible on one viewport only.",
+        "0": "Below the fold on both."
+      },
+      "evidence": "M-01, D-01",
+      "principle": "Conversion path"
+    },
+    {
+      "id": "B2",
+      "cat": "B",
+      "title": "Click-to-call and text on mobile",
+      "max": 3,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": true,
+      "allowed": [
+        3,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Working tel: and sms: links in the header or sticky bar.",
+        "1": "tel: only.",
+        "0": "Neither; phone as plain text."
+      },
+      "evidence": "href scan",
+      "principle": "Speed to lead"
+    },
+    {
+      "id": "B3",
+      "cat": "B",
+      "title": "Short form and real-time scheduler",
+      "max": 3,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Five fields or fewer and a scheduler with live availability.",
+        "2": "Five fields or fewer, no scheduler; or a scheduler behind six to eight fields.",
+        "1": "Nine or more fields.",
+        "0": "No form and no scheduler."
+      },
+      "evidence": "Contact/book page",
+      "principle": "Friction"
+    },
+    {
+      "id": "B4",
+      "cat": "B",
+      "title": "Named lead magnet",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Named low-friction offer with its own CTA and section.",
+        "1": "Free estimate only, no separate section or CTA.",
+        "0": "None."
+      },
+      "evidence": "Hero, offer section",
+      "principle": "Narrow lead magnet"
+    },
+    {
+      "id": "B5",
+      "cat": "B",
+      "title": "Video / VSL",
+      "max": 2,
+      "viewports": [
+        "mobile",
+        "desktop"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "60-second to 7-minute video with a clear play button above the fold or on the offer page.",
+        "1": "Video buried on the about page, or silent autoplay with no message.",
+        "0": "No video."
+      },
+      "evidence": "M-01, D-01",
+      "principle": "VSL pre-sell"
+    },
+    {
+      "id": "B6",
+      "cat": "B",
+      "title": "Financing or payment path",
+      "max": 3,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Named lender + monthly payment example next to the job price + pre-qualification/application link, mobile and desktop.",
+        "2": "Financing section with terms and an application link, but no monthly payment next to the price.",
+        "1": "Financing available text only, with no path.",
+        "0": "None."
+      },
+      "evidence": "Pricing/financing page",
+      "principle": "Payment menu"
+    },
+    {
+      "id": "B7",
+      "cat": "B",
+      "title": "Response-time promise",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Explicit promise (call back in 15 minutes, same-day quote, booked within 24 hours).",
+        "1": "We will be in touch soon.",
+        "0": "None."
+      },
+      "evidence": "Form area, contact page",
+      "principle": "Speed to lead"
+    },
+    {
+      "id": "B8",
+      "cat": "B",
+      "title": "Text/chat channel",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "Working SMS widget or live chat with human handoff.",
+        "0": "None, or a dead bot that loops."
+      },
+      "evidence": "Widget behavior",
+      "principle": "Speed to lead"
+    },
+    {
+      "id": "C1",
+      "cat": "C",
+      "title": "Review volume and source",
+      "max": 4,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        4,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "4": "Rating, review count, a named external review source (Google, Yelp, Facebook), and a link that opens the review profile; 50+ reviews at 4.5+. A map embed, directions link, or the site\u2019s own reviews page does not count.",
+        "2": "Rating and count, but under 50 reviews or no external review-platform link. A link to the site\u2019s own reviews page does not count.",
+        "1": "Three to ten handwritten testimonials, no aggregate.",
+        "0": "None."
+      },
+      "evidence": "Reviews section, GBP",
+      "principle": "Proof stack"
+    },
+    {
+      "id": "C2",
+      "cat": "C",
+      "title": "Specific named testimonials",
+      "max": 3,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Three or more with name/photo, job type, and a specific outcome.",
+        "2": "One or two specific testimonials.",
+        "1": "Generic quotes only.",
+        "0": "None."
+      },
+      "evidence": "Reviews page, service pages",
+      "principle": "Proof specificity"
+    },
+    {
+      "id": "C3",
+      "cat": "C",
+      "title": "Real job photos / before-and-after",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Five or more real job photos with captions or location.",
+        "1": "Stock photos, or uncaptioned gallery.",
+        "0": "None."
+      },
+      "evidence": "Gallery, service pages",
+      "principle": "Proof stack"
+    },
+    {
+      "id": "C4",
+      "cat": "C",
+      "title": "License, insurance, certifications",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "License number, insurance statement, and certifications visible.",
+        "1": "One badge or one of the three.",
+        "0": "None."
+      },
+      "evidence": "About, footer",
+      "principle": "Trust"
+    },
+    {
+      "id": "C5",
+      "cat": "C",
+      "title": "Owner or team face and story",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Real owner/team photo, name, and a short story.",
+        "1": "Photo or story, not both.",
+        "0": "Neither."
+      },
+      "evidence": "About page",
+      "principle": "Trust"
+    },
+    {
+      "id": "C6",
+      "cat": "C",
+      "title": "Specific warranty",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Workmanship or material warranty with a term and scope for the services sold.",
+        "1": "The word warranty with no terms for the services sold; a separate home-warranty product does not count.",
+        "0": "None."
+      },
+      "evidence": "Offer, service page, footer",
+      "principle": "Risk reversal"
+    },
+    {
+      "id": "D1",
+      "cat": "D",
+      "title": "Price transparency",
+      "max": 4,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        4,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "4": "Price list or range for the core services.",
+        "2": "Starting-at price for one service, or a partial pricing page.",
+        "1": "Call for pricing only.",
+        "0": "No pricing signal."
+      },
+      "evidence": "Pricing page, service pages",
+      "principle": "Price to the buyer"
+    },
+    {
+      "id": "D2",
+      "cat": "D",
+      "title": "Tiered packages or VIP",
+      "max": 3,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Three service/job packages or standard/VIP with named deliverables for the core job. Maintenance/membership plans belong in D3 and do not count here.",
+        "2": "Two service tiers.",
+        "1": "One service package.",
+        "0": "None."
+      },
+      "evidence": "Pricing/offer page",
+      "principle": "Anchor and tier"
+    },
+    {
+      "id": "D3",
+      "cat": "D",
+      "title": "Maintenance, membership, or annual plan",
+      "max": 4,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        4,
+        2,
+        0
+      ],
+      "anchors": {
+        "4": "Plan with price, benefits, and a signup path; a phone call or online form both count.",
+        "2": "Mentioned with no price or no signup.",
+        "0": "None."
+      },
+      "evidence": "Pricing page, home",
+      "principle": "Continuity"
+    },
+    {
+      "id": "D4",
+      "cat": "D",
+      "title": "Priority, same-day, or prepay option",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Explicit paid priority/same-day option or prepay discount.",
+        "1": "Same-day mentioned as free availability only.",
+        "0": "None."
+      },
+      "evidence": "Pricing, booking page",
+      "principle": "Price for speed"
+    },
+    {
+      "id": "D5",
+      "cat": "D",
+      "title": "Financing or fee disclosure",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "APR/term/minimum disclosed on the pricing page plus a payment example.",
+        "1": "Generic 0% claim or processing-fee disclosure only.",
+        "0": "None."
+      },
+      "evidence": "Pricing page",
+      "principle": "Payment menu"
+    },
+    {
+      "id": "E1",
+      "cat": "E",
+      "title": "Mobile LCP",
+      "max": 4,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": true,
+      "allowed": [
+        4,
+        2,
+        0
+      ],
+      "anchors": {
+        "4": "LCP at or under 2.5 seconds.",
+        "2": "LCP 2.5 to 4.0 seconds.",
+        "0": "LCP over 4.0 seconds."
+      },
+      "evidence": "Lighthouse mobile",
+      "principle": "Mobile speed"
+    },
+    {
+      "id": "E2",
+      "cat": "E",
+      "title": "Layout and tap targets",
+      "max": 3,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": true,
+      "allowed": [
+        3,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "No horizontal scroll, body text 16px or larger, tap targets 44px or larger.",
+        "1": "One of the three fails.",
+        "0": "Two or more fail."
+      },
+      "evidence": "M-02, M-03",
+      "principle": "Mobile friction"
+    },
+    {
+      "id": "E3",
+      "cat": "E",
+      "title": "Sticky call/book bar",
+      "max": 3,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": true,
+      "allowed": [
+        3,
+        1,
+        0
+      ],
+      "anchors": {
+        "3": "Sticky bar with both call and book.",
+        "1": "One of the two, or a floating button.",
+        "0": "None."
+      },
+      "evidence": "M-01 to M-04",
+      "principle": "Mobile conversion"
+    },
+    {
+      "id": "E4",
+      "cat": "E",
+      "title": "Navigation to booking or quote",
+      "max": 2,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Menu opens and booking or quote request is reachable in two taps or fewer.",
+        "1": "Three taps.",
+        "0": "Broken menu or four or more taps."
+      },
+      "evidence": "Mobile menu walkthrough",
+      "principle": "Mobile conversion"
+    },
+    {
+      "id": "E5",
+      "cat": "E",
+      "title": "No blocking popup",
+      "max": 2,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "No popup in the first 30 seconds, or a dismissible one that does not cover the CTA.",
+        "1": "Popup appears but is easy to dismiss.",
+        "0": "Blocking overlay on load or exit-intent that covers the CTA."
+      },
+      "evidence": "M-01",
+      "principle": "Mobile friction"
+    },
+    {
+      "id": "E6",
+      "cat": "E",
+      "title": "Form usability",
+      "max": 1,
+      "viewports": [
+        "mobile"
+      ],
+      "auto": false,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "Correct input types, autocomplete, no zoom on focus, submit reachable.",
+        "0": "Any of those fail."
+      },
+      "evidence": "Form inspection",
+      "principle": "Mobile friction"
+    },
+    {
+      "id": "F1",
+      "cat": "F",
+      "title": "Title and meta",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": true,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Title contains the primary service and city; meta description is written.",
+        "1": "One of the two.",
+        "0": "Neither."
+      },
+      "evidence": "Page source / SERP preview",
+      "principle": "Local search"
+    },
+    {
+      "id": "F2",
+      "cat": "F",
+      "title": "H1",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "One H1 with service and city.",
+        "1": "One of them.",
+        "0": "No H1 or a logo-only H1."
+      },
+      "evidence": "Page source",
+      "principle": "Local search"
+    },
+    {
+      "id": "F3",
+      "cat": "F",
+      "title": "NAP and map",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Consistent name, address, phone plus an embedded map.",
+        "1": "Phone and city only.",
+        "0": "None."
+      },
+      "evidence": "Contact page, footer",
+      "principle": "Local trust"
+    },
+    {
+      "id": "F4",
+      "cat": "F",
+      "title": "City/service-area pages",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Three or more dedicated city pages with unique content (verified, not just linked).",
+        "1": "One service-area page listing cities, or city links without verified unique content.",
+        "0": "None."
+      },
+      "evidence": "Sitemap or nav",
+      "principle": "Local search"
+    },
+    {
+      "id": "F5",
+      "cat": "F",
+      "title": "Structured data",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": true,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "LocalBusiness, Service, or FAQ schema detected.",
+        "0": "None."
+      },
+      "evidence": "Schema checker",
+      "principle": "Local search"
+    },
+    {
+      "id": "F6",
+      "cat": "F",
+      "title": "Google Business Profile link",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": true,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "Site links to the Google Business Profile or review profile.",
+        "0": "No link."
+      },
+      "evidence": "Footer, reviews section",
+      "principle": "Local search"
+    },
+    {
+      "id": "G1",
+      "cat": "G",
+      "title": "Service page answers four buying questions",
+      "max": 2,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        2,
+        1,
+        0
+      ],
+      "anchors": {
+        "2": "Price, time/process, warranty, and next step all answered.",
+        "1": "Two or three answered.",
+        "0": "Zero or one."
+      },
+      "evidence": "Primary service page",
+      "principle": "Objection handling"
+    },
+    {
+      "id": "G2",
+      "cat": "G",
+      "title": "FAQ with real objections",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "Five or more questions covering price, timing, damage, warranty, financing.",
+        "0": "None or generic."
+      },
+      "evidence": "FAQ section",
+      "principle": "Objection handling"
+    },
+    {
+      "id": "G3",
+      "cat": "G",
+      "title": "Advice content freshness",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "At least one post or guide in the last 90 days, or an evergreen guide.",
+        "0": "Stale or none."
+      },
+      "evidence": "Blog/resources",
+      "principle": "Content"
+    },
+    {
+      "id": "G4",
+      "cat": "G",
+      "title": "Next step at end of content",
+      "max": 1,
+      "viewports": [
+        "site"
+      ],
+      "auto": false,
+      "allowed": [
+        1,
+        0
+      ],
+      "anchors": {
+        "1": "CTA at the end of service/advice content.",
+        "0": "None."
+      },
+      "evidence": "End of page",
+      "principle": "Conversion"
+    }
+  ]
+}

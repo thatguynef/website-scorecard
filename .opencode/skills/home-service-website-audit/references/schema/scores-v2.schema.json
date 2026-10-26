@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thatguynef/website-scorecard/schema/scores-v2.schema.json",
+  "title": "Website Revenue Leak Scorecard scores (V2)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "framework",
+    "rubric_version",
+    "scorer_version",
+    "meta",
+    "categories",
+    "checks",
+    "findings",
+    "ownerDataRequired",
+    "journey",
+    "normalization",
+    "total",
+    "final",
+    "display",
+    "total_max",
+    "cap",
+    "cap_active",
+    "cap_binding",
+    "band",
+    "band_label"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "framework": {
+      "const": "revenue-leak"
+    },
+    "rubric_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "scorer_version": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "earned",
+          "max",
+          "applicable_max",
+          "normalized"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "earned": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "applicable_max": {
+            "type": "number"
+          },
+          "normalized": {
+            "type": "number"
+          },
+          "applicable": {
+            "type": "boolean"
+          },
+          "percent": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "na_items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "verifiedFindings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "strongSignals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ownerDataRequired": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "journey": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "topLeaks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "required": [
+        "method",
+        "applicable_weight",
+        "raw_total",
+        "na_checks"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "applicable_weight": {
+          "type": "number"
+        },
+        "raw_total": {
+          "type": "number"
+        },
+        "na_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "final": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "display": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "total_max": {
+      "const": 100
+    },
+    "percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "cap": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "cap_active": {
+      "type": "boolean"
+    },
+    "cap_binding": {
+      "type": "boolean"
+    },
+    "caps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "band": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ]
+    },
+    "band_label": {
+      "type": "string"
+    },
+    "recoverable": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

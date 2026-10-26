@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thatguynef/website-scorecard/schema/audit-v2.schema.json",
+  "title": "Website Revenue Leak Scorecard audit (V2)",
+  "type": "object",
+  "required": ["schema_version", "framework", "meta", "checks", "caps"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "framework": {"const": "revenue-leak"},
+    "meta": {
+      "type": "object",
+      "required": ["client", "url", "date", "run_id", "run_timestamp", "rubric_version", "collector_version", "configuration"],
+      "properties": {
+        "client": {"type": "string", "minLength": 1},
+        "slug": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "city": {"type": "string"},
+        "service": {"type": "string"},
+        "run_id": {"type": "string"},
+        "run_timestamp": {"type": "string"},
+        "rubric_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "collector_version": {"type": "string"},
+        "configuration": {
+          "type": "object",
+          "properties": {
+            "preferredLanguages": {"type": "array", "items": {"type": "string"}},
+            "optionalChecks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+            "excludedChecks": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["score", "evidence", "confidence", "applicable"],
+        "properties": {
+          "score": {"type": ["integer", "null"]},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "confidence": {"enum": ["verified", "strong_signal", "not_applicable"]},
+          "applicable": {"type": "boolean"},
+          "na_reason": {"type": "string"},
+          "needs_review": {"type": "boolean"}
+        }
+      }
+    },
+    "caps": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "topLeaks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "confidence"],
+        "properties": {
+          "title": {"type": "string"},
+          "stage": {"type": "string"},
+          "checkId": {"type": "string"},
+          "ownerDataId": {"type": "string"},
+          "confidence": {"enum": ["verified", "strong_signal", "owner_data_required", "not_applicable"]}
+        }
+      }
+    },
+    "ownerData": {
+      "type": "array",
+      "items": {"type": "object"}
+    }
+  }
+}

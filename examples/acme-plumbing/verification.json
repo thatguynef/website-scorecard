@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-10-26T1000",
+  "verifier": "verify.mjs",
+  "date": "2026-10-26",
+  "rubric_version": "2.0.0",
+  "result": "pass",
+  "sampled_checks": [
+    "RL-UND-01",
+    "RL-CON-02",
+    "RL-CON-05",
+    "RL-RSP-01",
+    "RL-TRU-01",
+    "RL-MOB-02",
+    "RL-FND-01",
+    "RL-MSR-01"
+  ],
+  "overrides": [],
+  "site_map": "site-map.json",
+  "path_traces": "paths.json",
+  "mutation_tests": "pass",
+  "hard_failures": [],
+  "soft_failures": [
+    {
+      "id": "I28",
+      "msg": "Lighthouse not required for this run"
+    },
+    {
+      "id": "I34",
+      "msg": "no previous run supplied"
+    }
+  ],
+  "waivers": []
+}

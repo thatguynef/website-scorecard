@@ -1,0 +1,93 @@
+{
+  "canonical_url": "https://acme-plumbing.example/",
+  "run_id": "2026-10-26T1000",
+  "generated_at": "2026-10-26T10:12:00Z",
+  "synthetic": true,
+  "pages": [
+    {
+      "url": "https://acme-plumbing.example/",
+      "type": "home",
+      "h1": "Acme Plumbing",
+      "screenshot": "M-01"
+    },
+    {
+      "url": "https://acme-plumbing.example/services/drain-cleaning",
+      "type": "service",
+      "h1": "Drain Cleaning",
+      "screenshot": "M-02"
+    },
+    {
+      "url": "https://acme-plumbing.example/services/water-heaters",
+      "type": "service",
+      "h1": "Water Heater Repair",
+      "screenshot": "M-03"
+    },
+    {
+      "url": "https://acme-plumbing.example/contact",
+      "type": "contact",
+      "h1": "Contact Acme Plumbing",
+      "screenshot": "M-04"
+    },
+    {
+      "url": "https://acme-plumbing.example/reviews",
+      "type": "reviews",
+      "h1": "Reviews",
+      "screenshot": "M-05"
+    }
+  ],
+  "conversion_paths": [
+    {
+      "id": "call",
+      "label": "Call",
+      "selector": "a[href^='tel:']",
+      "expected": "tel: link"
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "selector": "a[href^='sms:']",
+      "expected": "sms: link or none"
+    },
+    {
+      "id": "form",
+      "label": "Form",
+      "selector": "form",
+      "expected": "form with fields"
+    },
+    {
+      "id": "book",
+      "label": "Book / quote",
+      "selector": "a[href*='book']",
+      "expected": "scheduler or form"
+    },
+    {
+      "id": "estimate",
+      "label": "Estimate",
+      "selector": "a[href*='estimate']",
+      "expected": "estimate request path"
+    },
+    {
+      "id": "chat",
+      "label": "Chat / callback",
+      "selector": "chat widget",
+      "expected": "widget or none"
+    },
+    {
+      "id": "financing",
+      "label": "Financing",
+      "selector": "text=/financ/i",
+      "expected": "block or none"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews",
+      "selector": "text=/review/i",
+      "expected": "reviews page or section"
+    }
+  ],
+  "viewport_notes": {
+    "mobile": "390x844",
+    "desktop": "1440x900"
+  },
+  "page_count": 5
+}

@@ -1,0 +1,92 @@
+{
+  "client": "Example Roofing A (synthetic, legacy V1)",
+  "url": "example.com",
+  "trade": "Roofing",
+  "market": "Example County, CA",
+  "date": "October 24, 2026",
+  "verdict": "A credible roofer whose booking page is empty and whose mobile hero never asks for the job.",
+  "leaks": [
+    {
+      "title": "Book Estimate lands on an empty page",
+      "body": "Every Book Estimate link says 'Nothing to book right now.' The only working form is a small contact form that is not in the main menu."
+    },
+    {
+      "title": "The mobile hero sells a video, not an inspection",
+      "body": "No service, city, offer, or call button appears above the fold. The page is locked to 320px with 13px body text."
+    },
+    {
+      "title": "The phone is not a link on desktop",
+      "body": "Mobile has two click-to-call links, but desktop shows a plain number and there is no text path."
+    }
+  ],
+  "strengths": [
+    "35+ years in business, license, bond, workers-comp policy, CSLB badge, and A+ BBB.",
+    "Real job photos and two detailed, named testimonials.",
+    "Short three-field form, chat widget, LocalBusiness schema, and a 3.0s median mobile LCP."
+  ],
+  "fixes": [
+    {
+      "fix": "Turn booking back on and add a callback promise",
+      "checks": [
+        "B3",
+        "B7"
+      ],
+      "points": "+3",
+      "effort": "S"
+    },
+    {
+      "fix": "Rebuild the mobile hero with offer, Call, and Book",
+      "checks": [
+        "A1",
+        "B1",
+        "B2",
+        "E3"
+      ],
+      "points": "+9",
+      "effort": "S/M"
+    },
+    {
+      "fix": "Publish price ranges, tiers, maintenance plan, and financing",
+      "checks": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "points": "+15",
+      "effort": "M"
+    },
+    {
+      "fix": "Add review aggregate, case studies, captions, and warranty terms",
+      "checks": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "points": "+8",
+      "effort": "S"
+    },
+    {
+      "fix": "Compress images and remove unused apps",
+      "checks": [
+        "E1"
+      ],
+      "points": "+2",
+      "effort": "M"
+    }
+  ],
+  "fixNote": "The first three are worth about 27 points under V1. This legacy scorecard keeps the original 42-check rubric and is not directly comparable to a V2 score.",
+  "spanish": {
+    "score": "0 / 4",
+    "note": "No Spanish page, switcher, or notice. In a bilingual market, that leaves a real segment with no path to call."
+  },
+  "nextSteps": [
+    "This week: fix Book Estimate and add Book to the mobile bottom bar.",
+    "Next two weeks: publish the price architecture and the proof block.",
+    "Before ad spend: rebuild the mobile hero and get LCP under 2.5 seconds."
+  ],
+  "footer": "Synthetic legacy V1 example. Not a real business."
+}

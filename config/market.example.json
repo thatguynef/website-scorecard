@@ -1,0 +1,16 @@
+{
+  "preferredLanguages": [
+    "en",
+    "es"
+  ],
+  "optionalChecks": {
+    "language_access": true,
+    "sms": true,
+    "chat_callback": false,
+    "after_hours": true,
+    "licensing": true,
+    "financing": false,
+    "paid_traffic": false
+  },
+  "excludedChecks": []
+}

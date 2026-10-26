@@ -1,0 +1,1608 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Website Revenue Leak coverage matrix",
+  "rubricVersion": "2.0.0",
+  "generatedFrom": "references/rubric.json",
+  "framework": "revenue-leak",
+  "summary": {
+    "scoredChecks": 40,
+    "required": 27,
+    "recommended": 8,
+    "conditional": 5,
+    "ownerDataPrompts": 12,
+    "journeyStages": 12
+  },
+  "journey": [
+    {
+      "id": "visitor",
+      "order": 1,
+      "label": "Visitor",
+      "customerQuestion": "Can I find and load the right page?",
+      "coverageStatus": "scored",
+      "scoredChecks": [
+        "RL-MOB-01",
+        "RL-MOB-02",
+        "RL-MOB-04",
+        "RL-FND-01",
+        "RL-FND-02",
+        "RL-FND-03"
+      ],
+      "ownerData": []
+    },
+    {
+      "id": "understanding",
+      "order": 2,
+      "label": "Understanding",
+      "customerQuestion": "Do I understand what this business does, where, for whom, and what to do next?",
+      "coverageStatus": "scored",
+      "scoredChecks": [
+        "RL-UND-01",
+        "RL-UND-02",
+        "RL-UND-03",
+        "RL-UND-04",
+        "RL-UND-05",
+        "RL-UND-06",
+        "RL-UND-07",
+        "RL-UND-08",
+        "RL-TRU-03",
+        "RL-TRU-06",
+        "RL-FND-04"
+      ],
+      "ownerData": []
+    },
+    {
+      "id": "lead",
+      "order": 3,
+      "label": "Lead",
+      "customerQuestion": "Can I contact this business without friction or a dead end?",
+      "coverageStatus": "scored",
+      "scoredChecks": [
+        "RL-CON-01",
+        "RL-CON-02",
+        "RL-CON-03",
+        "RL-CON-04",
+        "RL-CON-05",
+        "RL-CON-06",
+        "RL-CON-07",
+        "RL-CON-08",
+        "RL-CON-09",
+        "RL-MOB-03",
+        "RL-MOB-05",
+        "RL-MSR-01",
+        "RL-MSR-02"
+      ],
+      "ownerData": []
+    },
+    {
+      "id": "response",
+      "order": 4,
+      "label": "Response",
+      "customerQuestion": "What happens after I reach out, and how fast?",
+      "coverageStatus": "scored_plus_owner_data",
+      "scoredChecks": [
+        "RL-RSP-01",
+        "RL-RSP-02"
+      ],
+      "ownerData": [
+        {
+          "id": "OD-SPEED-TO-LEAD",
+          "title": "Speed-to-lead",
+          "questions": [
+            "What is the median time from lead to first human response?",
+            "How does that change by lead source (call, form, chat, text, ads)?",
+            "Who owns new leads during business hours and after hours?",
+            "How many contact attempts are made before a lead is abandoned?",
+            "How many inbound calls are missed or abandoned each week?"
+          ]
+        },
+        {
+          "id": "OD-AFTER-HOURS",
+          "title": "After-hours and emergency handling",
+          "questions": [
+            "What happens to a call or form submitted after hours?",
+            "Is there an on-call rotation or answering service?",
+            "What percentage of after-hours leads become jobs?",
+            "Are emergency jobs priced or prioritized differently?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qualification",
+      "order": 5,
+      "label": "Qualification",
+      "customerQuestion": "Does the lead flow capture enough context to route the job without over-asking?",
+      "coverageStatus": "scored_plus_owner_data",
+      "scoredChecks": [
+        "RL-RSP-05"
+      ],
+      "ownerData": [
+        {
+          "id": "OD-LEAD-QUALITY",
+          "title": "Lead quality and routing",
+          "questions": [
+            "Which form fields are actually used to qualify or route a lead?",
+            "What percentage of form leads are spam, out of area, or the wrong service?",
+            "Where do form leads land, and who sees them?",
+            "What information is missing most often when the office calls back?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "booking",
+      "order": 6,
+      "label": "Booking",
+      "customerQuestion": "Can I book or request an appointment without confusion?",
+      "coverageStatus": "scored_plus_owner_data",
+      "scoredChecks": [
+        "RL-RSP-03",
+        "RL-RSP-04",
+        "RL-TRU-04",
+        "RL-TRU-05"
+      ],
+      "ownerData": [
+        {
+          "id": "OD-BOOKING-CAPACITY",
+          "title": "Booking capacity and confirmation",
+          "questions": [
+            "How many booked jobs are rescheduled or cancelled each week?",
+            "Is the online calendar connected to real crew capacity?",
+            "Who confirms appointments, and when?",
+            "What happens when the requested slot is unavailable?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estimate",
+      "order": 7,
+      "label": "Estimate / Opportunity",
+      "customerQuestion": "Can I request an estimate and understand what happens next?",
+      "coverageStatus": "scored_plus_owner_data",
+      "scoredChecks": [
+        "RL-RSP-06"
+      ],
+      "ownerData": [
+        {
+          "id": "OD-ESTIMATE-PIPELINE",
+          "title": "Estimate pipeline",
+          "questions": [
+            "How many estimates are currently open?",
+            "What is the total value of open estimates?",
+            "What is the average time from request to estimate delivered?",
+            "What percentage of estimates are accepted?",
+            "What percentage of estimate requests never receive an estimate?"
+          ]
+        },
+        {
+          "id": "OD-CLOSE-RATE",
+          "title": "Estimate close rate by source and size",
+          "questions": [
+            "What is the close rate by lead source?",
+            "What is the close rate by job size or service line?",
+            "What is the average job value?",
+            "Which objections appear most often on estimates?",
+            "Which lost reasons are recorded?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "follow_up",
+      "order": 8,
+      "label": "Follow-up",
+      "customerQuestion": "Are open estimates and quiet leads followed up until a decision?",
+      "coverageStatus": "owner_data_required",
+      "scoredChecks": [],
+      "ownerData": [
+        {
+          "id": "OD-ESTIMATE-FOLLOWUP",
+          "title": "Estimate follow-up",
+          "questions": [
+            "What percentage of open estimates receive follow-up?",
+            "How quickly is the first follow-up made?",
+            "How many attempts are made before follow-up stops?",
+            "Which channels are used (call, text, email)?",
+            "Are estimates segmented by size, service, or age?",
+            "Are stale estimates reactivated on a schedule?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "customer",
+      "order": 9,
+      "label": "Customer",
+      "customerQuestion": "What happens after the job is sold and completed?",
+      "coverageStatus": "owner_data_required",
+      "scoredChecks": [],
+      "ownerData": [
+        {
+          "id": "OD-CUSTOMER-HISTORY",
+          "title": "Customer history and job completion",
+          "questions": [
+            "How many past customers are in the CRM?",
+            "Is job history, equipment age, and service date recorded?",
+            "Is there a post-job check-in?",
+            "How many customers buy a second service within 12 months?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "order": 10,
+      "label": "Review",
+      "customerQuestion": "Does the public experience show credible customer proof?",
+      "coverageStatus": "scored_plus_owner_data",
+      "scoredChecks": [
+        "RL-TRU-01",
+        "RL-TRU-02"
+      ],
+      "ownerData": [
+        {
+          "id": "OD-REVIEW-REQUEST",
+          "title": "Review requests",
+          "questions": [
+            "Are customers automatically asked for a review?",
+            "How soon after the job is the ask made?",
+            "Is the ask sent by SMS, email, or in person?",
+            "Is the process measured by technician or job type?",
+            "Is negative feedback captured before it becomes a public review?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "referral",
+      "order": 11,
+      "label": "Referral",
+      "customerQuestion": "Is there a visible path for a happy customer to refer someone?",
+      "coverageStatus": "owner_data_required",
+      "scoredChecks": [],
+      "ownerData": [
+        {
+          "id": "OD-REFERRAL",
+          "title": "Referral operations",
+          "questions": [
+            "Do you ask for referrals? When and how?",
+            "Is there a referral offer or tracking method?",
+            "What percentage of new customers come from referrals?",
+            "Are referral partners (realtors, property managers, adjacent trades) tracked?",
+            "Is referral follow-up owned by someone?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reactivation",
+      "order": 12,
+      "label": "Reactivation",
+      "customerQuestion": "Are past customers and unsold estimates brought back?",
+      "coverageStatus": "owner_data_required",
+      "scoredChecks": [],
+      "ownerData": [
+        {
+          "id": "OD-REACTIVATION",
+          "title": "Reactivation and repeat business",
+          "questions": [
+            "How many past customers are inactive for 12+ months?",
+            "How many unsold estimates are older than 30, 60, or 90 days?",
+            "Are seasonal services or maintenance visits scheduled automatically?",
+            "Is there a maintenance plan or membership list?",
+            "Has anyone contacted the inactive list in the last year?"
+          ]
+        }
+      ]
+    }
+  ],
+  "supportingSystems": [
+    {
+      "id": "trust",
+      "label": "Trust and proof",
+      "checks": [
+        "RL-TRU-01",
+        "RL-TRU-02",
+        "RL-TRU-03",
+        "RL-TRU-04",
+        "RL-TRU-05",
+        "RL-TRU-06"
+      ]
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile usability",
+      "checks": [
+        "RL-MOB-01",
+        "RL-MOB-02",
+        "RL-MOB-03"
+      ]
+    },
+    {
+      "id": "technical",
+      "label": "Technical conversion health",
+      "checks": [
+        "RL-MOB-04",
+        "RL-MOB-05"
+      ]
+    },
+    {
+      "id": "search",
+      "label": "Local search discoverability",
+      "checks": [
+        "RL-FND-01",
+        "RL-FND-02",
+        "RL-FND-03",
+        "RL-FND-04"
+      ]
+    },
+    {
+      "id": "measurement",
+      "label": "Marketing measurement",
+      "checks": [
+        "RL-MSR-01",
+        "RL-MSR-02"
+      ]
+    },
+    {
+      "id": "language",
+      "label": "Language access",
+      "checks": [
+        "RL-UND-08"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "RL-UND-01",
+      "name": "Service clarity",
+      "legacyIds": [
+        "A1"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "confused_visitor",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Name the service in the hero in plain language.",
+      "serviceMapping": "revenue_recovery",
+      "max": 4
+    },
+    {
+      "id": "RL-UND-02",
+      "name": "Location and service-area clarity",
+      "legacyIds": [
+        "A6",
+        "F4"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unqualified_or_out_of_area_visitor",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "copy",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State the city/service area and add local proof.",
+      "serviceMapping": "market_intelligence",
+      "max": 3
+    },
+    {
+      "id": "RL-UND-03",
+      "name": "Customer problem and outcome clarity",
+      "legacyIds": [
+        "A1",
+        "A5"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_value",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Name the customer problem and the outcome.",
+      "serviceMapping": "revenue_recovery",
+      "max": 3
+    },
+    {
+      "id": "RL-UND-04",
+      "name": "Primary action clarity",
+      "legacyIds": [
+        "A2",
+        "B1"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_next_step",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one dominant next step above the fold.",
+      "serviceMapping": "revenue_recovery",
+      "max": 3
+    },
+    {
+      "id": "RL-UND-05",
+      "name": "Offer specificity and price anchor",
+      "legacyIds": [
+        "A3",
+        "D1"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "unclear_offer",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a starting-at price or range for a core job.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-UND-06",
+      "name": "Service navigation",
+      "legacyIds": [],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "high_intent_visitor_cannot_find_service",
+      "category": "A",
+      "evidenceType": [
+        "link",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Put the top services in the main navigation.",
+      "serviceMapping": "market_intelligence",
+      "max": 2
+    },
+    {
+      "id": "RL-UND-07",
+      "name": "Service-area eligibility navigation",
+      "legacyIds": [
+        "F4"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "out_of_area_lead",
+      "category": "A",
+      "evidenceType": [
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "low",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a service-area list, map, or ZIP check.",
+      "serviceMapping": "market_intelligence",
+      "max": 1
+    },
+    {
+      "id": "RL-UND-08",
+      "name": "Language access",
+      "legacyIds": [
+        "A7"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "language_barrier",
+      "category": "A",
+      "evidenceType": [
+        "screenshot",
+        "link",
+        "source"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "module": "language_access",
+      "severity": "high",
+      "scoringBehavior": "conditional",
+      "confidence": "verified",
+      "recommendedIntervention": "Add the configured language path and translate conversion pages.",
+      "serviceMapping": "market_intelligence",
+      "max": 2
+    },
+    {
+      "id": "RL-CON-01",
+      "name": "Phone visible and consistent",
+      "legacyIds": [
+        "B2"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "phone_hidden_or_inconsistent",
+      "category": "B",
+      "evidenceType": [
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one visible phone number consistently.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-02",
+      "name": "Click-to-call on mobile",
+      "legacyIds": [
+        "B2"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "phone_not_tappable",
+      "category": "B",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Make the mobile phone a tel: link in a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-03",
+      "name": "Text/SMS path",
+      "legacyIds": [
+        "B2",
+        "B8"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_text_channel",
+      "category": "B",
+      "evidenceType": [
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "module": "sms",
+      "severity": "low",
+      "scoringBehavior": "conditional",
+      "confidence": "verified",
+      "recommendedIntervention": "Add a working sms: link when SMS is enabled.",
+      "serviceMapping": "speed_to_lead",
+      "max": 1
+    },
+    {
+      "id": "RL-CON-04",
+      "name": "Form exists and is reachable",
+      "legacyIds": [
+        "B3"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_form_path",
+      "category": "B",
+      "evidenceType": [
+        "screenshot",
+        "dom",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Make the lead form reachable in two taps.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-05",
+      "name": "Form friction",
+      "legacyIds": [
+        "B3"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "form_friction",
+      "category": "B",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Cut fields to name, phone, ZIP, and problem.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-06",
+      "name": "Form usability",
+      "legacyIds": [
+        "E6"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "form_usability",
+      "category": "B",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add labels, input types, autocomplete, and a reachable submit.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-07",
+      "name": "Online scheduler or booking",
+      "legacyIds": [
+        "B3",
+        "E4"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_booking_path",
+      "category": "B",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add a working scheduler with live availability.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-CON-08",
+      "name": "No conversion dead end",
+      "legacyIds": [
+        "G4"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "conversion_dead_end",
+      "category": "B",
+      "evidenceType": [
+        "screenshot",
+        "link"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "End every high-intent page with a next step.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-CON-09",
+      "name": "Chat or callback request",
+      "legacyIds": [
+        "B8"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "no_alternate_channel",
+      "category": "B",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "module": "chat_callback",
+      "severity": "low",
+      "scoringBehavior": "conditional",
+      "confidence": "verified",
+      "recommendedIntervention": "Add a human-backed chat or callback when enabled.",
+      "serviceMapping": "speed_to_lead",
+      "max": 1
+    },
+    {
+      "id": "RL-RSP-01",
+      "name": "Response and acknowledgement promise",
+      "legacyIds": [
+        "B7"
+      ],
+      "journeyStage": "response",
+      "revenueLeakCategory": "no_response_expectation",
+      "category": "C",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Publish a response time, channel, and hours.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-RSP-02",
+      "name": "After-hours or emergency path",
+      "legacyIds": [],
+      "journeyStage": "response",
+      "revenueLeakCategory": "after_hours_leak",
+      "category": "C",
+      "evidenceType": [
+        "copy",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "module": "after_hours",
+      "severity": "high",
+      "scoringBehavior": "conditional",
+      "confidence": "verified",
+      "recommendedIntervention": "State hours and the after-hours or emergency path.",
+      "serviceMapping": "speed_to_lead",
+      "max": 2
+    },
+    {
+      "id": "RL-RSP-03",
+      "name": "Booking path steps and mobile usability",
+      "legacyIds": [
+        "E4"
+      ],
+      "journeyStage": "booking",
+      "revenueLeakCategory": "booking_friction",
+      "category": "C",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Reduce booking steps and keep the path on-site.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-RSP-04",
+      "name": "Confirmation expectations",
+      "legacyIds": [],
+      "journeyStage": "booking",
+      "revenueLeakCategory": "uncertain_after_submit",
+      "category": "C",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State what happens after submission and when.",
+      "serviceMapping": "speed_to_lead",
+      "max": 2
+    },
+    {
+      "id": "RL-RSP-05",
+      "name": "Qualification context without over-asking",
+      "legacyIds": [
+        "B3",
+        "G1",
+        "G2"
+      ],
+      "journeyStage": "qualification",
+      "revenueLeakCategory": "poor_lead_context_or_friction",
+      "category": "C",
+      "evidenceType": [
+        "dom",
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Capture service, ZIP or area, problem, and contact preference.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-RSP-06",
+      "name": "Estimate or quote request workflow",
+      "legacyIds": [
+        "B4",
+        "G1"
+      ],
+      "journeyStage": "estimate",
+      "revenueLeakCategory": "no_estimate_path",
+      "category": "C",
+      "evidenceType": [
+        "link",
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add an estimate request with scope and a clear next step.",
+      "serviceMapping": "revenue_recovery",
+      "max": 3
+    },
+    {
+      "id": "RL-TRU-01",
+      "name": "Review volume, source, and profile link",
+      "legacyIds": [
+        "C1",
+        "F6"
+      ],
+      "journeyStage": "review",
+      "revenueLeakCategory": "weak_public_proof",
+      "category": "D",
+      "evidenceType": [
+        "screenshot",
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Show rating, count, source, and a profile link.",
+      "serviceMapping": "revenue_recovery",
+      "max": 4
+    },
+    {
+      "id": "RL-TRU-02",
+      "name": "Specific testimonials and case studies",
+      "legacyIds": [
+        "C2"
+      ],
+      "journeyStage": "review",
+      "revenueLeakCategory": "generic_proof",
+      "category": "D",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Add named stories with job type and outcome.",
+      "serviceMapping": "revenue_recovery",
+      "max": 3
+    },
+    {
+      "id": "RL-TRU-03",
+      "name": "Real project proof",
+      "legacyIds": [
+        "C3"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "no_real_proof",
+      "category": "D",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Caption real job photos with city, job, and result.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-TRU-04",
+      "name": "License, insurance, and certifications",
+      "legacyIds": [
+        "C4"
+      ],
+      "journeyStage": "booking",
+      "revenueLeakCategory": "trust_gap",
+      "category": "D",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "conditional",
+      "module": "licensing",
+      "severity": "medium",
+      "scoringBehavior": "conditional",
+      "confidence": "verified",
+      "recommendedIntervention": "Show license, insurance, and relevant certifications.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-TRU-05",
+      "name": "Guarantee and warranty specificity",
+      "legacyIds": [
+        "A4",
+        "C6"
+      ],
+      "journeyStage": "booking",
+      "revenueLeakCategory": "risk_objection",
+      "category": "D",
+      "evidenceType": [
+        "copy",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "State the warranty term and scope.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-TRU-06",
+      "name": "Identity and differentiation consistency",
+      "legacyIds": [
+        "A5",
+        "C5"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "anonymous_or_generic_business",
+      "category": "D",
+      "evidenceType": [
+        "screenshot",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Use one identity and one verifiable differentiator.",
+      "serviceMapping": "revenue_recovery",
+      "max": 2
+    },
+    {
+      "id": "RL-MOB-01",
+      "name": "Mobile LCP",
+      "legacyIds": [
+        "E1"
+      ],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "slow_mobile_page",
+      "category": "E",
+      "evidenceType": [
+        "lighthouse"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Compress the hero and defer non-critical scripts.",
+      "serviceMapping": "cost_compression",
+      "max": 4
+    },
+    {
+      "id": "RL-MOB-02",
+      "name": "Mobile layout usability",
+      "legacyIds": [
+        "E2",
+        "E5"
+      ],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "mobile_layout_failure",
+      "category": "E",
+      "evidenceType": [
+        "screenshot",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Fix viewport, text size, clipping, and menu usability.",
+      "serviceMapping": "cost_compression",
+      "max": 4
+    },
+    {
+      "id": "RL-MOB-03",
+      "name": "Tap targets and persistent action",
+      "legacyIds": [
+        "E3"
+      ],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "hard_to_act_on_mobile",
+      "category": "E",
+      "evidenceType": [
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Use 44px targets and a persistent action.",
+      "serviceMapping": "speed_to_lead",
+      "max": 3
+    },
+    {
+      "id": "RL-MOB-04",
+      "name": "HTTPS and security",
+      "legacyIds": [],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "security_failure",
+      "category": "E",
+      "evidenceType": [
+        "source",
+        "url"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Serve HTTPS with a valid certificate.",
+      "serviceMapping": "cost_compression",
+      "max": 1
+    },
+    {
+      "id": "RL-MOB-05",
+      "name": "Broken links, CTAs, and conversion-blocking errors",
+      "legacyIds": [],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "broken_conversion_path",
+      "category": "E",
+      "evidenceType": [
+        "link",
+        "dom",
+        "screenshot"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "required",
+      "module": null,
+      "severity": "critical",
+      "scoringBehavior": "scored",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Fix broken links, CTAs, forms, and conversion-blocking errors.",
+      "serviceMapping": "cost_compression",
+      "max": 3
+    },
+    {
+      "id": "RL-FND-01",
+      "name": "Title, meta description, and H1",
+      "legacyIds": [
+        "F1",
+        "F2"
+      ],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "poor_search_snippet",
+      "category": "F",
+      "evidenceType": [
+        "source",
+        "screenshot"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Put service and city in title, meta, and H1.",
+      "serviceMapping": "market_intelligence",
+      "max": 3
+    },
+    {
+      "id": "RL-FND-02",
+      "name": "Indexability",
+      "legacyIds": [],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "indexing_blocker",
+      "category": "F",
+      "evidenceType": [
+        "source",
+        "url"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "high",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Fix canonical, robots, and sitemap.",
+      "serviceMapping": "market_intelligence",
+      "max": 2
+    },
+    {
+      "id": "RL-FND-03",
+      "name": "Local schema and NAP consistency",
+      "legacyIds": [
+        "F3",
+        "F5",
+        "F6"
+      ],
+      "journeyStage": "visitor",
+      "revenueLeakCategory": "weak_local_entity_signal",
+      "category": "F",
+      "evidenceType": [
+        "source",
+        "copy"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Add LocalBusiness or Service schema and consistent NAP.",
+      "serviceMapping": "market_intelligence",
+      "max": 2
+    },
+    {
+      "id": "RL-FND-04",
+      "name": "Service and location pages with unique content",
+      "legacyIds": [
+        "F4"
+      ],
+      "journeyStage": "understanding",
+      "revenueLeakCategory": "thin_local_content",
+      "category": "F",
+      "evidenceType": [
+        "link",
+        "copy"
+      ],
+      "evaluation": "model_judgment",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "low",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified_or_strong_signal",
+      "recommendedIntervention": "Build unique service and location pages.",
+      "serviceMapping": "market_intelligence",
+      "max": 1
+    },
+    {
+      "id": "RL-MSR-01",
+      "name": "Analytics present",
+      "legacyIds": [],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "unmeasured_marketing",
+      "category": "G",
+      "evidenceType": [
+        "source",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "required",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored",
+      "confidence": "verified",
+      "recommendedIntervention": "Install GA4, GTM, or an equivalent analytics platform.",
+      "serviceMapping": "marketing_intelligence",
+      "max": 2
+    },
+    {
+      "id": "RL-MSR-02",
+      "name": "Conversion and paid-traffic measurement",
+      "legacyIds": [],
+      "journeyStage": "lead",
+      "revenueLeakCategory": "unattributed_leads",
+      "category": "G",
+      "evidenceType": [
+        "source",
+        "dom"
+      ],
+      "evaluation": "deterministic",
+      "applicability": "recommended",
+      "module": null,
+      "severity": "medium",
+      "scoringBehavior": "scored_by_default",
+      "confidence": "verified",
+      "recommendedIntervention": "Add conversion events and ads or call tracking.",
+      "serviceMapping": "marketing_intelligence",
+      "max": 2
+    }
+  ],
+  "optionalModules": [
+    {
+      "id": "language_access",
+      "label": "Multilingual access",
+      "scored": true,
+      "checks": [
+        "RL-UND-08"
+      ],
+      "defaultApplicable": false,
+      "configKey": "preferredLanguages",
+      "description": "Enable when the target market needs a language other than the primary site language. Configure preferredLanguages, for example [\"en\", \"es\"]."
+    },
+    {
+      "id": "sms",
+      "label": "Text/SMS path",
+      "scored": true,
+      "checks": [
+        "RL-CON-03"
+      ],
+      "defaultApplicable": false,
+      "description": "Enable when the business accepts texted leads or the market expects SMS."
+    },
+    {
+      "id": "chat_callback",
+      "label": "Chat or callback request",
+      "scored": true,
+      "checks": [
+        "RL-CON-09"
+      ],
+      "defaultApplicable": false,
+      "description": "Enable when a human-backed chat or callback channel is part of the intended lead mix."
+    },
+    {
+      "id": "after_hours",
+      "label": "After-hours or emergency path",
+      "scored": true,
+      "checks": [
+        "RL-RSP-02"
+      ],
+      "defaultApplicable": true,
+      "description": "Enable for emergency, restoration, HVAC, plumbing, pest, and similar trades. Disable for businesses that do not take urgent work."
+    },
+    {
+      "id": "licensing",
+      "label": "License, insurance, and certifications",
+      "scored": true,
+      "checks": [
+        "RL-TRU-04"
+      ],
+      "defaultApplicable": true,
+      "description": "Enable where licensing or insurance is a meaningful buyer concern. It is scored only on visible claims."
+    },
+    {
+      "id": "financing",
+      "label": "Financing and payment path",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "High-ticket trades may benefit. It is an opportunity flag and owner-data question, not a universal score penalty."
+    },
+    {
+      "id": "video",
+      "label": "Video or VSL",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "A video can help some offers, but its absence is not a revenue leak for every trade. Report it as an opportunity only."
+    },
+    {
+      "id": "membership",
+      "label": "Maintenance plan or membership",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "A continuity offer is valuable when the trade has recurring service needs. It is not a universal score requirement."
+    },
+    {
+      "id": "tiered_packages",
+      "label": "Tiered packages or premium option",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "Useful for some offers, irrelevant for others. Report as an opportunity, not a penalty."
+    },
+    {
+      "id": "priority_service",
+      "label": "Paid priority or same-day option",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "An optional revenue architecture choice. Report when it fits the trade and market."
+    },
+    {
+      "id": "pricing_transparency",
+      "label": "Detailed price transparency",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "A price anchor is scored lightly in Understand. A full price list is optional and should be investigated, not assumed."
+    },
+    {
+      "id": "content_freshness",
+      "label": "Content freshness",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "Fresh advice content can help search and trust, but it is not a universal revenue-leak penalty."
+    },
+    {
+      "id": "lead_magnet",
+      "label": "Named lead magnet",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "A named low-friction offer can help. Report as an opportunity when the current offer is only a generic free estimate."
+    },
+    {
+      "id": "referral_program",
+      "label": "Referral program",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "Public referral signals are sparse. Treat referral operations as an owner-data opportunity."
+    },
+    {
+      "id": "paid_traffic",
+      "label": "Paid traffic landing experience",
+      "scored": false,
+      "defaultApplicable": false,
+      "description": "Enable when ads are known to point at the site. Inspect landing-page relevance, CTA, phone/form, speed, mobile usability, and measurement. Never invent ad spend or performance."
+    }
+  ],
+  "serviceMappings": [
+    {
+      "id": "revenue_recovery",
+      "label": "Revenue Recovery",
+      "description": "Recover revenue from open estimates, unsold opportunities, and conversion leaks."
+    },
+    {
+      "id": "speed_to_lead",
+      "label": "Speed-to-Lead",
+      "description": "Improve response time, routing, booking, and lead handling."
+    },
+    {
+      "id": "customer_reactivation",
+      "label": "Customer Reactivation",
+      "description": "Bring back inactive customers and past opportunities."
+    },
+    {
+      "id": "market_intelligence",
+      "label": "Market Intelligence",
+      "description": "Improve local visibility, service-area clarity, and market positioning."
+    },
+    {
+      "id": "marketing_intelligence",
+      "label": "Marketing Intelligence",
+      "description": "Connect lead sources, measurement, and channel profitability."
+    },
+    {
+      "id": "cost_compression",
+      "label": "Cost Compression",
+      "description": "Reduce waste from slow, broken, or unusable digital experiences."
+    }
+  ],
+  "ownerData": [
+    {
+      "id": "OD-SPEED-TO-LEAD",
+      "title": "Speed-to-lead",
+      "journeyStage": "response",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "questions": [
+        "What is the median time from lead to first human response?",
+        "How does that change by lead source (call, form, chat, text, ads)?",
+        "Who owns new leads during business hours and after hours?",
+        "How many contact attempts are made before a lead is abandoned?",
+        "How many inbound calls are missed or abandoned each week?"
+      ]
+    },
+    {
+      "id": "OD-AFTER-HOURS",
+      "title": "After-hours and emergency handling",
+      "journeyStage": "response",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "questions": [
+        "What happens to a call or form submitted after hours?",
+        "Is there an on-call rotation or answering service?",
+        "What percentage of after-hours leads become jobs?",
+        "Are emergency jobs priced or prioritized differently?"
+      ]
+    },
+    {
+      "id": "OD-LEAD-QUALITY",
+      "title": "Lead quality and routing",
+      "journeyStage": "qualification",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "questions": [
+        "Which form fields are actually used to qualify or route a lead?",
+        "What percentage of form leads are spam, out of area, or the wrong service?",
+        "Where do form leads land, and who sees them?",
+        "What information is missing most often when the office calls back?"
+      ]
+    },
+    {
+      "id": "OD-BOOKING-CAPACITY",
+      "title": "Booking capacity and confirmation",
+      "journeyStage": "booking",
+      "confidence": "owner_data_required",
+      "serviceMapping": "speed_to_lead",
+      "questions": [
+        "How many booked jobs are rescheduled or cancelled each week?",
+        "Is the online calendar connected to real crew capacity?",
+        "Who confirms appointments, and when?",
+        "What happens when the requested slot is unavailable?"
+      ]
+    },
+    {
+      "id": "OD-ESTIMATE-PIPELINE",
+      "title": "Estimate pipeline",
+      "journeyStage": "estimate",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "questions": [
+        "How many estimates are currently open?",
+        "What is the total value of open estimates?",
+        "What is the average time from request to estimate delivered?",
+        "What percentage of estimates are accepted?",
+        "What percentage of estimate requests never receive an estimate?"
+      ]
+    },
+    {
+      "id": "OD-CLOSE-RATE",
+      "title": "Estimate close rate by source and size",
+      "journeyStage": "estimate",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "questions": [
+        "What is the close rate by lead source?",
+        "What is the close rate by job size or service line?",
+        "What is the average job value?",
+        "Which objections appear most often on estimates?",
+        "Which lost reasons are recorded?"
+      ]
+    },
+    {
+      "id": "OD-ESTIMATE-FOLLOWUP",
+      "title": "Estimate follow-up",
+      "journeyStage": "follow_up",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "questions": [
+        "What percentage of open estimates receive follow-up?",
+        "How quickly is the first follow-up made?",
+        "How many attempts are made before follow-up stops?",
+        "Which channels are used (call, text, email)?",
+        "Are estimates segmented by size, service, or age?",
+        "Are stale estimates reactivated on a schedule?"
+      ]
+    },
+    {
+      "id": "OD-CUSTOMER-HISTORY",
+      "title": "Customer history and job completion",
+      "journeyStage": "customer",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "questions": [
+        "How many past customers are in the CRM?",
+        "Is job history, equipment age, and service date recorded?",
+        "Is there a post-job check-in?",
+        "How many customers buy a second service within 12 months?"
+      ]
+    },
+    {
+      "id": "OD-REVIEW-REQUEST",
+      "title": "Review requests",
+      "journeyStage": "review",
+      "confidence": "owner_data_required",
+      "serviceMapping": "revenue_recovery",
+      "questions": [
+        "Are customers automatically asked for a review?",
+        "How soon after the job is the ask made?",
+        "Is the ask sent by SMS, email, or in person?",
+        "Is the process measured by technician or job type?",
+        "Is negative feedback captured before it becomes a public review?"
+      ]
+    },
+    {
+      "id": "OD-REFERRAL",
+      "title": "Referral operations",
+      "journeyStage": "referral",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "questions": [
+        "Do you ask for referrals? When and how?",
+        "Is there a referral offer or tracking method?",
+        "What percentage of new customers come from referrals?",
+        "Are referral partners (realtors, property managers, adjacent trades) tracked?",
+        "Is referral follow-up owned by someone?"
+      ]
+    },
+    {
+      "id": "OD-REACTIVATION",
+      "title": "Reactivation and repeat business",
+      "journeyStage": "reactivation",
+      "confidence": "owner_data_required",
+      "serviceMapping": "customer_reactivation",
+      "questions": [
+        "How many past customers are inactive for 12+ months?",
+        "How many unsold estimates are older than 30, 60, or 90 days?",
+        "Are seasonal services or maintenance visits scheduled automatically?",
+        "Is there a maintenance plan or membership list?",
+        "Has anyone contacted the inactive list in the last year?"
+      ]
+    },
+    {
+      "id": "OD-MARKETING-ATTRIBUTION",
+      "title": "Marketing attribution and channel profitability",
+      "journeyStage": "response",
+      "confidence": "owner_data_required",
+      "serviceMapping": "marketing_intelligence",
+      "questions": [
+        "Is lead source recorded on every lead and job?",
+        "Can you report cost per lead, cost per booked job, and cost per closed job by channel?",
+        "Do you know revenue by channel?",
+        "Which campaigns produced jobs in the last 90 days?",
+        "How much is spent on ads, and what is the return?"
+      ]
+    }
+  ]
+}

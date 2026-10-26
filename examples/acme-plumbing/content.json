@@ -1,0 +1,411 @@
+{
+  "client": "Acme Plumbing (synthetic)",
+  "url": "https://acme-plumbing.example/",
+  "trade": "Plumbing",
+  "market": "Example County, CA",
+  "date": "October 26, 2026",
+  "verdict": "A credible plumbing site with a working booking path, but the estimate form and response expectations leak ready-to-buy jobs.",
+  "leaks": [
+    {
+      "title": "Mobile estimate form is difficult to complete",
+      "stage": "Lead",
+      "what": "Six fields, one missing label, and weak autocomplete on phone and ZIP.",
+      "evidence": "Six fields; submit is visible, so the form works but is harder than needed.",
+      "why": "Extra fields and unclear inputs lower completion on a phone.",
+      "fix": "Cut it to name, phone, ZIP, and problem; add autocomplete and labels.",
+      "confidence": "verified"
+    },
+    {
+      "title": "New inquiries have no observable immediate acknowledgement",
+      "stage": "Response",
+      "what": "The form says only \"We will be in touch soon.\" No time, channel, or hours are promised.",
+      "evidence": "The form area has generic contact language; the header hours are not connected to a response.",
+      "why": "A homeowner who submits at 6pm cannot tell whether anyone saw it.",
+      "fix": "Add one line beside the button: \"We call or text within 15 minutes during office hours.\"",
+      "confidence": "strong_signal"
+    },
+    {
+      "title": "Unclosed estimates may not receive follow-up",
+      "stage": "Follow-up",
+      "what": "The site can show an estimate request exists. It cannot show what happens next.",
+      "evidence": "No public page exposes the estimate pipeline, follow-up cadence, or close rate. It is not scored.",
+      "why": "Open estimates are often the largest recoverable revenue pool.",
+      "fix": "Pull the open-estimate list, segment by age and value, and assign a follow-up cadence.",
+      "confidence": "owner_data_required"
+    }
+  ],
+  "strengths": [
+    "Phone and click-to-call are consistent on mobile, including a sticky action.",
+    "A working scheduler shows live availability and is two taps from the home page.",
+    "License, insurance, and a manufacturer certification are visible."
+  ],
+  "fixes": [
+    {
+      "fix": "Simplify the mobile estimate form and add input autocomplete",
+      "checks": [
+        "RL-CON-05",
+        "RL-CON-06"
+      ],
+      "points": "+3",
+      "effort": "S"
+    },
+    {
+      "fix": "Publish a callback promise with a time, channel, and hours",
+      "checks": [
+        "RL-RSP-01"
+      ],
+      "points": "+2",
+      "effort": "S"
+    },
+    {
+      "fix": "Add a starting-at price range for the top three jobs",
+      "checks": [
+        "RL-UND-05"
+      ],
+      "points": "+2",
+      "effort": "M"
+    },
+    {
+      "fix": "Use one company name and one verifiable differentiator",
+      "checks": [
+        "RL-TRU-06"
+      ],
+      "points": "+1",
+      "effort": "S"
+    },
+    {
+      "fix": "Add form and call conversion events",
+      "checks": [
+        "RL-MSR-02"
+      ],
+      "points": "+2",
+      "effort": "S"
+    }
+  ],
+  "fixNote": "The first two fixes are a one-afternoon pass. They recover about 5 points and remove the two highest-friction moments in the lead path.",
+  "journey": [
+    {
+      "stage": "Understanding",
+      "status": "scored",
+      "summary": "Service and city are clear; price and outcome language are weak."
+    },
+    {
+      "stage": "Lead",
+      "status": "scored",
+      "summary": "Phone, form, and scheduler work; form friction is the main leak."
+    },
+    {
+      "stage": "Response",
+      "status": "scored_plus_owner_data",
+      "summary": "Hours and emergency path visible; no response-time promise. Actual speed needs owner data."
+    },
+    {
+      "stage": "Qualification",
+      "status": "scored_plus_owner_data",
+      "summary": "Enough context to route the job; routing and spam rate need owner data."
+    },
+    {
+      "stage": "Booking",
+      "status": "scored_plus_owner_data",
+      "summary": "Scheduler works; capacity and confirmation need owner data."
+    },
+    {
+      "stage": "Estimate",
+      "status": "scored_plus_owner_data",
+      "summary": "Request path exists; open estimates and close rate need owner data."
+    },
+    {
+      "stage": "Follow-up",
+      "status": "owner_data_required",
+      "summary": "Not observable from the public site."
+    },
+    {
+      "stage": "Review",
+      "status": "scored_plus_owner_data",
+      "summary": "38 reviews and a profile link are visible; request process needs owner data."
+    },
+    {
+      "stage": "Reactivation",
+      "status": "owner_data_required",
+      "summary": "Inactive customers and unsold estimates are not visible."
+    }
+  ],
+  "ownerData": [
+    {
+      "title": "Speed-to-lead",
+      "stage": "Response",
+      "why": "Response time drives booking rate, and the public site cannot prove it.",
+      "questions": [
+        "What is the median lead-to-response time?"
+      ]
+    },
+    {
+      "title": "Estimate follow-up",
+      "stage": "Follow-up",
+      "why": "Open estimates are the fastest recovery pool.",
+      "questions": [
+        "How many estimates are open, and what is their value?"
+      ]
+    },
+    {
+      "title": "Reactivation",
+      "stage": "Reactivation",
+      "why": "Past customers can produce jobs without new ad spend.",
+      "questions": [
+        "How many customers are inactive for 12+ months?"
+      ]
+    }
+  ],
+  "nextSteps": [
+    "This week: simplify the estimate form and add the callback promise.",
+    "Next two weeks: publish a starting-at price range and fix the mismatched company name.",
+    "Before more ad spend: add conversion events and pull the open-estimate list."
+  ],
+  "findings": [
+    {
+      "id": "RL-UND-01",
+      "observed": "M-01: hero says \"Plumbing done right\" but not the service or city above the fold.",
+      "fix": "Name plumbing and the city in the hero, not just the brand."
+    },
+    {
+      "id": "RL-UND-02",
+      "observed": "M-01 and contact page: Example City and a 25-mile service area are visible.",
+      "fix": "Keep the city and service-area proof."
+    },
+    {
+      "id": "RL-UND-03",
+      "observed": "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague.",
+      "fix": "Lead with the homeowner problem and the outcome."
+    },
+    {
+      "id": "RL-UND-04",
+      "observed": "M-01, D-01: one \"Get an estimate\" button dominates the hero.",
+      "fix": "Keep one dominant estimate action."
+    },
+    {
+      "id": "RL-UND-05",
+      "observed": "M-01, service pages: no price, starting-at price, or range.",
+      "fix": "Publish a starting-at range for the three most-requested jobs."
+    },
+    {
+      "id": "RL-UND-06",
+      "observed": "Mobile menu: Services opens a list; drain and water-heater pages are two taps away.",
+      "fix": "Keep the service menu to two taps."
+    },
+    {
+      "id": "RL-UND-07",
+      "observed": "Service-area page lists Example City and four neighboring cities.",
+      "fix": "Keep the service-area list and add a ZIP check."
+    },
+    {
+      "id": "RL-UND-08",
+      "observed": "N/A: multilingual access not configured for this market",
+      "fix": "Not applicable in this English-only configuration."
+    },
+    {
+      "id": "RL-CON-01",
+      "observed": "M-01, contact page, footer: (555) 010-0200 appears consistently.",
+      "fix": "Keep the number consistent across home, contact, and footer."
+    },
+    {
+      "id": "RL-CON-02",
+      "observed": "M-01 DOM: tel:+15550100200 in the sticky action bar.",
+      "fix": "Keep the sticky click-to-call."
+    },
+    {
+      "id": "RL-CON-03",
+      "observed": "N/A: optional module disabled for this market",
+      "fix": "Not applicable; SMS is disabled in this configuration."
+    },
+    {
+      "id": "RL-CON-04",
+      "observed": "Contact page is one tap from the header and renders a six-field form.",
+      "fix": "Keep the contact page one tap from the header."
+    },
+    {
+      "id": "RL-CON-05",
+      "observed": "Contact form: name, phone, email, ZIP, service, message; message is not required.",
+      "fix": "Cut the form to four fields: name, phone, ZIP, problem."
+    },
+    {
+      "id": "RL-CON-06",
+      "observed": "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible.",
+      "fix": "Add the missing label and autocomplete for phone and ZIP."
+    },
+    {
+      "id": "RL-CON-07",
+      "observed": "Book path: scheduler iframe loads and shows availability; no appointment selected.",
+      "fix": "Keep the scheduler; remove the third-party redirect."
+    },
+    {
+      "id": "RL-CON-08",
+      "observed": "M-01, service page, about page: each ends with a next step; reviews page relies on the persistent header action.",
+      "fix": "Add a next step to the reviews page."
+    },
+    {
+      "id": "RL-CON-09",
+      "observed": "N/A: optional module disabled for this market",
+      "fix": "Not applicable; chat/callback is disabled in this configuration."
+    },
+    {
+      "id": "RL-RSP-01",
+      "observed": "Form area: \"We will be in touch soon.\" No time, channel, or hours.",
+      "fix": "Promise a callback time and channel beside the form."
+    },
+    {
+      "id": "RL-RSP-02",
+      "observed": "Header: \"Mon-Sat 7am-7pm\" plus an emergency call link.",
+      "fix": "Keep the hours and emergency path."
+    },
+    {
+      "id": "RL-RSP-03",
+      "observed": "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page.",
+      "fix": "Keep the scheduler on-site and reduce the steps."
+    },
+    {
+      "id": "RL-RSP-04",
+      "observed": "Form area: generic \"we will contact you\" only.",
+      "fix": "State what happens after submission and when."
+    },
+    {
+      "id": "RL-RSP-05",
+      "observed": "Form asks service, ZIP, problem, and phone; no account required.",
+      "fix": "Keep the routing fields, but make the message optional."
+    },
+    {
+      "id": "RL-RSP-06",
+      "observed": "Service pages link to \"Request an estimate\" with a scope field and photo upload.",
+      "fix": "Keep the scope field and photo upload."
+    },
+    {
+      "id": "RL-TRU-01",
+      "observed": "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile.",
+      "fix": "Show the Google rating, count, and profile link."
+    },
+    {
+      "id": "RL-TRU-02",
+      "observed": "Two named testimonials with job type; no photos or specific numbers.",
+      "fix": "Add three named case studies with job type and outcome."
+    },
+    {
+      "id": "RL-TRU-03",
+      "observed": "Gallery has four uncaptioned job photos.",
+      "fix": "Caption real job photos with city, job, and result."
+    },
+    {
+      "id": "RL-TRU-04",
+      "observed": "Footer: license number, insured statement, and manufacturer badge.",
+      "fix": "Keep the license, insurance, and certification proof."
+    },
+    {
+      "id": "RL-TRU-05",
+      "observed": "Service page: \"warranty\" with no term or scope.",
+      "fix": "State the workmanship warranty term and scope."
+    },
+    {
+      "id": "RL-TRU-06",
+      "observed": "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name.",
+      "fix": "Use one company name and one verifiable differentiator everywhere."
+    },
+    {
+      "id": "RL-MOB-01",
+      "observed": "Lighthouse mobile median LCP 3.1 s across 3 runs.",
+      "fix": "Compress the hero and defer third-party scripts."
+    },
+    {
+      "id": "RL-MOB-02",
+      "observed": "M-01: one hero heading clips at 390px; menu opens; form fields visible.",
+      "fix": "Unclip the hero heading and test at 390px."
+    },
+    {
+      "id": "RL-MOB-03",
+      "observed": "M-01: sticky call button; three footer links are under 44px.",
+      "fix": "Increase small footer tap targets to 44px."
+    },
+    {
+      "id": "RL-MOB-04",
+      "observed": "URL loads over HTTPS with a valid certificate.",
+      "fix": "Keep HTTPS and the valid certificate."
+    },
+    {
+      "id": "RL-MOB-05",
+      "observed": "One service page link 404s; the primary estimate path still works.",
+      "fix": "Fix the 404 service-page link."
+    },
+    {
+      "id": "RL-FND-01",
+      "observed": "Title and meta include plumbing and Example City; H1 is brand-only.",
+      "fix": "Put plumbing and Example City in the H1."
+    },
+    {
+      "id": "RL-FND-02",
+      "observed": "Canonical present, robots allow indexing, sitemap.xml returns 200.",
+      "fix": "Keep canonical, robots, and sitemap."
+    },
+    {
+      "id": "RL-FND-03",
+      "observed": "LocalBusiness schema present; visible NAP matches the footer.",
+      "fix": "Keep LocalBusiness schema and matching NAP."
+    },
+    {
+      "id": "RL-FND-04",
+      "observed": "No dedicated city pages; one service-area list only.",
+      "fix": "Build one unique city page with local proof."
+    },
+    {
+      "id": "RL-MSR-01",
+      "observed": "GA4 and Google Tag Manager are present.",
+      "fix": "Keep GA4 and GTM."
+    },
+    {
+      "id": "RL-MSR-02",
+      "observed": "No conversion events or ads tags detected.",
+      "fix": "Add form and call conversion events."
+    }
+  ],
+  "executiveSummary": [
+    "Acme Plumbing has the hard parts: a consistent phone path, a working scheduler, visible licensing, and basic analytics.",
+    "The biggest observable leak is form friction on mobile, followed by a missing response expectation after submission.",
+    "The largest unknown is estimate follow-up. It is presented as an owner-data opportunity, not a website penalty.",
+    "Fix the form and the callback promise first; they are cheap, fast, and directly on the path to a booked job."
+  ],
+  "evidenceNote": "This is a synthetic documentation example. Evidence strings and screenshots are illustrative, not a real business record. A real run stores screenshots, Lighthouse JSON, site-map.json, and paths.json in .audit/<slug>/<run-id>/.",
+  "footer": "Synthetic example for documentation. Not a real business. Prepared with Website Scorecard v2.",
+  "journeyOnePage": [
+    {
+      "stage": "Understanding",
+      "status": "scored",
+      "summary": "Service and city are clear; price and outcome language are weak."
+    },
+    {
+      "stage": "Lead",
+      "status": "scored",
+      "summary": "Phone, form, and scheduler work; form friction is the main leak."
+    },
+    {
+      "stage": "Response",
+      "status": "scored_plus_owner_data",
+      "summary": "Hours and emergency path visible; no response-time promise. Actual speed needs owner data."
+    },
+    {
+      "stage": "Booking",
+      "status": "scored_plus_owner_data",
+      "summary": "Scheduler works; capacity and confirmation need owner data."
+    },
+    {
+      "stage": "Estimate",
+      "status": "scored_plus_owner_data",
+      "summary": "Request path exists; open estimates and close rate need owner data."
+    },
+    {
+      "stage": "Follow-up",
+      "status": "owner_data_required",
+      "summary": "Not observable from the public site."
+    },
+    {
+      "stage": "Review",
+      "status": "scored_plus_owner_data",
+      "summary": "38 reviews and a profile link are visible; request process needs owner data."
+    }
+  ]
+}

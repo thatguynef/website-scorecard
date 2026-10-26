@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "client": "Acme Plumbing (synthetic)",
+    "slug": "acme-plumbing",
+    "url": "https://acme-plumbing.example/",
+    "date": "2026-10-26",
+    "city": "Example City, CA",
+    "market": "Example County, CA",
+    "trade": "plumbing",
+    "service": "plumbing",
+    "run_id": "2026-10-26T1000",
+    "run_timestamp": "2026-10-26T10:00:00Z",
+    "generated_at": "2026-10-26T10:00:00Z",
+    "collector": "collect.mjs",
+    "collector_version": "2.0.0",
+    "rubric_version": "2.0.0",
+    "configuration": {
+      "preferredLanguages": [
+        "en"
+      ],
+      "optionalChecks": {
+        "language_access": false,
+        "sms": false,
+        "chat_callback": false,
+        "after_hours": true,
+        "licensing": true
+      },
+      "excludedChecks": []
+    },
+    "synthetic": true,
+    "note": "Synthetic fixture. No real business, customer, phone number, or evidence is represented."
+  },
+  "checks": {
+    "RL-UND-01": {
+      "score": 2,
+      "evidence": [
+        "M-01: hero says \"Plumbing done right\" but not the service or city above the fold."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-02": {
+      "score": 3,
+      "evidence": [
+        "M-01 and contact page: Example City and a 25-mile service area are visible."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-03": {
+      "score": 2,
+      "evidence": [
+        "M-01 and service page: \"fast repairs\" is present; the homeowner outcome is vague."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-04": {
+      "score": 3,
+      "evidence": [
+        "M-01, D-01: one \"Get an estimate\" button dominates the hero."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-05": {
+      "score": 0,
+      "evidence": [
+        "M-01, service pages: no price, starting-at price, or range."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-06": {
+      "score": 2,
+      "evidence": [
+        "Mobile menu: Services opens a list; drain and water-heater pages are two taps away."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-07": {
+      "score": 1,
+      "evidence": [
+        "Service-area page lists Example City and four neighboring cities."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-UND-08": {
+      "score": null,
+      "evidence": [
+        "N/A: the synthetic audit is configured for English only."
+      ],
+      "confidence": "not_applicable",
+      "applicable": false,
+      "na_reason": "multilingual access not configured for this market"
+    },
+    "RL-CON-01": {
+      "score": 3,
+      "evidence": [
+        "M-01, contact page, footer: (555) 010-0200 appears consistently."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-02": {
+      "score": 3,
+      "evidence": [
+        "M-01 DOM: tel:+15550100200 in the sticky action bar."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-03": {
+      "score": null,
+      "evidence": [
+        "N/A: SMS module disabled for this audit."
+      ],
+      "confidence": "not_applicable",
+      "applicable": false,
+      "na_reason": "optional module disabled for this market"
+    },
+    "RL-CON-04": {
+      "score": 3,
+      "evidence": [
+        "Contact page is one tap from the header and renders a six-field form."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-05": {
+      "score": 2,
+      "evidence": [
+        "Contact form: name, phone, email, ZIP, service, message; message is not required."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-06": {
+      "score": 1,
+      "evidence": [
+        "Mobile form: labels and input types are present; the ZIP field uses autocomplete=\"postal-code\"; submit is visible."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-07": {
+      "score": 3,
+      "evidence": [
+        "Book path: scheduler iframe loads and shows availability; no appointment selected."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-08": {
+      "score": 2,
+      "evidence": [
+        "M-01, service page, about page: each ends with a next step; reviews page relies on the persistent header action."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-CON-09": {
+      "score": null,
+      "evidence": [
+        "N/A: chat/callback module disabled for this audit."
+      ],
+      "confidence": "not_applicable",
+      "applicable": false,
+      "na_reason": "optional module disabled for this market"
+    },
+    "RL-RSP-01": {
+      "score": 1,
+      "evidence": [
+        "Form area: \"We will be in touch soon.\" No time, channel, or hours."
+      ],
+      "confidence": "strong_signal",
+      "applicable": true
+    },
+    "RL-RSP-02": {
+      "score": 2,
+      "evidence": [
+        "Header: \"Mon-Sat 7am-7pm\" plus an emergency call link."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-RSP-03": {
+      "score": 2,
+      "evidence": [
+        "Mobile path: book is two taps from the home page; scheduler is usable but opens a third-party page."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-RSP-04": {
+      "score": 1,
+      "evidence": [
+        "Form area: generic \"we will contact you\" only."
+      ],
+      "confidence": "strong_signal",
+      "applicable": true
+    },
+    "RL-RSP-05": {
+      "score": 2,
+      "evidence": [
+        "Form asks service, ZIP, problem, and phone; no account required."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-RSP-06": {
+      "score": 3,
+      "evidence": [
+        "Service pages link to \"Request an estimate\" with a scope field and photo upload."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-01": {
+      "score": 2,
+      "evidence": [
+        "Reviews widget shows 4.7 stars and 38 reviews with a link to the external profile."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-02": {
+      "score": 2,
+      "evidence": [
+        "Two named testimonials with job type; no photos or specific numbers."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-03": {
+      "score": 1,
+      "evidence": [
+        "Gallery has four uncaptioned job photos."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-04": {
+      "score": 2,
+      "evidence": [
+        "Footer: license number, insured statement, and manufacturer badge."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-05": {
+      "score": 1,
+      "evidence": [
+        "Service page: \"warranty\" with no term or scope."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-TRU-06": {
+      "score": 1,
+      "evidence": [
+        "About page names the owner and a \"same-day repair\" claim; the footer uses a different company name."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MOB-01": {
+      "score": 2,
+      "evidence": [
+        "Lighthouse mobile median LCP 3.1 s across 3 runs."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MOB-02": {
+      "score": 2,
+      "evidence": [
+        "M-01: one hero heading clips at 390px; menu opens; form fields visible."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MOB-03": {
+      "score": 1,
+      "evidence": [
+        "M-01: sticky call button; three footer links are under 44px."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MOB-04": {
+      "score": 1,
+      "evidence": [
+        "URL loads over HTTPS with a valid certificate."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MOB-05": {
+      "score": 2,
+      "evidence": [
+        "One service page link 404s; the primary estimate path still works."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-FND-01": {
+      "score": 2,
+      "evidence": [
+        "Title and meta include plumbing and Example City; H1 is brand-only."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-FND-02": {
+      "score": 2,
+      "evidence": [
+        "Canonical present, robots allow indexing, sitemap.xml returns 200."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-FND-03": {
+      "score": 1,
+      "evidence": [
+        "LocalBusiness schema present; visible NAP matches the footer."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-FND-04": {
+      "score": 0,
+      "evidence": [
+        "No dedicated city pages; one service-area list only."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MSR-01": {
+      "score": 2,
+      "evidence": [
+        "GA4 and Google Tag Manager are present."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    },
+    "RL-MSR-02": {
+      "score": 0,
+      "evidence": [
+        "No conversion events or ads tags detected."
+      ],
+      "confidence": "verified",
+      "applicable": true
+    }
+  },
+  "caps": {
+    "no_contact": false,
+    "primary_contact_broken": false,
+    "form_unusable": false,
+    "booking_failure": false,
+    "mobile_unusable": false,
+    "https_failure": false,
+    "malicious_redirect": false,
+    "unclear_offer": false
+  },
+  "topLeaks": [
+    {
+      "title": "Mobile estimate form is difficult to complete",
+      "confidence": "verified",
+      "checkId": "RL-CON-05",
+      "stage": "lead"
+    },
+    {
+      "title": "No observable immediate acknowledgement after a form submit",
+      "confidence": "strong_signal",
+      "checkId": "RL-RSP-01",
+      "stage": "response"
+    },
+    {
+      "title": "Unclosed estimates may not receive follow-up",
+      "confidence": "owner_data_required",
+      "ownerDataId": "OD-ESTIMATE-FOLLOWUP",
+      "stage": "follow_up"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.0",
+  "framework": "hormozi-42",
+  "meta": {
+    "client": "Example Roofing A",
+    "slug": "example-roofing-a",
+    "url": "https://example.com/",
+    "date": "2026-10-24",
+    "market": "Example County, CA",
+    "trade": "Roofing",
+    "rubric_version": "1.1.3",
+    "synthetic": true,
+    "note": "Sanitized legacy V1 golden fixture. Company, people, phone, address, and license values are placeholders."
+  },
+  "rubric_version": "1.1.3",
+  "scorer_version": "2.0.0",
+  "categories": [
+    {
+      "id": "A",
+      "name": "Offer and positioning",
+      "earned": 10,
+      "max": 20
+    },
+    {
+      "id": "B",
+      "name": "Conversion path",
+      "earned": 8,
+      "max": 20
+    },
+    {
+      "id": "C",
+      "name": "Proof and trust",
+      "earned": 7,
+      "max": 15
+    },
+    {
+      "id": "D",
+      "name": "Pricing and offer architecture",
+      "earned": 0,
+      "max": 15
+    },
+    {
+      "id": "E",
+      "name": "Mobile experience and speed",
+      "earned": 8,
+      "max": 15
+    },
+    {
+      "id": "F",
+      "name": "Local SEO",
+      "earned": 3,
+      "max": 10
+    },
+    {
+      "id": "G",
+      "name": "Content and objections",
+      "earned": 0,
+      "max": 5
+    }
+  ],
+  "total": 36,
+  "total_max": 100,
+  "percent": 36.0,
+  "cap": 50,
+  "cap_active": true,
+  "cap_binding": false,
+  "cap_applied": true,
+  "caps": [
+    {
+      "id": "broken_cta",
+      "max": 50,
+      "label": "Primary CTA broken (404, dead scheduler, form error)"
+    },
+    {
+      "id": "no_mobile_offer",
+      "max": 75,
+      "label": "No service/offer clarity above the fold on mobile"
+    }
+  ],
+  "final": 36,
+  "display": 36,
+  "band": "F",
+  "band_label": "Critical",
+  "recoverable": [
+    {
+      "id": "A7",
+      "title": "Spanish-language access",
+      "lost": 4,
+      "max": 4
+    },
+    {
+      "id": "C1",
+      "title": "Review volume and source",
+      "lost": 4,
+      "max": 4
+    },
+    {
+      "id": "D1",
+      "title": "Price transparency",
+      "lost": 4,
+      "max": 4
+    },
+    {
+      "id": "D3",
+      "title": "Maintenance, membership, or annual plan",
+      "lost": 4,
+      "max": 4
+    },
+    {
+      "id": "A1",
+      "title": "Above-fold clarity",
+      "lost": 3,
+      "max": 4
+    },
+    {
+      "id": "B6",
+      "title": "Financing or payment path",
+      "lost": 3,
+      "max": 3
+    },
+    {
+      "id": "D2",
+      "title": "Tiered packages or VIP",
+      "lost": 3,
+      "max": 3
+    },
+    {
+      "id": "E2",
+      "title": "Layout and tap targets",
+      "lost": 3,
+      "max": 3
+    },
+    {
+      "id": "B1",
+      "title": "Primary CTA above the fold",
+      "lost": 2,
+      "max": 4
+    },
+    {
+      "id": "B2",
+      "title": "Click-to-call and text on mobile",
+      "lost": 2,
+      "max": 3
+    },
+    {
+      "id": "B7",
+      "title": "Response-time promise",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "D4",
+      "title": "Priority, same-day, or prepay option",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "D5",
+      "title": "Financing or fee disclosure",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "E1",
+      "title": "Mobile LCP",
+      "lost": 2,
+      "max": 4
+    },
+    {
+      "id": "E3",
+      "title": "Sticky call/book bar",
+      "lost": 2,
+      "max": 3
+    },
+    {
+      "id": "F2",
+      "title": "H1",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "F4",
+      "title": "City/service-area pages",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "G1",
+      "title": "Service page answers four buying questions",
+      "lost": 2,
+      "max": 2
+    },
+    {
+      "id": "A2",
+      "title": "One primary offer",
+      "lost": 1,
+      "max": 3
+    },
+    {
+      "id": "A3",
+      "title": "Specific offer with a price anchor",
+      "lost": 1,
+      "max": 3
+    },
+    {
+      "id": "A4",
+      "title": "Risk reversal near the CTA",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "B3",
+      "title": "Short form and real-time scheduler",
+      "lost": 1,
+      "max": 3
+    },
+    {
+      "id": "B4",
+      "title": "Named lead magnet",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "B5",
+      "title": "Video / VSL",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "C2",
+      "title": "Specific named testimonials",
+      "lost": 1,
+      "max": 3
+    },
+    {
+      "id": "C3",
+      "title": "Real job photos / before-and-after",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "C5",
+      "title": "Owner or team face and story",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "C6",
+      "title": "Specific warranty",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "F1",
+      "title": "Title and meta",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "F3",
+      "title": "NAP and map",
+      "lost": 1,
+      "max": 2
+    },
+    {
+      "id": "F6",
+      "title": "Google Business Profile link",
+      "lost": 1,
+      "max": 1
+    },
+    {
+      "id": "G2",
+      "title": "FAQ with real objections",
+      "lost": 1,
+      "max": 1
+    },
+    {
+      "id": "G3",
+      "title": "Advice content freshness",
+      "lost": 1,
+      "max": 1
+    },
+    {
+      "id": "G4",
+      "title": "Next step at end of content",
+      "lost": 1,
+      "max": 1
+    }
+  ],
+  "missing": [],
+  "errors": [],
+  "complete": true
+}

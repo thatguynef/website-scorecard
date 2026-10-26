@@ -1,0 +1,86 @@
+{
+  "run_id": "2026-10-26T1000",
+  "synthetic": true,
+  "paths": [
+    {
+      "id": "call",
+      "label": "Call",
+      "url": "https://acme-plumbing.example/",
+      "viewport": "mobile",
+      "action": "scan for tel: link",
+      "observed_state": "present",
+      "screenshot": "M-01",
+      "submitted": false
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "url": "https://acme-plumbing.example/",
+      "viewport": "mobile",
+      "action": "scan for sms: link",
+      "observed_state": "absent",
+      "screenshot": "M-01",
+      "submitted": false
+    },
+    {
+      "id": "form",
+      "label": "Form",
+      "url": "https://acme-plumbing.example/contact",
+      "viewport": "mobile",
+      "action": "load contact page and count fields; no submit",
+      "observed_state": "form (6 visible fields)",
+      "screenshot": "M-04",
+      "submitted": false
+    },
+    {
+      "id": "book",
+      "label": "Book / quote",
+      "url": "https://acme-plumbing.example/book",
+      "viewport": "mobile",
+      "action": "load scheduler and read state; no appointment selected",
+      "observed_state": "scheduler",
+      "screenshot": "m-book.png",
+      "submitted": false
+    },
+    {
+      "id": "estimate",
+      "label": "Estimate",
+      "url": "https://acme-plumbing.example/contact",
+      "viewport": "mobile",
+      "action": "find estimate request path; no submit",
+      "observed_state": "form",
+      "screenshot": "M-04",
+      "submitted": false
+    },
+    {
+      "id": "chat",
+      "label": "Chat / callback",
+      "url": "https://acme-plumbing.example/",
+      "viewport": "mobile",
+      "action": "detect chat widget; no message sent",
+      "observed_state": "absent",
+      "screenshot": "M-01",
+      "submitted": false
+    },
+    {
+      "id": "financing",
+      "label": "Financing",
+      "url": "https://acme-plumbing.example/",
+      "viewport": "mobile",
+      "action": "scan pages for financing language",
+      "observed_state": "none",
+      "screenshot": "M-01",
+      "submitted": false
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews",
+      "url": "https://acme-plumbing.example/reviews",
+      "viewport": "mobile",
+      "action": "find reviews page or section",
+      "observed_state": "reviews page",
+      "screenshot": "M-05",
+      "submitted": false
+    }
+  ]
+}

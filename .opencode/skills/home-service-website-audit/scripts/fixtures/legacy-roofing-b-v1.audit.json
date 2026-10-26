@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "client": "Example Roofing B",
+    "slug": "example-roofing-b",
+    "url": "https://example-roofing-b.com/",
+    "date": "2026-10-24",
+    "city": "Example City",
+    "service": "roofing",
+    "generated_at": "2026-10-25T01:04:44.636Z",
+    "collector": "collect.mjs",
+    "lighthouse": "mobile x3 median",
+    "rubric_version": "1.1.3",
+    "run_id": "2026-10-24T1812",
+    "collector_version": "1.2.0",
+    "synthetic": true,
+    "note": "Sanitized legacy V1 golden fixture. Company, people, phone, address, and license values are placeholders."
+  },
+  "checks": {
+    "A1": {
+      "score": 2,
+      "evidence": [
+        "M-01/D-01: brand + phone + Free Estimates; no city or outcome above the fold"
+      ],
+      "needs_review": false
+    },
+    "A2": {
+      "score": 2,
+      "evidence": [
+        "Phone, Free Estimates, Contact, Request a Quote compete for attention"
+      ],
+      "needs_review": false
+    },
+    "A3": {
+      "score": 2,
+      "evidence": [
+        "'Free Estimates' is the named offer; no price or range"
+      ],
+      "needs_review": false
+    },
+    "A4": {
+      "score": 0,
+      "evidence": [
+        "No guarantee or risk reversal on home or service pages"
+      ],
+      "needs_review": false
+    },
+    "A5": {
+      "score": 2,
+      "evidence": [
+        "40 years, manufacturer certification, 54 roofs on one street, BBB A+"
+      ],
+      "needs_review": false
+    },
+    "A6": {
+      "score": 2,
+      "evidence": [
+        "Example City in title/meta; 123 Example St address; local reviews"
+      ],
+      "needs_review": false
+    },
+    "A7": {
+      "score": 0,
+      "evidence": [
+        "No /es/, hreflang, switcher, or Se habla espanol on mobile or desktop"
+      ],
+      "needs_review": false,
+      "subscores": {
+        "mobile": 0,
+        "desktop": 0
+      }
+    },
+    "B1": {
+      "score": 4,
+      "evidence": [
+        "Phone and Free Estimates visible above the fold on mobile and desktop"
+      ],
+      "needs_review": false
+    },
+    "B2": {
+      "score": 1,
+      "evidence": [
+        "Two tel: links (555-0101); no sms:"
+      ],
+      "needs_review": false
+    },
+    "B3": {
+      "score": 2,
+      "evidence": [
+        "Contact form has 5 visible fields (Name, Phone, Email, Service type, Message); no scheduler"
+      ],
+      "needs_review": false
+    },
+    "B4": {
+      "score": 1,
+      "evidence": [
+        "'Free Estimates' only; no named lead magnet with its own section"
+      ],
+      "needs_review": false
+    },
+    "B5": {
+      "score": 0,
+      "evidence": [
+        "No VSL; the SoundCloud audio embed is not a video"
+      ],
+      "needs_review": false
+    },
+    "B6": {
+      "score": 0,
+      "evidence": [
+        "No financing, monthly payment, lender, or pre-qualification anywhere on the 6 pages"
+      ],
+      "needs_review": false
+    },
+    "B7": {
+      "score": 0,
+      "evidence": [
+        "No response-time promise"
+      ],
+      "needs_review": false
+    },
+    "B8": {
+      "score": 0,
+      "evidence": [
+        "No SMS or live chat widget"
+      ],
+      "needs_review": false
+    },
+    "C1": {
+      "score": 1,
+      "evidence": [
+        "Four named testimonials plus handwritten letters; no aggregate rating, count, source, or review link"
+      ],
+      "needs_review": false
+    },
+    "C2": {
+      "score": 2,
+      "evidence": [
+        "Customer C, Customer D, Customer E, Customer F; specific but no photos or numbers"
+      ],
+      "needs_review": false
+    },
+    "C3": {
+      "score": 1,
+      "evidence": [
+        "16 real gallery photos, uncaptioned and with no location"
+      ],
+      "needs_review": false
+    },
+    "C4": {
+      "score": 2,
+      "evidence": [
+        "License #EXAMPLE-04, C-39, bonded/insured, workers comp, manufacturer certification"
+      ],
+      "needs_review": false
+    },
+    "C5": {
+      "score": 1,
+      "evidence": [
+        "Owner Name story on About; truck photo, no owner portrait"
+      ],
+      "needs_review": false
+    },
+    "C6": {
+      "score": 2,
+      "evidence": [
+        "25-year labor warranty, transferable"
+      ],
+      "needs_review": false
+    },
+    "D1": {
+      "score": 0,
+      "evidence": [
+        "No prices or ranges on any page"
+      ],
+      "needs_review": false
+    },
+    "D2": {
+      "score": 0,
+      "evidence": [
+        "No tiers or packages"
+      ],
+      "needs_review": false
+    },
+    "D3": {
+      "score": 0,
+      "evidence": [
+        "No maintenance or membership plan"
+      ],
+      "needs_review": false
+    },
+    "D4": {
+      "score": 0,
+      "evidence": [
+        "No priority, same-day, or prepay option"
+      ],
+      "needs_review": false
+    },
+    "D5": {
+      "score": 0,
+      "evidence": [
+        "No APR, term, or payment example"
+      ],
+      "needs_review": false
+    },
+    "E1": {
+      "score": 0,
+      "evidence": [
+        "Lighthouse mobile median LCP 5.67 s (3 runs)"
+      ],
+      "needs_review": false
+    },
+    "E2": {
+      "score": 0,
+      "evidence": [
+        "Mobile content clipped: headings, body copy, and form fields cut off; 8 small tap targets; 7 header overlaps"
+      ],
+      "needs_review": false
+    },
+    "E3": {
+      "score": 0,
+      "evidence": [
+        "Sticky header only; the floating Call Us link has no href, and there is no call/book bar"
+      ],
+      "needs_review": false
+    },
+    "E4": {
+      "score": 2,
+      "evidence": [
+        "Contact/quote is one tap from the nav; no scheduler"
+      ],
+      "needs_review": false
+    },
+    "E5": {
+      "score": 2,
+      "evidence": [
+        "No blocking popup"
+      ],
+      "needs_review": false
+    },
+    "E6": {
+      "score": 0,
+      "evidence": [
+        "Mobile form clipped: phone and service fields off-screen; reCAPTCHA; submit not reachable on the first screen"
+      ],
+      "needs_review": false
+    },
+    "F1": {
+      "score": 2,
+      "evidence": [
+        "Title and meta contain roofing + Example City"
+      ],
+      "needs_review": false
+    },
+    "F2": {
+      "score": 2,
+      "evidence": [
+        "Service pages H1: 'Roof Installation/Repair in Example City, California'; home H1 is brand-only"
+      ],
+      "needs_review": false
+    },
+    "F3": {
+      "score": 2,
+      "evidence": [
+        "NAP plus Mapbox on contact"
+      ],
+      "needs_review": false
+    },
+    "F4": {
+      "score": 0,
+      "evidence": [
+        "No city pages; service pages only"
+      ],
+      "needs_review": false
+    },
+    "F5": {
+      "score": 1,
+      "evidence": [
+        "RoofingContractor schema"
+      ],
+      "needs_review": false
+    },
+    "F6": {
+      "score": 1,
+      "evidence": [
+        "Google Maps place link in the footer"
+      ],
+      "needs_review": false
+    },
+    "G1": {
+      "score": 1,
+      "evidence": [
+        "Installation page covers process and next step; no price or warranty on the page"
+      ],
+      "needs_review": false
+    },
+    "G2": {
+      "score": 0,
+      "evidence": [
+        "No FAQ"
+      ],
+      "needs_review": false
+    },
+    "G3": {
+      "score": 0,
+      "evidence": [
+        "No blog; sitemap service pages last modified 2022"
+      ],
+      "needs_review": false
+    },
+    "G4": {
+      "score": 1,
+      "evidence": [
+        "Quote form/contact CTA at the end of service content"
+      ],
+      "needs_review": false
+    }
+  },
+  "caps": {
+    "no_contact": false,
+    "broken_cta": false,
+    "mobile_unusable": true,
+    "no_mobile_offer": false,
+    "no_https": false
+  }
+}
