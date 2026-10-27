@@ -1,5 +1,7 @@
 # Revenue Leak Framework
 
+> **For:** owners, marketers, and analysts working with local home-service businesses.
+
 The framework follows the customer journey from the first visit to repeat business. Each stage asks a business question, lists what the public site can show, and separates the owner-data questions that cannot be scored.
 
 Machine-readable source: `references/rubric.json` (`journey`, `items`, `ownerData`). Derived matrix: `references/coverage-matrix.json`.
@@ -63,3 +65,7 @@ A live Revenue Leak Teardown should use the same 12 stages and load a completed 
 5. The next three actions by impact × confidence ÷ effort.
 
 Do not use different terminology for the Scorecard, the live teardown, and the client diagnosis. They are the same business concept.
+
+---
+
+**Next:** [Scoring](scoring.md) — how the observable checks become a score out of 100.

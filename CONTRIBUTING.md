@@ -95,10 +95,22 @@ node .opencode/skills/home-service-website-audit/scripts/verify.mjs \
 
 ## Documentation
 
+- Read [`docs/style-guide.md`](docs/style-guide.md) before changing user-facing docs.
 - One canonical source per concept.
 - Link instead of duplicating.
 - If behavior changes, update the doc and the generated artifact in the same pull request.
 - Keep contractor-facing language plain: "Your mobile estimate form is cut off" not "the form container violates viewport bounds."
+- Every top-level page states who it is for.
+- Images need alt text and must stay under the asset budget (`npm run check:assets`).
+- Build the site before opening a pull request:
+
+  ```sh
+  python3 -m venv .venv-docs
+  .venv-docs/bin/pip install -r requirements-docs.txt
+  .venv-docs/bin/mkdocs build --strict
+  ```
+
+- Do not hand-edit generated files or generated preview images. Regenerate them.
 
 ## Privacy and evidence
 

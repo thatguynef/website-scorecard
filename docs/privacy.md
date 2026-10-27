@@ -1,5 +1,7 @@
 # Privacy and Public-Repository Safety
 
+> **For:** anyone publishing audit work from this public repository.
+
 This repository is **public**. Treat every commit as publishable to the internet.
 
 ## The rules
@@ -81,7 +83,7 @@ The default scan checks the current tree for private-key blocks, common token pr
 
 ## Reporting a security problem
 
-See [`SECURITY.md`](../SECURITY.md). Do not open a public issue that contains a live credential, customer data, or an exploitable detail. Use GitHub's private vulnerability reporting if available.
+See [`SECURITY.md`](https://github.com/thatguynef/website-scorecard/blob/main/SECURITY.md). Do not open a public issue that contains a live credential, customer data, or an exploitable detail. Use GitHub's private vulnerability reporting if available.
 
 ## Client-data handling outside the repository
 

@@ -14,12 +14,17 @@ Use this before changing the repository from private to public or before a major
 
 ## Documentation
 
-- [ ] README first screen explains what, why, and how to run.
+- [ ] README first screen explains who it is for, what it does, why it matters, and how to run it.
+- [ ] The README names local home-service businesses and links `docs/audience.md`.
 - [ ] The README does not say "keep it private."
 - [ ] `docs/privacy.md` matches the actual repository visibility.
 - [ ] All relative links resolve (`npm run check:links`).
+- [ ] Images resolve, meet the asset budget, and have alt text (`npm run check:assets`).
+- [ ] The docs site builds without warnings (`mkdocs build --strict`).
+- [ ] GitHub Pages is enabled with source **GitHub Actions** and the Docs workflow succeeds.
 - [ ] `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, and `LICENSE` exist.
 - [ ] The license is accurate and intentional.
+- [ ] `docs/assets/social-preview.png` matches the current positioning.
 
 ## Scoring and evidence
 

@@ -1,89 +1,40 @@
+![Website Scorecard — find where local home-service websites leak customers and revenue](docs/assets/banner.svg)
+
 # Website Scorecard
 
-**Find where local home-service websites may be leaking customers and revenue.**
+**Find where local home-service websites leak customers and revenue.**
 
-Website Scorecard is an open, evidence-based diagnostic framework for evaluating how effectively a local service website turns visitors into leads, appointments, estimates, and customers. It is built for plumbing, HVAC, roofing, electrical, pest control, garage door, landscaping, restoration, cleaning, and similar trades.
+[![CI](https://github.com/thatguynef/website-scorecard/actions/workflows/ci.yml/badge.svg)](https://github.com/thatguynef/website-scorecard/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-ff3b3b)](LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/thatguynef/website-scorecard?color=ff3b3b)](CHANGELOG.md)
+[![Node 22+](https://img.shields.io/badge/node-22%2B-3fbf7f)](package.json)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3fbf7f)](package.json)
 
-It is not another SEO grader. It follows the customer journey and separates what the website can prove from what only the business owner can answer.
+> [!NOTE]
+> **Built for local home-service businesses** — plumbing, HVAC, roofing, electrical, pest control, garage door, landscaping, restoration, cleaning, and similar trades. It is also for the marketers, agencies, and analysts who serve them. Read the [audience guide](docs/audience.md).
 
-```text
-VISITOR
-   ↓
-UNDERSTANDING
-   ↓
-LEAD
-   ↓
-RESPONSE
-   ↓
-QUALIFICATION
-   ↓
-BOOKING
-   ↓
-ESTIMATE / OPPORTUNITY
-   ↓
-FOLLOW-UP
-   ↓
-CUSTOMER
-   ↓
-REVIEW
-   ↓
-REFERRAL
-   ↓
-REACTIVATION
-```
+| At a glance | |
+|---|---|
+| **The question** | Where could this local service website be leaking leads, bookings, or revenue? |
+| **The output** | A 0–100 website score, a contractor-facing one-pager, a full evidence audit, and the owner-data questions the site cannot answer |
+| **The rule** | Only what the public site can prove is scored. Everything else is marked **owner data required**. |
+| **What it is not** | An SEO grader, a SaaS dashboard, an automated fix, or a guarantee of revenue lift |
 
-## What it does
+![Synthetic sample report for Acme Plumbing showing 68 out of 100, with three revenue leaks](docs/assets/scorecard-preview.png)
 
-- Collects mobile and desktop screenshots, DOM signals, Lighthouse data, a site map, and non-destructive conversion-path traces.
-- Scores the observable website out of **100** with applicability-aware category weights and hard caps.
-- Separates **verified website findings** from **strong signals** and **owner-data opportunities**.
-- Produces a contractor-facing one-pager, a full audit, a machine-readable `scores.json`, and a coverage matrix.
-- Verifies the run with invariants, cross-artifact checks, and mutation tests.
-- Preserves the legacy 42-check V1 rubric so historical scores keep their meaning.
+*Synthetic example — not a real business. Read the [one-page report](examples/acme-plumbing/one-page.md) or the [full audit](examples/acme-plumbing/full-report.md).*
 
-## Why it exists
+## Who it's for
 
-Traditional website graders optimize for technical health: SEO, performance, metadata, accessibility. Those matter. But a contractor does not lose a job because a meta description is 12 characters too long. A contractor loses a job when a homeowner cannot tell what the company does, cannot tap the phone number, cannot finish the form, cannot book a slot, or never hears back.
+**Local home-service businesses** — the trades people call when something at home is broken, dirty, unsafe, or overdue. If your customers find you in a local search, call or fill out a form, and book a job, this framework was written for you.
 
-The website is the observable front end of a larger revenue system. This project diagnoses the front end honestly and marks the rest as **owner data required** instead of pretending the public site can see the CRM.
+It is also for the people who run the marketing: in-house marketers, local agencies, consultants, and analysts who need a repeatable, evidence-based second opinion instead of another SEO checklist.
 
-The most important distinction:
-
-```text
-WEBSITE SCORE                 REVENUE OPPORTUNITIES TO INVESTIGATE
-observable, scored            owner/CRM data, never scored
-```
-
-A good website with unknown internal processes should score well **and** produce follow-up questions. It should not be penalized for estimate follow-up, response time, or reactivation that the audit cannot see.
-
-## Example output
-
-From the synthetic [`examples/acme-plumbing/`](examples/acme-plumbing/) example:
-
-```markdown
-# Website Scorecard — Acme Plumbing (synthetic)
-
-# 68 / 100 — Average
-
-## The three biggest revenue leaks
-
-1. Mobile estimate form is difficult to complete
-   VERIFIED
-
-2. New inquiries have no observable immediate acknowledgement
-   STRONG SIGNAL
-
-3. Unclosed estimates may not receive follow-up
-   OWNER DATA REQUIRED
-```
-
-Read the full [one-page report](examples/acme-plumbing/one-page.md) or the [full audit](examples/acme-plumbing/full-report.md).
-
-The example is synthetic. It is not a real case study.
+**Not a fit:** SaaS, e-commerce, content or media sites, national brands with mature analytics teams, and anyone looking for a guaranteed revenue lift or an automated fix. [Read the audience guide →](docs/audience.md)
 
 ## Quick start
 
-Requirements: Node.js 22+, Python 3.10+, and Google Chrome or Chromium. Lighthouse is optional for development but a delivered audit needs three mobile runs (or a documented waiver).
+Requirements: Node.js 22+, Python 3.10+, and Google Chrome or Chromium. Lighthouse is optional for development, but a delivered audit needs three mobile runs (or a documented waiver).
 
 ```sh
 git clone https://github.com/thatguynef/website-scorecard.git
@@ -105,7 +56,10 @@ npm run audit -- \
   --lh-runs 3
 ```
 
-The entrypoint writes raw evidence to `.audit/example/<run-id>/` and creates the report package at `reports/example.com/<run-id>/`. Fill the judgment checks in `audit.json`, save the result as `reports/example.com/<run-id>/audit.filled.json`, then:
+The entrypoint writes raw evidence to `.audit/example/<run-id>/` and creates the report package at `reports/example.com/<run-id>/`. Fill the judgment checks in `audit.json`, save the result as `reports/example.com/<run-id>/audit.filled.json`, then score, render, and verify. The step-by-step version, including what each input means and how to get each output type, is [Run an audit](docs/run-an-audit.md).
+
+<details>
+<summary><strong>Stage-by-stage commands</strong></summary>
 
 ```sh
 python3 .opencode/skills/home-service-website-audit/scripts/score.py \
@@ -113,11 +67,7 @@ python3 .opencode/skills/home-service-website-audit/scripts/score.py \
   --out reports/example.com/<run-id>/scores.json \
   --markdown reports/example.com/<run-id>/scorecard.md \
   --strict
-```
 
-Render the reports into the same domain/run directory:
-
-```sh
 node .opencode/skills/home-service-website-audit/scripts/render.mjs \
   --scores reports/example.com/<run-id>/scores.json \
   --content reports/example.com/<run-id>/content.json \
@@ -128,18 +78,13 @@ node .opencode/skills/home-service-website-audit/scripts/render.mjs --mode full 
   --content reports/example.com/<run-id>/content.json \
   --out "reports/example.com/<run-id>/full-report.md"
 
-# Local index
 node .opencode/skills/home-service-website-audit/scripts/index.mjs \
   --reports reports/index.local.md \
   --client "Example Co." --market "Example County, CA" \
   --score <score> --band "<band>" --date 2026-10-26 \
   --one-page example.com/<run-id>/one-page.md \
   --full example.com/<run-id>/full-report.md
-```
 
-Verify before delivery:
-
-```sh
 node .opencode/skills/home-service-website-audit/scripts/verify.mjs \
   --run .audit/example/<run-id> \
   --filled reports/example.com/<run-id>/audit.filled.json \
@@ -151,25 +96,48 @@ node .opencode/skills/home-service-website-audit/scripts/verify.mjs \
   --mutation --fixture
 ```
 
-Each report package is local and covered by the `reports/*` ignore rule; only `reports/README.md` is tracked.
+</details>
 
-Every public CLI supports `--help`.
+Each report package is local and covered by the `reports/*` ignore rule; only `reports/README.md` is tracked. Every public CLI supports `--help`.
+
+## Documentation
+
+Start with [Who this is for](docs/audience.md), then [Run an audit](docs/run-an-audit.md) and [Why this exists](docs/methodology.md). The full index is in [docs/README.md](docs/README.md). The same content deploys to `https://thatguynef.github.io/website-scorecard/` through `.github/workflows/docs.yml`.
+
+## Why it exists
+
+Traditional website graders optimize for technical health: SEO, performance, metadata, accessibility. Those matter. But a contractor does not lose a job because a meta description is 12 characters too long. A contractor loses a job when a homeowner cannot tell what the company does, cannot tap the phone number, cannot finish the form, cannot book a slot, or never hears back.
+
+The website is the observable front end of a larger revenue system. This project diagnoses the front end honestly and marks the rest as **owner data required** instead of pretending the public site can see the CRM.
+
+The most important distinction:
+
+```text
+WEBSITE SCORE                 REVENUE OPPORTUNITIES TO INVESTIGATE
+observable, scored            owner/CRM data, never scored
+```
+
+A good website with unknown internal processes should score well **and** produce follow-up questions. It should not be penalized for estimate follow-up, response time, or reactivation that the audit cannot see.
+
+## What it does
+
+- Collects mobile and desktop screenshots, DOM signals, Lighthouse data, a site map, and non-destructive conversion-path traces.
+- Scores the observable website out of **100** with applicability-aware category weights and hard caps.
+- Separates **verified website findings** from **strong signals** and **owner-data opportunities**.
+- Produces a contractor-facing one-pager, a full audit, a machine-readable `scores.json`, and a coverage matrix.
+- Verifies the run with invariants, cross-artifact checks, and mutation tests.
+- Preserves the legacy 42-check V1 rubric so historical scores keep their meaning.
 
 ## How it works
 
-```text
-COLLECT      screenshots, DOM, Lighthouse, site map, path traces
-   ↓
-REVIEW       model judgment for clarity, friction, trust, offer
-   ↓
-SCORE        validation, applicability, normalization, caps
-   ↓
-RENDER       one-page + full report
-   ↓
-VERIFY       invariants, cross-artifact checks, mutation tests
+![The 12-stage home-service customer journey, with observable and owner-data stages marked](docs/assets/journey.svg)
+
+```mermaid
+flowchart LR
+  A[Collect] --> B[Review] --> C[Score] --> D[Render] --> E[Verify]
 ```
 
-The underlying stages stay independently runnable for debugging. `npm run audit` is a wrapper, not a monolith.
+Collection is deterministic. Only judgment checks use a model. Scoring, rendering, and verification are file-based and reproducible, and each stage stays independently runnable for debugging. `npm run audit` is a wrapper, not a monolith.
 
 ## Revenue Leak Framework
 
@@ -220,7 +188,8 @@ Every finding is one of:
 - **OWNER DATA REQUIRED** — cannot responsibly determine from public information.
 - **NOT APPLICABLE** — the check does not reasonably apply to this business, market, or configuration.
 
-The system never says "this contractor responds slowly" unless response time was measured with authorization. It says "no immediate acknowledgement mechanism was observed" and asks the owner for the real number.
+> [!IMPORTANT]
+> The system never says "this contractor responds slowly" unless response time was measured with authorization. It says "no immediate acknowledgement mechanism was observed" and asks the owner for the real number.
 
 Read [docs/evidence.md](docs/evidence.md).
 
@@ -253,20 +222,36 @@ Both are synthetic or sanitized. No real client data is published.
     eval.mjs                  cross-model eval
     fixtures/                 V1/V2 golden fixtures
 docs/                         methodology, scoring, evidence, architecture, etc.
+docs/index.md                 documentation landing page
+docs/assets/                  brand assets, diagrams, and generated previews
 examples/                     synthetic/sanitized examples
 config/                       example market configuration
-scripts/                      entrypoint, doctor, link/privacy checks
+scripts/                      entrypoint, doctor, link/asset/privacy checks
+mkdocs.yml                    documentation site configuration
+requirements-docs.txt         pinned docs toolchain
 .github/workflows/ci.yml      CI
+.github/workflows/docs.yml    documentation build and deploy
 ```
 
 ## Development
 
 ```sh
 npm test                 # scorer + pipeline tests
-npm run check            # tests, rubric, generated docs, schemas, links, privacy scan
+npm run check            # tests, rubric, generated docs, schemas, links, assets, privacy
 npm run check:generated  # fail if generated docs are stale
+npm run check:assets     # image existence, alt text, and size budgets
 npm run check:privacy    # secret/PII safety net
+npm run render:assets    # regenerate the sample and social previews (Chrome required)
 npm run eval -- --mock --snapshot examples/acme-plumbing --out /tmp/eval-mock
+```
+
+Build the docs site locally:
+
+```sh
+python3 -m venv .venv-docs
+.venv-docs/bin/pip install -r requirements-docs.txt
+.venv-docs/bin/mkdocs serve
+.venv-docs/bin/mkdocs build --strict
 ```
 
 Do not hand-edit generated files. `rubric.json` is the single source of truth.
@@ -275,7 +260,7 @@ Read [docs/development.md](docs/development.md) before adding a check.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Repository description/topics recommendations are in [docs/github-settings.md](docs/github-settings.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Documentation voice, colour, and asset rules are in [docs/style-guide.md](docs/style-guide.md). Repository description/topic recommendations are in [docs/github-settings.md](docs/github-settings.md).
 
 Every check must answer at least one of:
 
@@ -308,3 +293,5 @@ This is a **public** repository.
 ## Radical Red Rocket
 
 Website Scorecard is maintained alongside [Radical Red Rocket](https://radicalredrocket.com), which uses it as the diagnostic framework behind live Revenue Leak Teardowns. The Scorecard diagnoses; remediation is a separate system. The open-source toolkit is useful without hiring anyone.
+
+The documentation and assets use the Radical Red Rocket palette: near-black surfaces, off-white type, and signal red `#FF3B3B`.

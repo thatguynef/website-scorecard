@@ -1,5 +1,7 @@
 # Scoring
 
+> **For:** owners, marketers, and analysts working with local home-service businesses.
+
 The score answers: **how well does the observable website support the customer revenue journey?** It is not a count of best practices.
 
 Canonical machine-readable source: `.opencode/skills/home-service-website-audit/references/rubric.json`.
@@ -186,3 +188,7 @@ Do not compare a V1 score with a V2 score. The checks, weights, applicability, a
 - Do not invent a score for an owner-data question.
 - Do not let an auto score override a screenshot.
 - Do not change the rubric silently. Version it.
+
+---
+
+**Next:** [Evidence model](evidence.md) — how every finding is classified.

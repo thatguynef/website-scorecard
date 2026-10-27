@@ -18,6 +18,10 @@ npm-debug.log*
 coverage/
 .nyc_output/
 
+# Docs site build output and local docs environment
+site/
+.venv-docs/
+
 # Local secrets
 .env
 .env.*

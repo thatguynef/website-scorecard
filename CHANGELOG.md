@@ -2,6 +2,24 @@
 
 All notable changes to the Website Scorecard are documented here.
 
+## Unreleased
+
+### Added
+
+- `docs/audience.md` — canonical statement of who the framework is for, including the local home-service trades it targets and explicit non-fits.
+- Documentation site (MkDocs Material) with brand theme, search, dark mode, and a GitHub Pages workflow.
+- Brand assets: banner, journey diagram, sample report preview, social preview, logo, and favicon.
+- `npm run check:assets` for image existence, size budgets, alt text, and forbidden evidence paths.
+- `docs/style-guide.md` for voice, colour, typography, diagrams, and asset rules.
+- `docs/run-an-audit.md` — a step-by-step guide from website URL to one-page report, including judgment checks, `content.json`, rendering, verification, and troubleshooting.
+
+### Changed
+
+- README now leads with the home-service audience, a scannable "who it's for / not for" block, badges, and a sample report image.
+- Docs use the Radical Red Rocket palette and consistent audience notes, callouts, and next-step footers.
+- `check_links.mjs` also validates HTML `<img>` and `<picture>` sources.
+- Release checklist and pull request template include audience, accessibility, and docs-build checks.
+
 ## 2.0.0 — 2026-10-26
 
 ### Added

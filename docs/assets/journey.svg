@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="journeyTitle journeyDesc">
+  <title id="journeyTitle">The 12-stage home-service customer journey</title>
+  <desc id="journeyDesc">Twelve stages from Visitor to Reactivation. Visitor, Understanding, and Lead are fully scored; Response through Estimate and Review are scored with owner data; Follow-up, Customer, Referral, and Reactivation require owner data and never reduce the website score.</desc>
+  <defs>
+    <pattern id="jgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="dot" x="-2" y="-2" width="8" height="8">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="240" rx="18" fill="#0B0B0C"/>
+  <rect width="1200" height="240" rx="18" fill="url(#jgrid)"/>
+  <rect x="0.5" y="0.5" width="1199" height="239" rx="17.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <text x="32" y="38" font-family="'IBM Plex Mono','SFMono-Regular',ui-monospace,monospace" font-size="10.5" letter-spacing="2.2" fill="#FF3B3B">THE 12-STAGE JOURNEY</text>
+
+  <!-- 01 Visitor -->
+  <g>
+    <rect x="29" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="30" y="72" width="84" height="3" rx="1.5" fill="#FF3B3B"/>
+    <text x="72" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">01</text>
+    <text x="72" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Visitor</text>
+  </g>
+  <!-- 02 Understanding -->
+  <g>
+    <rect x="125" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="126" y="72" width="84" height="3" rx="1.5" fill="#FF3B3B"/>
+    <text x="168" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">02</text>
+    <text x="168" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Understanding</text>
+  </g>
+  <!-- 03 Lead -->
+  <g>
+    <rect x="221" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="222" y="72" width="84" height="3" rx="1.5" fill="#FF3B3B"/>
+    <text x="264" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">03</text>
+    <text x="264" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Lead</text>
+  </g>
+  <!-- 04 Response -->
+  <g>
+    <rect x="317" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="318" y="72" width="84" height="3" rx="1.5" fill="#F5C766"/>
+    <text x="360" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">04</text>
+    <text x="360" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Response</text>
+  </g>
+  <!-- 05 Qualification -->
+  <g>
+    <rect x="413" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="414" y="72" width="84" height="3" rx="1.5" fill="#F5C766"/>
+    <text x="456" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">05</text>
+    <text x="456" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Qualification</text>
+  </g>
+  <!-- 06 Booking -->
+  <g>
+    <rect x="509" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="510" y="72" width="84" height="3" rx="1.5" fill="#F5C766"/>
+    <text x="552" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">06</text>
+    <text x="552" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Booking</text>
+  </g>
+  <!-- 07 Estimate -->
+  <g>
+    <rect x="605" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="606" y="72" width="84" height="3" rx="1.5" fill="#F5C766"/>
+    <text x="648" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">07</text>
+    <text x="648" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Estimate</text>
+  </g>
+  <!-- 08 Follow-up -->
+  <g>
+    <rect x="701" y="72" width="86" height="64" rx="10" fill="#101012" stroke="#3A3A40" stroke-dasharray="4 4"/>
+    <rect x="702" y="72" width="84" height="3" rx="1.5" fill="#6B6B70"/>
+    <text x="744" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">08</text>
+    <text x="744" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#8A8A90">Follow-up</text>
+  </g>
+  <!-- 09 Customer -->
+  <g>
+    <rect x="797" y="72" width="86" height="64" rx="10" fill="#101012" stroke="#3A3A40" stroke-dasharray="4 4"/>
+    <rect x="798" y="72" width="84" height="3" rx="1.5" fill="#6B6B70"/>
+    <text x="840" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">09</text>
+    <text x="840" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#8A8A90">Customer</text>
+  </g>
+  <!-- 10 Review -->
+  <g>
+    <rect x="893" y="72" width="86" height="64" rx="10" fill="#141416" stroke="#2A2A2E"/>
+    <rect x="894" y="72" width="84" height="3" rx="1.5" fill="#F5C766"/>
+    <text x="936" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">10</text>
+    <text x="936" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#F7F7F5">Review</text>
+  </g>
+  <!-- 11 Referral -->
+  <g>
+    <rect x="989" y="72" width="86" height="64" rx="10" fill="#101012" stroke="#3A3A40" stroke-dasharray="4 4"/>
+    <rect x="990" y="72" width="84" height="3" rx="1.5" fill="#6B6B70"/>
+    <text x="1032" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">11</text>
+    <text x="1032" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#8A8A90">Referral</text>
+  </g>
+  <!-- 12 Reactivation -->
+  <g>
+    <rect x="1085" y="72" width="86" height="64" rx="10" fill="#101012" stroke="#3A3A40" stroke-dasharray="4 4"/>
+    <rect x="1086" y="72" width="84" height="3" rx="1.5" fill="#6B6B70"/>
+    <text x="1128" y="95" text-anchor="middle" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="8.5" letter-spacing="1" fill="#6B6B70">12</text>
+    <text x="1128" y="118" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#8A8A90">Reactivation</text>
+  </g>
+
+  <line x1="29" y1="104" x2="1171" y2="104" stroke="#2A2A2E" stroke-width="1.5"/>
+
+  <!-- legend -->
+  <g font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#A6A6AA">
+    <circle cx="36" cy="190" r="3.5" fill="#FF3B3B"/>
+    <text x="48" y="194">Scored</text>
+    <circle cx="128" cy="190" r="3.5" fill="#F5C766"/>
+    <text x="140" y="194">Scored + owner data</text>
+    <circle cx="288" cy="190" r="3.5" fill="#6B6B70"/>
+    <text x="300" y="194">Owner data required</text>
+  </g>
+  <text x="1168" y="194" text-anchor="end" font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#6B6B70">Owner-data stages never reduce the website score.</text>
+</svg>

@@ -1,5 +1,7 @@
 # Methodology
 
+> **For:** owners, marketers, and analysts working with local home-service businesses.
+
 ## Why this exists
 
 Most website graders answer a technical question: is the site fast, indexable, accessible, and well structured? Those things matter. They are not the whole business question.
@@ -72,3 +74,7 @@ The output should be useful to a plumbing, HVAC, roofing, or electrical contract
 5. What can only the owner tell us?
 
 If a finding cannot answer one of those questions, it probably does not belong in the report.
+
+---
+
+**Next:** [Revenue Leak Framework](revenue-leak-framework.md) — the 12 journey stages.

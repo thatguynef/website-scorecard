@@ -1,22 +1,24 @@
 # Architecture
 
+> **For:** developers and auditors who need to inspect, run, or extend the pipeline.
+
 The repository is a deterministic diagnostic toolkit, not a SaaS platform. It is intentionally file-based and simple to inspect.
 
 ## Pipeline
 
-```text
-collect.mjs
-   ↓  screenshots, DOM signals, Lighthouse, site map, path traces
-.audit/<slug>/<run-id>/audit.json
-   ↓  model judgment for non-deterministic checks
-reports/<domain>/<run-id>/audit.filled.json
-   ↓  score.py — validation, applicability, normalization, caps, bands
-reports/<domain>/<run-id>/scores.json + scorecard.md
-   ↓  model prose in content.json
-reports/<domain>/<run-id>/one-page.md + full-report.md
-   ↓  verify.mjs — invariants, cross-artifact consistency, mutation tests
-reports/<domain>/<run-id>/verification.json
+```mermaid
+flowchart TD
+  A["collect.mjs<br/>screenshots · DOM · Lighthouse<br/>site map · path traces"] --> B[".audit/&lt;slug&gt;/&lt;run-id&gt;/<br/>audit.json"]
+  B --> C["reports/&lt;domain&gt;/&lt;run-id&gt;/<br/>audit.filled.json<br/>model judgment"]
+  C --> D["score.py<br/>validation · applicability<br/>normalization · caps · bands"]
+  D --> E["scores.json<br/>scorecard.md"]
+  E --> F["content.json<br/>model prose"]
+  F --> G["render.mjs<br/>one-page.md · full-report.md"]
+  G --> H["verify.mjs<br/>invariants · mutation tests"]
+  H --> I["verification.json"]
 ```
+
+The file paths use placeholders (`<slug>`, `<run-id>`, `<domain>`) for readability.
 
 ## Components
 
@@ -166,3 +168,7 @@ V1 is preserved, not emulated:
 ## What this is not
 
 It is not a microservice, database, hosted dashboard, or SaaS. Prefer structured files, deterministic scripts, and clear docs. If a future hosted service is built, it should consume the JSON schema rather than fork the scoring logic.
+
+---
+
+**Next:** [Configuration](configuration.md) — optional modules and market setup.

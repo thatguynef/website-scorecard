@@ -1,5 +1,7 @@
 # Configuration
 
+> **For:** anyone configuring an audit for a local home-service business.
+
 Configuration tells the scorecard which optional modules apply to this business and market. It does not change the rubric's meaning; it changes the denominator.
 
 ## Example
@@ -205,3 +207,7 @@ If the business is known to buy traffic, enable the `paid_traffic` opportunity m
 > "If paid traffic is being sent to this page, this issue may be wasting acquisition spend."
 
 Do not invent ad spend, campaign names, or performance. Tags are observable; profitability is owner data.
+
+---
+
+**Next:** [Structured output schema](schema.md) — the audit and scores documents.

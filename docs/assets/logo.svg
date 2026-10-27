@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Website Scorecard mark: a gauge with a red arc</title>
+  <rect width="64" height="64" rx="15" fill="#0B0B0C"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="14.25" fill="none" stroke="#2A2A2E" stroke-width="1.5"/>
+  <path d="M17 42 A 15 15 0 0 1 47 42" fill="none" stroke="#2A2A2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M17 42 A 15 15 0 0 1 39.5 29" fill="none" stroke="#FF3B3B" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="32" cy="42" r="3" fill="#F7F7F5"/>
+  <path d="M32 42 L39 33" stroke="#F7F7F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

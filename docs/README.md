@@ -1,9 +1,17 @@
 # Documentation
 
+**Website Scorecard is built for local home-service businesses** — plumbing, HVAC, roofing, electrical, pest control, garage door, landscaping, restoration, cleaning, and similar trades — and for the marketers and analysts who serve them. Everything here assumes that context.
+
+New here? Read [Who this is for](audience.md), then [Why this exists](methodology.md).
+
+This directory also builds into a documentation site: [thatguynef.github.io/website-scorecard](https://thatguynef.github.io/website-scorecard/), deployed by `.github/workflows/docs.yml`.
+
 Start with the question you are trying to answer.
 
 | If you want to... | Read |
 |---|---|
+| Confirm whether this is built for your business | [`audience.md`](audience.md) |
+| Run an audit from a website URL | [`run-an-audit.md`](run-an-audit.md) |
 | Understand why the project exists | [`methodology.md`](methodology.md) |
 | Understand the customer-journey model | [`revenue-leak-framework.md`](revenue-leak-framework.md) |
 | Understand the score, weights, N/A math, and caps | [`scoring.md`](scoring.md) |
@@ -19,5 +27,6 @@ Start with the question you are trying to answer.
 | Use an external browser agent | [`portable-checklist.md`](portable-checklist.md) |
 | Recommend GitHub metadata | [`github-settings.md`](github-settings.md) |
 | Run a public-release check | [`release-checklist.md`](release-checklist.md) |
+| Write or review documentation | [`style-guide.md`](style-guide.md) |
 
 The canonical rubric is `.opencode/skills/home-service-website-audit/references/rubric.json`. Generated files are marked as generated; do not edit them by hand.

@@ -1,7 +1,10 @@
 # Evidence Model
 
+> **For:** owners, marketers, and analysts working with local home-service businesses.
+
 The most important rule in this project:
 
+> [!IMPORTANT]
 > **A finding without evidence is an opinion.**
 
 The evidence model separates what was observed from what was inferred and what the owner must answer.
@@ -134,3 +137,7 @@ Do not hardcode Spanish as a universal penalty. Do not claim a business does not
 | "The form is broken." | "The form has no visible submit control" (verified) or "the form is hard to complete" (verified friction) — distinguish broken from friction. |
 | "The site is not trustworthy." | Cite the specific trust signal that is missing; do not make a character judgment. |
 | "The booking path is slow." | "The booking path takes five steps and opens a third-party page" — describe the observable friction. |
+
+---
+
+**Next:** [Coverage completeness](coverage-completeness.md) — the area-by-area map.

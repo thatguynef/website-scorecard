@@ -1,5 +1,7 @@
 # Structured Output Schema
 
+> **For:** developers and analysts consuming the JSON output.
+
 The pipeline emits two machine-readable documents:
 
 - `audit.filled.json` — the evidence and judgments for one run.
@@ -7,8 +9,8 @@ The pipeline emits two machine-readable documents:
 
 Schemas:
 
-- [`references/schema/audit-v2.schema.json`](../.opencode/skills/home-service-website-audit/references/schema/audit-v2.schema.json)
-- [`references/schema/scores-v2.schema.json`](../.opencode/skills/home-service-website-audit/references/schema/scores-v2.schema.json)
+- [`references/schema/audit-v2.schema.json`](https://github.com/thatguynef/website-scorecard/blob/main/.opencode/skills/home-service-website-audit/references/schema/audit-v2.schema.json)
+- [`references/schema/scores-v2.schema.json`](https://github.com/thatguynef/website-scorecard/blob/main/.opencode/skills/home-service-website-audit/references/schema/scores-v2.schema.json)
 
 The scorer is the executable validator; the JSON Schemas describe the contract for downstream tools. If the two disagree, fix the scorer and the schema together.
 
@@ -241,3 +243,7 @@ A downstream tool can consume `scores.json` to:
 - compare runs by rubric version.
 
 It must not treat owner-data questions as website failures. It must not compare a V1 score with a V2 score.
+
+---
+
+**Next:** [Development](development.md) — tests, checks, and extension points.

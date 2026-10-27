@@ -54,6 +54,9 @@ jobs:
       - name: Link check
         run: node scripts/check_links.mjs
 
+      - name: Asset check
+        run: node scripts/check_assets.mjs
+
       - name: Privacy scan
         run: node scripts/privacy_scan.mjs
 

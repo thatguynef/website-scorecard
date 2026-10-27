@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="favTitle">
+  <title id="favTitle">Website Scorecard</title>
+  <rect width="64" height="64" rx="14" fill="#FF3B3B"/>
+  <path d="M17 42 A 15 15 0 0 1 47 42" fill="none" stroke="#0B0B0C" stroke-opacity="0.28" stroke-width="6" stroke-linecap="round"/>
+  <path d="M17 42 A 15 15 0 0 1 39.5 29" fill="none" stroke="#F7F7F5" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="32" cy="42" r="3" fill="#F7F7F5"/>
+  <path d="M32 42 L39 33" stroke="#F7F7F5" stroke-width="3" stroke-linecap="round"/>
+</svg>

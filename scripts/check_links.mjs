@@ -42,17 +42,32 @@ for (const file of files) {
   let text = fs.readFileSync(absolute, "utf8");
   // Remove fenced code blocks so example links do not count.
   text = text.replace(/```[\s\S]*?```/g, "").replace(/`[^`\n]*`/g, "");
+
+  const targets = [];
   for (const match of text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)) {
-    let target = match[1].trim();
-    if (!target || target.startsWith("#") || /^(https?:|mailto:|tel:|sms:)/i.test(target)) continue;
-    target = target.split("#")[0];
+    targets.push(match[1]);
+  }
+  // HTML images and picture sources are not Markdown links; check them too.
+  for (const match of text.matchAll(/<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi)) {
+    targets.push(match[1]);
+  }
+  for (const match of text.matchAll(/<source\b[^>]*\bsrcset\s*=\s*["']([^"']+)["']/gi)) {
+    for (const candidate of match[1].split(",")) {
+      targets.push(candidate.trim().split(/\s+/)[0]);
+    }
+  }
+
+  for (const raw of targets) {
+    let target = raw.trim();
+    if (!target || target.startsWith("#") || /^(https?:|data:|mailto:|tel:|sms:)/i.test(target)) continue;
+    target = target.split("#")[0].split("?")[0];
     if (!target || target.includes("{{")) continue;
     try {
       target = decodeURI(target);
     } catch {}
     const resolved = path.resolve(path.dirname(absolute), target);
     if (!fs.existsSync(resolved)) {
-      broken.push(`${file} -> ${match[1]}`);
+      broken.push(`${file} -> ${raw}`);
     }
   }
 }

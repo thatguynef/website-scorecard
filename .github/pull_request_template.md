@@ -18,6 +18,9 @@
 - [ ] The synthetic example still verifies
 - [ ] No real client data, credentials, or screenshots are included
 - [ ] If a score changed, the fixture change is intentional and documented
+- [ ] Documentation changes follow `docs/style-guide.md`
+- [ ] If a page changed, it was reviewed in light and dark mode at 375px and 1440px
+- [ ] If the docs site changed, `mkdocs build --strict` passes
 
 ## Rubric / score impact
 

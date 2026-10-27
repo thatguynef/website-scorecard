@@ -25,16 +25,22 @@ npm test
 
 There is no build step. The repository is plain `.mjs` and `.py` scripts.
 
+For a step-by-step first run from a website URL, see [Run an audit](run-an-audit.md).
+
 ## Common commands
 
 ```sh
 npm test                 # Python scorer tests + Node pipeline/verifier tests
-npm run check            # tests + rubric validation + generated-doc freshness + privacy scan
+npm run check            # tests + rubric + generated docs + schemas + links + assets + privacy
 npm run check:generated  # rubric.md, coverage-matrix.json, portable-checklist.md
 npm run check:rubric     # rubric structure and weights
 npm run check:schemas    # JSON Schema files parse
-npm run check:links      # relative Markdown links resolve
+npm run check:links      # relative Markdown and HTML image links resolve
+npm run check:assets     # image existence, alt text, and size budgets
 npm run check:privacy    # tracked-file secret/PII scan
+npm run render:assets    # regenerate the sample and social previews
+npm run docs:build       # mkdocs build --strict (venv active)
+npm run docs:serve       # mkdocs serve (venv active)
 npm run audit -- --help  # single collector entrypoint
 npm run eval -- --help   # cross-model eval harness
 ```
@@ -161,6 +167,30 @@ npm run check
 
 The canonical source is `references/rubric.json`.
 
+## Documentation site
+
+The docs are plain Markdown and build with MkDocs Material.
+
+```sh
+python3 -m venv .venv-docs
+.venv-docs/bin/pip install -r requirements-docs.txt
+.venv-docs/bin/mkdocs serve
+.venv-docs/bin/mkdocs build --strict
+```
+
+`mkdocs.yml` uses `docs_dir: docs` and excludes `docs/README.md` so the GitHub folder index does not conflict with the site home at `docs/index.md`. Source pages keep GitHub-style alerts (`> [!NOTE]`); `scripts/mkdocs_github_alerts.py` converts them to Material admonitions at build time.
+
+Regenerate the preview images from the synthetic example only:
+
+```sh
+npm run render:assets
+npm run check:assets
+```
+
+`check_assets.mjs` enforces image existence, alt text, per-file budgets, a 2 MB total, and blocks references to `.audit/`, `audit-screens/`, `reports/`, or `evals/`.
+
+The site deploys from `.github/workflows/docs.yml`. Enable GitHub Pages with source **GitHub Actions** before the first deploy. Do not hand-edit `docs/assets/scorecard-preview.png` or `docs/assets/social-preview.png`; regenerate them.
+
 ## Error handling
 
 - Missing Chrome: set `CHROME_PATH` or install Chrome.
@@ -181,8 +211,10 @@ The canonical source is `references/rubric.json`.
 - generated-doc freshness
 - JSON Schema syntax
 - relative-link checks
+- image/asset checks
 - privacy scan
 - the synthetic V2 example verification
+- the docs site build (`.github/workflows/docs.yml`, strict mode)
 
 CI does not audit production websites, submit forms, call businesses, send messages, or make model calls. Cross-model evals are manual/scheduled because they cost money and are nondeterministic.
 
