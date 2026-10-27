@@ -5,21 +5,23 @@ This repository is **public**. Treat every commit as publishable to the internet
 ## The rules
 
 1. **Raw audit evidence stays local.** `.audit/` and `audit-screens/` are gitignored. Do not force-add them.
-2. **Client reports stay local by default.** `reports/*.md` is gitignored. Use `examples/` only for synthetic or properly sanitized examples.
-3. **Never commit credentials.** No `.env` files, API keys, tokens, cookies, browser profiles, session stores, private URLs, or production IDs.
-4. **Never commit customer PII.** No customer names, emails, phone numbers, addresses, review text, or private notes.
-5. **Business information must be public and intentional.** A real business name is not automatically safe to publish in an audit. Default to anonymizing unless the business has explicitly approved publication.
-6. **Screenshots can leak.** A screenshot may show a logged-in account, a customer name, a phone number, an address, a chat transcript, or a browser profile. Review every image before publishing.
-7. **Do not rely on `.gitignore` alone.** Check `git status`, `git ls-files`, and the staged diff before committing.
+2. **Client reports stay local by default.** `reports/*` is gitignored except `reports/README.md`. Report packages live under `reports/<domain>/<run-id>/`. Use `examples/` only for synthetic or properly sanitized examples.
+3. **Client configuration stays local unless it is the public example.** `config/*.json` is gitignored except `config/market.example.json`.
+4. **Never commit credentials.** No `.env` files, API keys, tokens, cookies, browser profiles, session stores, private URLs, or production IDs.
+5. **Never commit customer PII.** No customer names, emails, phone numbers, addresses, review text, or private notes.
+6. **Business information must be public and intentional.** A real business name is not automatically safe to publish in an audit. Default to anonymizing unless the business has explicitly approved publication.
+7. **Screenshots can leak.** A screenshot may show a logged-in account, a customer name, a phone number, an address, a chat transcript, or a browser profile. Review every image before publishing.
+8. **Do not rely on `.gitignore` alone.** Check `git status`, `git ls-files`, and the staged diff before committing.
 
 ## What stays local
 
 | Path | Why |
 |---|---|
-| `.audit/` | Raw screenshots, Lighthouse JSON, signals, filled audits, reports |
+| `.audit/` | Raw screenshots, Lighthouse JSON, signals, site map, and path traces |
 | `audit-screens/` | Legacy raw screenshot directory |
-| `reports/*.md` | Generated client one-pagers, full reports, and `reports/index.local.md` |
+| `reports/*` | Generated client report packages (`reports/<domain>/<run-id>/`) and `reports/index.local.md` |
 | `evals/*` | Cross-model eval runs, which can contain client evidence |
+| `config/*.json` | Client-specific local configuration; `config/market.example.json` is the public example |
 | `.env`, `.env.*` | Secrets and local configuration |
 | `node_modules/` | Dependencies |
 | Browser profiles, HAR files, cookies | Session data |

@@ -105,36 +105,36 @@ npm run audit -- \
   --lh-runs 3
 ```
 
-The collector writes `.audit/example/<run-id>/` and prints the exact next commands. Fill the judgment checks in `audit.json`, save it as `audit.filled.json`, then:
+The entrypoint writes raw evidence to `.audit/example/<run-id>/` and creates the report package at `reports/example.com/<run-id>/`. Fill the judgment checks in `audit.json`, save the result as `reports/example.com/<run-id>/audit.filled.json`, then:
 
 ```sh
 python3 .opencode/skills/home-service-website-audit/scripts/score.py \
-  --input .audit/example/<run-id>/audit.filled.json \
-  --out .audit/example/<run-id>/scores.json \
-  --markdown .audit/example/<run-id>/scorecard.md \
+  --input reports/example.com/<run-id>/audit.filled.json \
+  --out reports/example.com/<run-id>/scores.json \
+  --markdown reports/example.com/<run-id>/scorecard.md \
   --strict
 ```
 
-Render the reports:
+Render the reports into the same domain/run directory:
 
 ```sh
 node .opencode/skills/home-service-website-audit/scripts/render.mjs \
-  --scores .audit/example/<run-id>/scores.json \
-  --content .audit/example/<run-id>/content.json \
-  --out "reports/example-2026-10-26-one-page.md"
+  --scores reports/example.com/<run-id>/scores.json \
+  --content reports/example.com/<run-id>/content.json \
+  --out "reports/example.com/<run-id>/one-page.md"
 
 node .opencode/skills/home-service-website-audit/scripts/render.mjs --mode full \
-  --scores .audit/example/<run-id>/scores.json \
-  --content .audit/example/<run-id>/content.json \
-  --out "reports/example-2026-10-26-full-report.md"
+  --scores reports/example.com/<run-id>/scores.json \
+  --content reports/example.com/<run-id>/content.json \
+  --out "reports/example.com/<run-id>/full-report.md"
 
 # Local index
 node .opencode/skills/home-service-website-audit/scripts/index.mjs \
   --reports reports/index.local.md \
   --client "Example Co." --market "Example County, CA" \
   --score <score> --band "<band>" --date 2026-10-26 \
-  --one-page example-2026-10-26-one-page.md \
-  --full example-2026-10-26-full-report.md
+  --one-page example.com/<run-id>/one-page.md \
+  --full example.com/<run-id>/full-report.md
 ```
 
 Verify before delivery:
@@ -142,11 +142,16 @@ Verify before delivery:
 ```sh
 node .opencode/skills/home-service-website-audit/scripts/verify.mjs \
   --run .audit/example/<run-id> \
-  --report reports/example-2026-10-26-full-report.md \
-  --one-page reports/example-2026-10-26-one-page.md \
+  --filled reports/example.com/<run-id>/audit.filled.json \
+  --scores reports/example.com/<run-id>/scores.json \
+  --report reports/example.com/<run-id>/full-report.md \
+  --one-page reports/example.com/<run-id>/one-page.md \
   --index reports/index.local.md \
+  --out reports/example.com/<run-id>/verification.json \
   --mutation --fixture
 ```
+
+Each report package is local and covered by the `reports/*` ignore rule; only `reports/README.md` is tracked.
 
 Every public CLI supports `--help`.
 
@@ -288,7 +293,8 @@ Do not maximize the number of checks. Maximize the usefulness, credibility, repr
 This is a **public** repository.
 
 - Raw audit evidence stays local in `.audit/` and `audit-screens/`.
-- Client reports are local by default in `reports/` and are gitignored.
+- Client reports are local by default in `reports/<domain>/<run-id>/` and are gitignored.
+- Client-specific configs are local in `config/` and are gitignored except for `config/market.example.json`.
 - Never commit credentials, customer PII, private screenshots, or production data.
 - Public examples must be synthetic or sanitized and labeled as such.
 - The public repository was deleted and recreated from a clean root commit on 2026-10-26 to remove earlier real-client audit artifacts. The old commit is not available in the new repository.

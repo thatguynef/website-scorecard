@@ -32,12 +32,16 @@ coverage/
 # Raw audit evidence and client work stay local
 .audit/
 audit-screens/
-reports/*.md
+reports/*
 !reports/README.md
 
 # Cross-model eval runs may contain client evidence; only the README is public
 evals/*
 !evals/README.md
+
+# Client-specific local configuration; the public example stays tracked
+config/*.json
+!config/market.example.json
 
 # Browser/session artifacts
 *.har

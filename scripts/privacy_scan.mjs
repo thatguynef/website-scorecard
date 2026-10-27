@@ -37,7 +37,7 @@ try {
 const forbiddenPaths = [
   [/^\.audit\//, "raw audit evidence"],
   [/^audit-screens\//, "raw screenshot evidence"],
-  [/^reports\/(?!README\.md$).+\.md$/, "client report"],
+  [/^reports\/(?!README\.md$).+/, "client report"],
   [/^evals\/(?!README\.md$).+/, "eval run (may contain client evidence)"],
   [/(^|\/)\.env(?!\.example)(\.|$)/, ".env file"],
   [/(^|\/)cookies\.txt$/, "cookie jar"],

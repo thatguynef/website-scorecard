@@ -12,6 +12,7 @@
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { reportDirFor, reportLinks } from "./report-paths.mjs";
 
 const HELP = `Website Revenue Leak Scorecard — audit entrypoint 2.0.0
 
@@ -34,9 +35,10 @@ Recommended:
 Optional:
   --slug <slug>            Output slug, default: hostname
   --run-id <id>            Run id, default: YYYY-MM-DDTHHMM
-  --out <dir>              Output directory
+  --out <dir>              Raw audit output directory
+  --report-dir <dir>       Report output directory, default: reports/<domain>/<run-id>
   --skip-lighthouse        Skip Lighthouse
-  --prepare                Copy audit.json to audit.filled.json after collection
+  --prepare                Copy audit.json to the report directory as audit.filled.json
   --help                   Show this help
 
 Examples:
@@ -55,6 +57,11 @@ function arg(name, fallback) {
   return v;
 }
 const has = (name) => process.argv.includes(`--${name}`);
+const shellQuote = (value) => `'${String(value).replaceAll("'", "'\\''")}'`;
+const localDate = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const localRunId = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16).replace(/:/g, "");
 
 if (has("help") || process.argv.includes("-h")) {
   console.log(HELP);
@@ -87,8 +94,21 @@ try {
 }
 
 const slug = String(arg("slug", new URL(url).hostname.replace(/^www\./, "").replace(/\./g, "-")));
-const runId = String(arg("run-id", new Date().toISOString().slice(0, 16).replace(/:/g, "")));
+const runId = String(arg("run-id", localRunId()));
 const out = String(arg("out", path.join(".audit", slug, runId)));
+const reportDirArg = arg("report-dir");
+if (reportDirArg === true) {
+  console.error("error: --report-dir requires a path");
+  process.exit(2);
+}
+let reportDir;
+try {
+  reportDir = String(reportDirArg || reportDirFor(url, runId));
+} catch (error) {
+  console.error(`error: ${error.message}`);
+  process.exit(2);
+}
+const reportPaths = reportLinks(reportDir);
 const service = String(arg("service", trade));
 const maxPages = String(arg("max-pages", "12"));
 const lhRuns = String(arg("lh-runs", "3"));
@@ -131,7 +151,29 @@ if (result.error) {
 if (result.status !== 0) process.exit(result.status ?? 1);
 
 const auditPath = path.resolve(out, "audit.json");
-const filledPath = path.resolve(out, "audit.filled.json");
+const filledPath = path.resolve(reportDir, "audit.filled.json");
+const scoresPath = path.resolve(reportDir, "scores.json");
+const scorecardPath = path.resolve(reportDir, "scorecard.md");
+const contentPath = path.resolve(reportDir, "content.json");
+const onePagePath = path.resolve(reportDir, "one-page.md");
+const fullReportPath = path.resolve(reportDir, "full-report.md");
+const verificationPath = path.resolve(reportDir, "verification.json");
+
+try {
+  fs.mkdirSync(reportDir, { recursive: true });
+} catch (error) {
+  console.error(`error: could not create report directory ${reportDir}: ${error.message}`);
+  process.exit(1);
+}
+console.log(`\nReport directory: ${reportDir}`);
+
+let auditDate = localDate();
+try {
+  auditDate = JSON.parse(fs.readFileSync(auditPath, "utf8")).meta?.date || auditDate;
+} catch {
+  // Keep the local fallback if the audit manifest cannot be read.
+}
+
 if (has("prepare") && fs.existsSync(auditPath)) {
   fs.copyFileSync(auditPath, filledPath);
   console.log(`\nPrepared ${filledPath}`);
@@ -145,22 +187,32 @@ console.log(`Next:
    Save as ${filledPath}
 3. Score:
    python3 .opencode/skills/home-service-website-audit/scripts/score.py \\
-     --input ${filledPath} \\
-     --out ${path.join(out, "scores.json")} \\
-     --markdown ${path.join(out, "scorecard.md")} --strict
-4. Write content.json, then render:
+     --input ${shellQuote(filledPath)} \\
+     --out ${shellQuote(scoresPath)} \\
+     --markdown ${shellQuote(scorecardPath)} --strict
+4. Write content.json and README.md in ${reportDir}, then render:
    node .opencode/skills/home-service-website-audit/scripts/render.mjs \\
-     --scores ${path.join(out, "scores.json")} \\
-     --content ${path.join(out, "content.json")} \\
-     --out reports/${slug}-one-page.md
+     --scores ${shellQuote(scoresPath)} \\
+     --content ${shellQuote(contentPath)} \\
+     --out ${shellQuote(onePagePath)}
    node .opencode/skills/home-service-website-audit/scripts/render.mjs --mode full \\
-     --scores ${path.join(out, "scores.json")} \\
-     --content ${path.join(out, "content.json")} \\
-     --out reports/${slug}-full-report.md
+     --scores ${shellQuote(scoresPath)} \\
+     --content ${shellQuote(contentPath)} \\
+     --out ${shellQuote(fullReportPath)}
 5. Verify:
    node .opencode/skills/home-service-website-audit/scripts/verify.mjs \\
-     --run ${out} \\
-     --report reports/${slug}-full-report.md \\
-     --one-page reports/${slug}-one-page.md \\
-     --index reports/README.md --mutation --fixture
+     --run ${shellQuote(out)} \\
+     --filled ${shellQuote(filledPath)} \\
+     --scores ${shellQuote(scoresPath)} \\
+     --report ${shellQuote(fullReportPath)} \\
+     --one-page ${shellQuote(onePagePath)} \\
+     --index reports/index.local.md \\
+     --out ${shellQuote(verificationPath)} --mutation --fixture
+6. Index after verification:
+   node .opencode/skills/home-service-website-audit/scripts/index.mjs \\
+     --reports reports/index.local.md \\
+     --client ${shellQuote(client)} --market ${shellQuote(city)} \\
+     --score <score> --band "<band>" --date ${auditDate} \\
+     --one-page ${shellQuote(reportPaths.onePage)} \\
+     --full ${shellQuote(reportPaths.fullReport)}
 `);

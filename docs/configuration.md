@@ -40,6 +40,8 @@ Or use the shortcut:
 npm run audit -- ... --language en,es
 ```
 
+Client-specific configuration files are local and gitignored under `config/*.json`; only `config/market.example.json` is published. Do not commit a config that identifies a client.
+
 The collector writes the resolved configuration to `audit.json` → `meta.configuration` so the score is reproducible.
 
 ## Fields
@@ -149,7 +151,8 @@ Collector:
 --max-pages <n>        Pages to crawl (10-14 for a full audit)
 --lh-runs <n>          Lighthouse runs (median of at least 3 recommended)
 --skip-lighthouse      Leave RL-MOB-01 for manual review
---out <dir>            Output directory
+--out <dir>            Raw audit output directory
+--report-dir <dir>     Report output directory, default: reports/<domain>/<run-id>
 --help                 Full help
 ```
 
@@ -179,14 +182,21 @@ Verifier:
 
 ```text
 --run <dir>            Run directory
+--filled <json>        Filled audit (default <run>/audit.filled.json)
+--scores <json>        scores.json (default <run>/scores.json)
 --report <md>          Full report
 --one-page <md>        One-pager
 --index <md>           Reports index
+--out <json>           verification.json
 --mutation             Mutation suite
 --fixture              Golden fixtures
 --synthetic            Allow synthetic example without screenshots/Lighthouse
 --help
 ```
+
+## Report output
+
+`npm run audit` writes raw evidence to `.audit/<slug>/<run-id>/` and creates the report package at `reports/<domain>/<run-id>/`. The domain is the canonical hostname without `www.`. Use `--report-dir` to override the report package location.
 
 ## Paid traffic
 

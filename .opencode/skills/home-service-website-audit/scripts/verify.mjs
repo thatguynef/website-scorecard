@@ -3,8 +3,10 @@
  * Verify one Website Revenue Leak Scorecard run.
  *
  *   node verify.mjs --run .audit/example/2026-10-26T1000 \
- *     --report audit-example.md \
- *     --one-page reports/example-2026-10-26-one-page.md \
+ *     --filled reports/example.com/2026-10-26T1000/audit.filled.json \
+ *     --scores reports/example.com/2026-10-26T1000/scores.json \
+ *     --report reports/example.com/2026-10-26T1000/full-report.md \
+ *     --one-page reports/example.com/2026-10-26T1000/one-page.md \
  *     --index reports/index.local.md --mutation
  *
  * Exit 0 = pass, 1 = hard failure, 2 = bad input.
@@ -14,6 +16,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+
+const localDate = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
 function arg(name, fallback) {
   const i = process.argv.indexOf(`--${name}`);
@@ -520,7 +525,7 @@ const result = {
 const record = {
   run_id: result.run_id,
   verifier: "verify.mjs",
-  date: new Date().toISOString().slice(0, 10),
+  date: localDate(),
   rubric_version: result.rubric_version,
   result: result.result,
   sampled_checks: ["RL-UND-01", "RL-CON-02", "RL-CON-05", "RL-RSP-01", "RL-TRU-01", "RL-MOB-02", "RL-FND-01", "RL-MSR-01"],

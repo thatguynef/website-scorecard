@@ -4,14 +4,17 @@
  *
  *   node index.mjs --client "Example Co." --market "Example County, CA" \
  *     --score 68 --band "C — Average" --date 2026-10-26 \
- *     --one-page example-2026-10-26-one-page.md \
- *     --full ../audit-example.md
+ *     --one-page example.com/2026-10-26T1200/one-page.md \
+ *     --full example.com/2026-10-26T1200/full-report.md
  *
  * Idempotent: a row with the same date + client is replaced, not duplicated.
  */
 
 import fs from "node:fs";
 import path from "node:path";
+
+const localDate = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
 const HELP = `Website Scorecard reports index
 
@@ -50,7 +53,7 @@ const client = arg("client");
 const market = arg("market", "");
 const score = arg("score");
 const band = arg("band", "");
-const date = arg("date", new Date().toISOString().slice(0, 10));
+const date = arg("date", localDate());
 const onePage = arg("one-page", "");
 const full = arg("full", "");
 

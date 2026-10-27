@@ -7,17 +7,15 @@ The repository is a deterministic diagnostic toolkit, not a SaaS platform. It is
 ```text
 collect.mjs
    ↓  screenshots, DOM signals, Lighthouse, site map, path traces
-audit.json + audit.filled.json
+.audit/<slug>/<run-id>/audit.json
    ↓  model judgment for non-deterministic checks
-score.py
-   ↓  validation, applicability, normalization, caps, bands
-scores.json + scorecard.md
+reports/<domain>/<run-id>/audit.filled.json
+   ↓  score.py — validation, applicability, normalization, caps, bands
+reports/<domain>/<run-id>/scores.json + scorecard.md
    ↓  model prose in content.json
-render.mjs
-   ↓  one-page and full report
-verify.mjs
-   ↓  invariants, cross-artifact consistency, mutation tests
-verification.json
+reports/<domain>/<run-id>/one-page.md + full-report.md
+   ↓  verify.mjs — invariants, cross-artifact consistency, mutation tests
+reports/<domain>/<run-id>/verification.json
 ```
 
 ## Components
@@ -32,6 +30,7 @@ verification.json
 | Scorer | `score.py` | Validates the filled audit, computes applicability-aware category normalization, caps, bands, findings, owner-data output, and coverage. Supports V1 and V2. |
 | Scorer tests | `test_score.py` | V1 golden fixtures, V2 golden fixture, normalization, N/A, caps, confidence, evidence, version migration. |
 | Renderer | `render.mjs` | One-page and full-report rendering from `scores.json` + `content.json`. Owns tables; model owns prose. |
+| Report paths | `scripts/report-paths.mjs` | Derives `reports/<domain>/<run-id>/` from a URL and builds local index links. |
 | Index helper | `index.mjs` | Idempotent row insertion for a local, gitignored reports index (`reports/index.local.md`). |
 | Generated-doc renderers | `render_rubric.py`, `render_coverage.py`, `render_portable.py` | Render derived artifacts from the canonical rubric and fail when stale. |
 | Rubric validator | `validate_rubric.py` | Structural validation of the canonical rubric. |

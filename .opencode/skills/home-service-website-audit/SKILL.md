@@ -76,11 +76,13 @@ This writes `.audit/<slug>/<run-id>/` with:
 - `paths.json` — call, text, form, book, estimate, chat, financing, reviews traces
 - `run.json` — run ID, rubric/collector versions, configuration, pages, viewports
 
+Raw evidence stays in `.audit/<slug>/<run-id>/`. The `npm run audit` entrypoint also creates the report package at `reports/<domain>/<run-id>/`; if you run `collect.mjs` directly, create that directory yourself.
+
 The collector is non-destructive. It never submits a form, places a call, sends a text, books an appointment, creates an account, or enters payment details. It may click a Book Now control once to detect a scheduler iframe; no appointment is selected.
 
 ### 2. Review and fill judgment
 
-Read the mobile screenshots first, then desktop. Fill every applicable `null` check in `audit.json`, set `needs_review` to `false`, and save it as `audit.filled.json`.
+Read the mobile screenshots first, then desktop. Fill every applicable `null` check in `audit.json`, set `needs_review` to `false`, and save it as `reports/<domain>/<run-id>/audit.filled.json`.
 
 Rules:
 
@@ -96,9 +98,9 @@ Rules:
 
 ```sh
 python3 .opencode/skills/home-service-website-audit/scripts/score.py \
-  --input .audit/example/<run-id>/audit.filled.json \
-  --out .audit/example/<run-id>/scores.json \
-  --markdown .audit/example/<run-id>/scorecard.md \
+  --input reports/example.com/<run-id>/audit.filled.json \
+  --out reports/example.com/<run-id>/scores.json \
+  --markdown reports/example.com/<run-id>/scorecard.md \
   --strict
 ```
 
@@ -106,21 +108,25 @@ python3 .opencode/skills/home-service-website-audit/scripts/score.py \
 
 ### 4. Render the reports
 
-Create `content.json` beside the audit. The model writes the prose; the renderer owns the tables.
+Create `content.json` in the report package. The model writes the prose; the renderer owns the tables.
 
 ```sh
 node .opencode/skills/home-service-website-audit/scripts/render.mjs \
-  --scores .audit/example/<run-id>/scores.json \
-  --content .audit/example/<run-id>/content.json \
-  --out "reports/example-2026-10-26-one-page.md"
+  --scores reports/example.com/<run-id>/scores.json \
+  --content reports/example.com/<run-id>/content.json \
+  --out "reports/example.com/<run-id>/one-page.md"
 
 node .opencode/skills/home-service-website-audit/scripts/render.mjs --mode full \
-  --scores .audit/example/<run-id>/scores.json \
-  --content .audit/example/<run-id>/content.json \
-  --out "reports/example-2026-10-26-full-report.md"
+  --scores reports/example.com/<run-id>/scores.json \
+  --content reports/example.com/<run-id>/content.json \
+  --out "reports/example.com/<run-id>/full-report.md"
 ```
 
 The one-pager leads with the three biggest revenue leaks, then the customer journey, score breakdown, strengths, fixes, owner-data opportunities, and next steps. The full report includes all checks and limitations.
+
+The report package keeps `one-page.md`, `full-report.md`, `scores.json`, `scorecard.md`, `content.json`, `audit.filled.json`, `verification.json`, and a `README.md` together under `reports/<domain>/<run-id>/`.
+
+After verification, write the package `README.md` with the client, URL, audit date, run ID, score, links to the one-page and full report, and the raw-evidence path.
 
 Index the report locally (the index is gitignored):
 
@@ -129,8 +135,8 @@ node .opencode/skills/home-service-website-audit/scripts/index.mjs \
   --reports reports/index.local.md \
   --client "Example Co." --market "San Diego County, CA" \
   --score 68 --band "C — Average" --date 2026-10-26 \
-  --one-page example-2026-10-26-one-page.md \
-  --full example-2026-10-26-full-report.md
+  --one-page example.com/<run-id>/one-page.md \
+  --full example.com/<run-id>/full-report.md
 ```
 
 ### 5. Verify
@@ -138,13 +144,16 @@ node .opencode/skills/home-service-website-audit/scripts/index.mjs \
 ```sh
 node .opencode/skills/home-service-website-audit/scripts/verify.mjs \
   --run .audit/example/<run-id> \
-  --report reports/example-2026-10-26-full-report.md \
-  --one-page reports/example-2026-10-26-one-page.md \
+  --filled reports/example.com/<run-id>/audit.filled.json \
+  --scores reports/example.com/<run-id>/scores.json \
+  --report reports/example.com/<run-id>/full-report.md \
+  --one-page reports/example.com/<run-id>/one-page.md \
   --index reports/index.local.md \
+  --out reports/example.com/<run-id>/verification.json \
   --mutation --fixture
 ```
 
-The verifier writes `verification.json` and exits non-zero on any hard failure. **A run is not delivered unless it exits 0.**
+The verifier writes `verification.json` into the report package and exits non-zero on any hard failure. **A run is not delivered unless it exits 0.**
 
 Use `--synthetic` only for the sanitized examples in `examples/`; it waives screenshot and Lighthouse file checks.
 

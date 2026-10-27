@@ -3,7 +3,7 @@
  * Render a Website Revenue Leak Scorecard report from scores.json + content.json.
  *
  *   node render.mjs --scores scores.json --content content.json \
- *     --out reports/example-2026-10-26-one-page.md
+ *     --out reports/example.com/2026-10-26T1200/one-page.md
  *
  *   node render.mjs --mode full --scores scores.json --content content.json \
  *     --out reports/example-full-report.md

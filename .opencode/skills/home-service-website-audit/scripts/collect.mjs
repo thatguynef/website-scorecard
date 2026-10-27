@@ -105,7 +105,11 @@ const SITE_SLUG = arg(
     }
   })()
 );
-const RUN_ID = arg("run-id", new Date().toISOString().slice(0, 16).replace(/:/g, ""));
+const localDate = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const localRunId = (now = new Date()) =>
+  new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16).replace(/:/g, "");
+const RUN_ID = arg("run-id", localRunId());
 const OUT = arg("out", path.join(".audit", SITE_SLUG, RUN_ID));
 const CITY = arg("city", "");
 const TRADE = arg("trade", "");
@@ -810,7 +814,7 @@ function scoreAuto(rubric, mobile, desktop, lcpMs, sitemapOk) {
 function pageType(url) {
   const p = new URL(url).pathname.toLowerCase().replace(/\.(?:html?|php|aspx?)$/, "");
   if (!p || p === "/") return "home";
-  if (/\/(contact|contact-us|estimate|book|schedule|quote|free-quote)(\/|$)/.test(p)) return "contact";
+  if (/\/(contact|contact-us|estimate|book|schedule|quote|free-quote|scorecard)(\/|$)/.test(p)) return "contact";
   if (/financ/.test(p)) return "financing";
   if (/review|testimonial/.test(p)) return "reviews";
   if (/family-plan|membership/.test(p)) return "plan";
@@ -1137,7 +1141,7 @@ try {
       client: arg("client", new URL(URL_).hostname.replace(/^www\./, "")),
       slug: arg("slug", new URL(URL_).hostname.replace(/^www\./, "").replace(/\./g, "-")),
       url: URL_,
-      date: arg("date", new Date().toISOString().slice(0, 10)),
+      date: arg("date", localDate()),
       city: CITY,
       trade: TRADE,
       service: SERVICE,

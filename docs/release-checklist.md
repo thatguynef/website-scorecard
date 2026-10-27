@@ -8,7 +8,7 @@ Use this before changing the repository from private to public or before a major
 - [ ] `node scripts/privacy_scan.mjs --history` passes. If it fails, stop and investigate; do not claim history is clean.
 - [ ] No `.env`, tokens, cookies, browser profiles, or private keys are tracked.
 - [ ] No real client report, audit, screenshot, customer PII, or third-party widget key is in the current tree.
-- [ ] `.audit/`, `audit-screens/`, `reports/*.md`, and `evals/*` are ignored.
+- [ ] `.audit/`, `audit-screens/`, `reports/*` (except `reports/README.md`), `config/*.json` (except `config/market.example.json`), and `evals/*` are ignored.
 - [ ] Public examples are synthetic or sanitized and labeled.
 - [ ] Any exposed credential has been rotated with the vendor.
 

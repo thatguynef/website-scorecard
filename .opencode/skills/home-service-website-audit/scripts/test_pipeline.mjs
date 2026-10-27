@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { domainFromUrl, reportDirFor, reportLinks } from "../../../../scripts/report-paths.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../../../..");
 const SCRIPTS = path.join(ROOT, ".opencode", "skills", "home-service-website-audit", "scripts");
@@ -60,6 +61,49 @@ test("collector rejects an invalid URL", () => {
   const result = runNode(path.join(SCRIPTS, "collect.mjs"), ["--url", "not-a-url"]);
   assert.equal(result.status, 2);
   assert.match(result.stderr, /invalid --url/i);
+});
+
+test("report paths group by prospect domain and run", () => {
+  assert.equal(domainFromUrl("https://www.Example.com/path"), "example.com");
+  assert.equal(domainFromUrl("https://parts.example.com"), "parts.example.com");
+  assert.equal(domainFromUrl("https://www.example.com:8443"), "example.com");
+
+  const dir = reportDirFor("https://www.example.com", "2026-10-26T1200");
+  assert.equal(dir, path.join("reports", "example.com", "2026-10-26T1200"));
+
+  const links = reportLinks(dir);
+  assert.equal(links.onePage, "example.com/2026-10-26T1200/one-page.md");
+  assert.equal(links.fullReport, "example.com/2026-10-26T1200/full-report.md");
+
+  assert.throws(() => domainFromUrl("file:///tmp/x"), /http/i);
+  assert.throws(() => reportDirFor("https://example.com", "../escape"), /run id/i);
+});
+
+test("client reports, raw evidence, eval runs, and local configs are gitignored", () => {
+  const ignored = [
+    "reports/index.local.md",
+    "reports/example.com/2026-10-26T1200/one-page.md",
+    "reports/example.com/2026-10-26T1200/full-report.md",
+    "reports/example.com/2026-10-26T1200/scores.json",
+    "reports/example.com/2026-10-26T1200/README.md",
+    ".audit/example/2026-10-26T1200/audit.json",
+    "evals/example/result.json",
+    "config/example-client.json",
+  ];
+  const publicPaths = [
+    "reports/README.md",
+    "config/market.example.json",
+    "examples/acme-plumbing/one-page.md",
+  ];
+
+  for (const file of ignored) {
+    const result = run("git", ["check-ignore", "-q", file]);
+    assert.equal(result.status, 0, `${file} must be gitignored`);
+  }
+  for (const file of publicPaths) {
+    const result = run("git", ["check-ignore", "-q", file]);
+    assert.equal(result.status, 1, `${file} must stay public`);
+  }
 });
 
 test("V2 golden fixture scores 68 / C and V1 fixture scores 36 / F", () => {
@@ -162,8 +206,8 @@ test("reports index is idempotent", () => {
     "--score", "68",
     "--band", "C — Average",
     "--date", "2026-10-26",
-    "--one-page", "one.md",
-    "--full", "full.md",
+    "--one-page", "example.com/2026-10-26T1200/one-page.md",
+    "--full", "example.com/2026-10-26T1200/full-report.md",
   ];
   const first = runNode(path.join(SCRIPTS, "index.mjs"), args);
   const second = runNode(path.join(SCRIPTS, "index.mjs"), args);
@@ -172,6 +216,7 @@ test("reports index is idempotent", () => {
   const text = fs.readFileSync(index, "utf8");
   assert.equal((text.match(/Example Co\./g) || []).length, 1);
   assert.match(text, /\*\*68\/100\*\*/);
+  assert.match(text, /\(example\.com\/2026-10-26T1200\/one-page\.md\)/);
 });
 
 test("generated rubric, coverage, and portable checklist are current", () => {
