@@ -10,7 +10,8 @@ hide:
     <h1>Find where your website leaks booked jobs.</h1>
     <p class="ws-lede">Website Scorecard scores what the public site can prove, separates verified leaks from owner-data questions, and produces a contractor-facing report in one run.</p>
     <div class="ws-actions">
-      <a class="ws-btn ws-btn--primary" href="audience/">Who it's for</a>
+      <a class="ws-btn ws-btn--primary" href="run-an-audit/">Run an audit</a>
+      <a class="ws-btn" href="audience/">Who it's for</a>
       <a class="ws-btn" href="revenue-leak-framework/">See the framework</a>
     </div>
     <p class="ws-trades">Plumbing · HVAC · Roofing · Electrical · Pest control · Garage door · Landscaping · Restoration · Cleaning</p>

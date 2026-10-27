@@ -53,10 +53,11 @@ npm run audit -- \
   --city "San Diego" \
   --service plumbing \
   --max-pages 12 \
-  --lh-runs 3
+  --lh-runs 3 \
+  --prepare
 ```
 
-The entrypoint writes raw evidence to `.audit/example/<run-id>/` and creates the report package at `reports/example.com/<run-id>/`. Fill the judgment checks in `audit.json`, save the result as `reports/example.com/<run-id>/audit.filled.json`, then score, render, and verify. The step-by-step version, including what each input means and how to get each output type, is [Run an audit](docs/run-an-audit.md).
+The entrypoint writes raw evidence to `.audit/example/<run-id>/` and creates the report package at `reports/example.com/<run-id>/`. Fill the judgment checks in `reports/example.com/<run-id>/audit.filled.json`, then score, render, and verify. The step-by-step version, including what each input means and how to get each output type, is [Run an audit](docs/run-an-audit.md).
 
 <details>
 <summary><strong>Stage-by-stage commands</strong></summary>
