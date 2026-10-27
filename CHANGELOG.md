@@ -12,6 +12,7 @@ All notable changes to the Website Scorecard are documented here.
 - `npm run check:assets` for image existence, size budgets, alt text, and forbidden evidence paths.
 - `docs/style-guide.md` for voice, colour, typography, diagrams, and asset rules.
 - `docs/run-an-audit.md` — a step-by-step guide from website URL to one-page report, including judgment checks, `content.json`, rendering, verification, and troubleshooting.
+- A restrained, UTM-tagged CTA on the audience page, the audit guide, and the README for the optional done-for-you Scorecard review.
 
 ### Changed
 

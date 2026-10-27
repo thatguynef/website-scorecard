@@ -1,6 +1,6 @@
 # Plan: Home-Service Positioning + Docs Visual Upgrade
 
-**Status:** Executed — pending publish (commit, Pages deploy, social preview upload)
+**Status:** Executed and published — social preview upload remains
 **Created:** 2026-10-27
 **Scope:** README, `docs/`, GitHub repository presentation, optional GitHub Pages site
 **Out of scope:** Scoring logic, rubric, report renderer, collector behavior, any client data
@@ -501,6 +501,7 @@ Each PR includes before/after screenshots (light and dark, mobile and desktop) a
 
 - **Phase 1:** README first screen, `docs/audience.md`, audience notes across the docs, metadata/release/PR guidance, changelog.
 - **Usage guide:** `docs/run-an-audit.md` covers entering the website URL, every input, the judgment pass, each output type, verification, and troubleshooting.
+- **CTA policy:** one CTA block per page on `audience.md`, `run-an-audit.md`, and the README, plus a top exit link on the audit guide; UTM-tagged and documented in `docs/style-guide.md`.
 - **Phase 2:** Banner, journey diagram, sample report preview, social preview, logo, favicon; Mermaid pipeline; callouts and next-step footers; `check_assets.mjs`; HTML image support in `check_links.mjs`.
 - **Phase 3:** MkDocs Material site, branded landing page, theme CSS, GitHub alert hook, pinned docs toolchain, Docs workflow with Pages auto-enablement.
 - **Phase 4:** Style guide, contributor rules, release checklist, PR template, responsive and light/dark review, social preview asset.
@@ -518,12 +519,12 @@ Each PR includes before/after screenshots (light and dark, mobile and desktop) a
 
 ### Remaining publish steps (need repository access)
 
-- [ ] Commit and push to `main`.
-- [ ] Confirm the `Docs` workflow deploys and Pages is enabled (the workflow requests auto-enablement).
+- [x] Commit and push to `main`.
+- [x] Confirm the `Docs` workflow deploys and Pages is enabled (the workflow requests auto-enablement).
 - [ ] Upload `docs/assets/social-preview.png` in GitHub repository settings.
 - [ ] Optionally apply the description, topics, and homepage from `docs/github-settings.md`.
 
-The site is built and verified locally at `site/`; `https://thatguynef.github.io/website-scorecard/` returns 404 until the first deploy.
+The site is live at `https://thatguynef.github.io/website-scorecard/`.
 
 ---
 

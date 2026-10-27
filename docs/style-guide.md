@@ -154,6 +154,22 @@ Use a diagram only when it replaces prose or shows a relationship a table cannot
 - Label every example **synthetic** or **sanitized**.
 - Run `npm run check:privacy` and `npm run check:assets` before opening a pull request.
 
+## Conversion and CTAs
+
+The toolkit is free and complete. A CTA is an exit ramp for readers who will not run the commands, not the main path.
+
+- At most one CTA block per page. A single one-line exit link is allowed at the top of `run-an-audit.md`.
+- Only use CTAs on [`audience.md`](audience.md), [`run-an-audit.md`](run-an-audit.md), and `README.md`.
+- Lead with the free, open-source path. Label the review as optional and separate.
+- Link to `https://radicalredrocket.com/scorecard` with UTM parameters:
+  - `utm_source=website-scorecard`
+  - `utm_medium=docs` or `utm_medium=readme`
+  - `utm_campaign=<page-or-placement>`
+- State what the form asks for and that it uses public information only.
+- Never promise revenue lift, a turnaround, or a specific result.
+- No popups, sticky banners, nav items, or CTAs in reference docs.
+- Do not imply the CLI is a demo, incomplete, or a lead magnet.
+
 ## Review checklist
 
 - [ ] The page states who it is for.
@@ -162,5 +178,6 @@ Use a diagram only when it replaces prose or shows a relationship a table cannot
 - [ ] Claims are evidence-based and do not promise revenue.
 - [ ] Images have alt text and meet the budget.
 - [ ] The page works in light and dark mode.
+- [ ] Any CTA follows the conversion rules and uses UTM parameters.
 - [ ] `npm run check` passes.
 - [ ] The docs site builds with `mkdocs build --strict`.

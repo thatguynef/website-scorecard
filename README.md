@@ -295,4 +295,6 @@ This is a **public** repository.
 
 Website Scorecard is maintained alongside [Radical Red Rocket](https://radicalredrocket.com), which uses it as the diagnostic framework behind live Revenue Leak Teardowns. The Scorecard diagnoses; remediation is a separate system. The open-source toolkit is useful without hiring anyone.
 
+**Want it run for you?** [Request a free done-for-you Scorecard](https://radicalredrocket.com/scorecard?utm_source=website-scorecard&utm_medium=readme&utm_campaign=done-for-you). It reviews the public site and follow-up; no account or site access is required. The open-source toolkit stays free and complete.
+
 The documentation and assets use the Radical Red Rocket palette: near-black surfaces, off-white type, and signal red `#FF3B3B`.

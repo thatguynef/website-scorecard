@@ -18,6 +18,8 @@ npm run audit -- \
 
 The rest of this page explains what each input means, what the command produces, and how to turn the collected evidence into the report you want.
 
+**Don't want to run the commands?** The toolkit is free and complete. If you'd rather have the maintainer run the Scorecard and review the findings for you, [request a free done-for-you Scorecard](https://radicalredrocket.com/scorecard?utm_source=website-scorecard&utm_medium=docs&utm_campaign=run-an-audit-top). No account or site access required.
+
 ## What you will get
 
 | Output | File | Use it when |
@@ -297,9 +299,21 @@ Read [Scoring](scoring.md) and [Evidence](evidence.md) for the full rules.
 
 Client reports stay local. `reports/*`, `.audit/`, and `audit-screens/` are gitignored. Never commit a client's screenshots, report, customer PII, or credentials. Read [Privacy](privacy.md) before publishing anything from a run.
 
-## Prefer a done-for-you review?
+## Run it yourself, or have it run for you
 
-The open-source toolkit in this repository runs locally. If you want a person to review the website and follow-up, the maintainer's scorecard at [radicalredrocket.com/scorecard](https://radicalredrocket.com/scorecard) asks for your name, email, and website. It reviews public information; no account or site access is required. That is a separate service, not the open-source CLI.
+The open-source toolkit in this repository is free and complete. The review below is optional.
+
+| Option | Run it yourself | Have it run for you |
+|---|---|---|
+| **Best for** | Developers, analysts, and agencies who want the full evidence package | Owners and marketers who want the findings without running the commands |
+| **What you do** | Follow the steps above and fill the judgment checks | Submit your name, email, and website |
+| **What you get** | `one-page.md`, `full-report.md`, `scores.json`, and `verification.json` | A review of the public site and follow-up, based on public information |
+| **Setup** | Node.js, Python, and Chrome | None. No account or site access required |
+| **Cost** | Free, MIT | Free Scorecard, no obligation |
+
+[Request a free done-for-you Scorecard →](https://radicalredrocket.com/scorecard?utm_source=website-scorecard&utm_medium=docs&utm_campaign=run-an-audit-bottom)
+
+The form asks for your name, email, and website. It is a separate service from the open-source CLI.
 
 ---
 

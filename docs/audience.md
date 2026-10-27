@@ -52,6 +52,9 @@ Answer these five questions:
 
 **Five yeses:** you are the intended audience. **Three or four:** the website score is still useful, but some owner-data questions may not apply. **Two or fewer:** the framework will still run, but treat the score as background context rather than a diagnosis.
 
+> [!TIP]
+> **Own the business but don't want to run the toolkit?** The CLI is free and complete. You can also [request a free done-for-you Scorecard](https://radicalredrocket.com/scorecard?utm_source=website-scorecard&utm_medium=docs&utm_campaign=audience) that reviews your public site and follow-up. No account or site access required.
+
 ## What the score does and does not mean
 
 | It does | It does not |
