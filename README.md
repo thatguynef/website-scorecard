@@ -32,6 +32,18 @@ It is also for the people who run the marketing: in-house marketers, local agenc
 
 **Not a fit:** SaaS, e-commerce, content or media sites, national brands with mature analytics teams, and anyone looking for a guaranteed revenue lift or an automated fix. [Read the audience guide →](docs/audience.md)
 
+## Part of the scorecard family
+
+Website Scorecard is the conversion layer of a three-part diagnostic. Each score is independently meaningful, and none rewrites another.
+
+| Scorecard | Question it answers |
+|---|---|
+| [Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/) | Can prospective customers discover the business across Search, Maps, AI answers, competitors, and external authority? |
+| [GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/) | Does the Google Business Profile create trust and enable action? |
+| **Website Scorecard** (this repository) | Can the owned website convert that demand into leads, bookings, and estimates? |
+
+The ownership boundaries, shared evidence states, and the RAD handoff are documented in [The Scorecard Family](docs/scorecard-family.md).
+
 ## Quick start
 
 Requirements: Node.js 22+, Python 3.10+, and Google Chrome or Chromium. Lighthouse is optional for development, but a delivered audit needs three mobile runs (or a documented waiver).
@@ -103,7 +115,7 @@ Each report package is local and covered by the `reports/*` ignore rule; only `r
 
 ## Documentation
 
-Start with [Who this is for](docs/audience.md), then [Run an audit](docs/run-an-audit.md) and [Why this exists](docs/methodology.md). The full index is in [docs/README.md](docs/README.md). The same content deploys to `https://thatguynef.github.io/website-scorecard/` through `.github/workflows/docs.yml`.
+Start with [Who this is for](docs/audience.md), then [Run an audit](docs/run-an-audit.md) and [Why this exists](docs/methodology.md). The full index is in [docs/README.md](docs/README.md). [The Scorecard Family](docs/scorecard-family.md) explains how this fits with Local Visibility and GBP. The same content deploys to `https://thatguynef.github.io/website-scorecard/` through `.github/workflows/docs.yml`.
 
 ## Why it exists
 

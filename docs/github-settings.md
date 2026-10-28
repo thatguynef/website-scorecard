@@ -36,6 +36,12 @@ website-scorecard
 open-source
 ```
 
+## Related scorecards
+
+- [Website Scorecard](https://thatguynef.github.io/website-scorecard/)
+- [Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/)
+- [GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/)
+
 ## Social preview
 
 Upload `docs/assets/social-preview.png` (1280×640, under 1 MB). It should read:

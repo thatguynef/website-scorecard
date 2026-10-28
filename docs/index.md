@@ -88,6 +88,32 @@ Collection is deterministic. Only judgment checks use a model. Scoring, renderin
 
 </div>
 
+## The scorecard family
+
+Three separate diagnostics. No merged score.
+
+<div class="grid cards" markdown>
+
+-   **[Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/)**
+
+    ---
+
+    Can prospective customers discover the business across Search, Maps, AI answers, competitors, and external authority?
+
+-   **[GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/)**
+
+    ---
+
+    Does the Google Business Profile create trust and enable action?
+
+-   **Website Scorecard** — this project
+
+    ---
+
+    Can the owned website convert that demand? Read [The Scorecard Family](scorecard-family.md) for the boundaries.
+
+</div>
+
 ## Public by design
 
 > [!NOTE]

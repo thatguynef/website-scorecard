@@ -25,6 +25,7 @@ Use this before changing the repository from private to public or before a major
 - [ ] `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, and `LICENSE` exist.
 - [ ] The license is accurate and intentional.
 - [ ] `docs/assets/social-preview.png` matches the current positioning.
+- [ ] Cross-links to the Local Visibility and GBP scorecards are current.
 
 ## Scoring and evidence
 

@@ -4,13 +4,16 @@ Read this before changing the repository. It applies to every agent and harness.
 
 ## What this is
 
-An open, evidence-based diagnostic for local home-service websites. The public site is the observable part. The CRM, phone system, booking capacity, estimate follow-up, and close rate are **owner data**, never website findings.
+An open, evidence-based diagnostic for local home-service websites. It is the conversion layer of a coordinated three-scorecard family; see `docs/scorecard-family.md`. The public site is the observable part. The CRM, phone system, booking capacity, estimate follow-up, and close rate are **owner data**, never website findings.
 
 | Resource | Path |
 |---|---|
 | Canonical rubric | `.opencode/skills/home-service-website-audit/references/rubric.json` |
 | Audit workflow skill | `.opencode/skills/home-service-website-audit/SKILL.md` |
 | Step-by-step audit | `docs/run-an-audit.md` |
+| Scorecard family | `docs/scorecard-family.md` |
+| Judgment layer | `docs/judgment.md` |
+| Evaluation | `docs/eval.md` |
 | Development guide | `docs/development.md` |
 | Documentation style | `docs/style-guide.md` |
 | Live docs | `https://thatguynef.github.io/website-scorecard/` |
@@ -19,6 +22,7 @@ An open, evidence-based diagnostic for local home-service websites. The public s
 
 | If you are… | Read / run |
 |---|---|
+| Understanding the family | `docs/scorecard-family.md` |
 | Auditing a website | `SKILL.md`, then `docs/run-an-audit.md` |
 | Adding or changing a check | `docs/development.md`, then `references/rubric.json` |
 | Changing scoring math | `score.py`, `test_score.py`, `docs/scoring.md` |

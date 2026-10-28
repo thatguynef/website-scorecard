@@ -40,6 +40,18 @@ The framework is trade-agnostic. Trade and market are audit inputs, not hardcode
 - **Anyone who wants a guaranteed revenue lift**, automated fixes, or a replacement for CRM, call-tracking, booking, and financial data.
 - **Anyone who wants a vanity score** without evidence. The output separates what the site proves from what only the owner can answer.
 
+## Where this fits
+
+Website Scorecard is the conversion layer. Use the other two when the leak is discovery or the profile.
+
+| Question | Scorecard |
+|---|---|
+| Can local customers discover the business? | [Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/) |
+| Does the Google Business Profile create trust and enable action? | [GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/) |
+| Can the owned website convert that demand? | **Website Scorecard** (this one) |
+
+Read [The Scorecard Family](scorecard-family.md) for the ownership boundaries.
+
 ## Is my business a fit?
 
 Answer these five questions:

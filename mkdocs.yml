@@ -55,11 +55,14 @@ nav:
   - Scoring: scoring.md
   - Evidence: evidence.md
   - Coverage: coverage-completeness.md
+  - Scorecard family: scorecard-family.md
   - Guides:
       - Architecture: architecture.md
       - Configuration: configuration.md
       - Structured output: schema.md
       - Portable checklist: portable-checklist.md
+      - Judgment: judgment.md
+      - Evaluation: eval.md
       - Development: development.md
   - Project:
       - Style guide: style-guide.md
@@ -70,6 +73,7 @@ nav:
       - Security: https://github.com/thatguynef/website-scorecard/blob/main/SECURITY.md
       - Changelog: https://github.com/thatguynef/website-scorecard/blob/main/CHANGELOG.md
   - Reference:
+      - Fix library (GitHub): https://github.com/thatguynef/website-scorecard/blob/main/.opencode/skills/home-service-website-audit/references/fix-library.md
       - V1 → V2 migration: v1-to-v2-migration.md
       - Legacy V1: legacy-v1.md
 

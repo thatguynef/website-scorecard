@@ -15,6 +15,8 @@ All notable changes to the Website Scorecard are documented here.
 - A restrained, UTM-tagged CTA on the audience page, the audit guide, and the README for the optional done-for-you Scorecard review.
 - Root `AGENTS.md` with harness-neutral repository rules, verification expectations, and the deterministic/judgment boundary.
 - `npm run check:eval` and a CI mock-eval step; the real cross-model eval remains manual.
+- `docs/scorecard-family.md` — the three-scorecard model, shared conventions, no-duplicate-scoring table, and cross-links to Local Visibility and GBP Scorecard.
+- `docs/judgment.md` and `docs/eval.md` — the judgment boundary, the direct `audit.filled.json` workflow, and the manual cross-model eval harness.
 
 ### Changed
 
