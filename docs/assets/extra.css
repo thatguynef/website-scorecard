@@ -2,6 +2,18 @@
 
 /* ---------------------------------------------------------------- tokens */
 
+:root {
+  --rrr-ink: #0b0b0c;
+  --rrr-surface: #141416;
+  --rrr-card: #1c1c1f;
+  --rrr-paper: #f7f7f5;
+  --rrr-muted: #a6a6aa;
+  --rrr-red: #ff3b3b;
+  --rrr-soft: #ff8f8f;
+  --rrr-green: #3fbf7f;
+  --rrr-amber: #f5c766;
+}
+
 [data-md-color-primary="custom"] {
   --md-primary-fg-color: #0b0b0c;
   --md-primary-fg-color--light: #141416;
@@ -86,10 +98,7 @@
   color: rgba(247, 247, 245, 0.6);
 }
 
-.md-footer {
-  background-color: #08080a;
-}
-
+.md-footer,
 .md-footer-meta {
   background-color: #08080a;
 }
@@ -110,8 +119,12 @@
 /* ------------------------------------------------------------ landing */
 
 .ws-hero {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   gap: 32px;
   align-items: center;
   padding: 40px;
@@ -135,8 +148,15 @@
   text-transform: uppercase;
 }
 
+.ws-hero > * {
+  min-width: 0;
+}
+
 .ws-hero h1 {
   margin: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
   font-size: clamp(1.9rem, 3.4vw, 2.65rem);
   line-height: 1.05;
@@ -146,6 +166,9 @@
 
 .ws-lede {
   margin: 16px 0 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   max-width: 34rem;
   font-size: 0.9rem;
   line-height: 1.65;
@@ -200,6 +223,7 @@
 
 .ws-hero__media {
   overflow: hidden;
+  margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
@@ -225,6 +249,19 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+@media screen and (max-width: 60em) {
+  .ws-hero {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+  }
+
+  .md-typeset .grid.cards.ws-cards-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ------------------------------------------------------- content blocks */
 
 .md-typeset .grid.cards > ul > li,
@@ -232,6 +269,10 @@
   border-color: var(--ws-line);
   border-radius: 10px;
   background: var(--ws-surface);
+}
+
+.md-content {
+  overflow-x: clip;
 }
 
 .md-typeset .grid.cards > ul > li:hover,
@@ -277,43 +318,57 @@
   color: var(--md-default-fg-color--light);
 }
 
-.md-typeset pre > code {
-  border-radius: 8px;
-}
-
 .md-typeset .mermaid {
   margin: 1.2rem 0;
   text-align: center;
 }
 
-/* --------------------------------------------------------------- mobile */
-
-@media screen and (max-width: 60em) {
-  .ws-hero {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
-
-  .ws-hero__media {
-    max-width: 34rem;
-  }
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 600;
 }
 
-@media screen and (max-width: 44.9375em) {
-  .md-typeset .grid.cards.ws-cards-4 {
-    grid-template-columns: 1fr;
-  }
+.md-typeset h2 {
+  margin-top: 2.2em;
+  padding-top: 0.4em;
+  border-top: 1px solid var(--ws-line);
+}
 
-  .ws-hero {
-    padding: 24px;
-    border-radius: 14px;
-  }
+.md-typeset h2:first-of-type {
+  border-top: none;
+}
 
-  .ws-actions {
-    flex-direction: column;
-  }
+.md-typeset code {
+  border-radius: 4px;
+}
 
-  .ws-btn {
-    justify-content: center;
-  }
+.md-typeset pre > code {
+  border-radius: 8px;
+}
+
+.md-typeset .tabbed-labels > label {
+  font-weight: 600;
+}
+
+.md-typeset .task-list-indicator::before {
+  border-radius: 3px;
+}
+
+.ws-callout {
+  padding: 18px 22px;
+  border-left: 3px solid var(--rrr-red);
+  background: var(--ws-surface);
+  border-radius: 0 8px 8px 0;
+}
+
+.ws-muted {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.ws-kicker {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--md-typeset-a-color);
+  text-transform: uppercase;
 }

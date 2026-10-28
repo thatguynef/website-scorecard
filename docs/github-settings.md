@@ -44,7 +44,7 @@ open-source
 
 ## Social preview
 
-Upload `docs/assets/social-preview.png` (1280×640, under 1 MB). It should read:
+Upload `docs/assets/social-preview.png` (1200×630, under 1 MB). It should read:
 
 > Website Scorecard — find where local home-service websites leak customers and revenue.
 

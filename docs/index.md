@@ -1,4 +1,5 @@
 ---
+description: "Evidence-based Website Scorecard for local home-service businesses — find where the owned site may be leaking leads, bookings, and revenue."
 hide:
   - navigation
   - toc
@@ -17,10 +18,7 @@ hide:
     <p class="ws-trades">Plumbing · HVAC · Roofing · Electrical · Pest control · Garage door · Landscaping · Restoration · Cleaning</p>
   </div>
   <figure class="ws-hero__media">
-    <picture>
-      <source media="(max-width: 60em)" srcset="assets/scorecard-preview-640.png">
-      <img src="assets/scorecard-preview.png" alt="Synthetic sample report for Acme Plumbing showing 68 out of 100, three revenue leaks, and a score breakdown" width="1200" height="1000" fetchpriority="high">
-    </picture>
+    <img src="assets/scorecard-preview.svg" alt="Synthetic sample Website Scorecard for Acme Plumbing showing 68 out of 100, three revenue leaks, and a score breakdown" width="1200" height="820" fetchpriority="high">
     <figcaption>Synthetic sample report</figcaption>
   </figure>
 </section>
@@ -88,31 +86,49 @@ Collection is deterministic. Only judgment checks use a model. Scoring, renderin
 
 </div>
 
-## The scorecard family
+## A coordinated scorecard family
 
-Three separate diagnostics. No merged score.
+```text
+LOCAL VISIBILITY
+      ↓
+GBP SCORECARD
+      ↓
+WEBSITE SCORECARD
+      ↓
+RAD
+```
+
+Three independent diagnostics, used in journey order:
 
 <div class="grid cards" markdown>
 
--   **[Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/)**
+-   :material-map-search:{ .lg .middle } **[Local Visibility Scorecard](https://thatguynef.github.io/local-visibility-scorecard/)**
 
     ---
 
     Can prospective customers discover the business across Search, Maps, AI answers, competitors, and external authority?
 
--   **[GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/)**
+    [Open the Local Visibility Scorecard →](https://thatguynef.github.io/local-visibility-scorecard/)
+
+-   :material-storefront:{ .lg .middle } **[GBP Scorecard](https://thatguynef.github.io/gbp-scorecard/)**
 
     ---
 
-    Does the Google Business Profile create trust and enable action?
+    Does the Google Business Profile create trust and enable action — before the customer reaches the website?
 
--   **Website Scorecard** — this project
+    [Open the GBP Scorecard →](https://thatguynef.github.io/gbp-scorecard/)
+
+-   :material-web:{ .lg .middle } **Website Scorecard** · you are here
 
     ---
 
-    Can the owned website convert that demand? Read [The Scorecard Family](scorecard-family.md) for the boundaries.
+    Can the owned website turn that demand into a lead, booking, or estimate?
+
+    [Open the Website Scorecard →](https://thatguynef.github.io/website-scorecard/)
 
 </div>
+
+The boundaries, shared evidence states, and no-duplicate-scoring matrix are in [The Scorecard Family](scorecard-family.md).
 
 ## Public by design
 

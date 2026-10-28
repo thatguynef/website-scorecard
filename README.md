@@ -20,7 +20,7 @@
 | **The rule** | Only what the public site can prove is scored. Everything else is marked **owner data required**. |
 | **What it is not** | An SEO grader, a SaaS dashboard, an automated fix, or a guarantee of revenue lift |
 
-![Synthetic sample report for Acme Plumbing showing 68 out of 100, with three revenue leaks](docs/assets/scorecard-preview.png)
+![Synthetic sample Website Scorecard for Acme Plumbing showing 68 out of 100, with three revenue leaks](docs/assets/scorecard-preview.svg)
 
 *Synthetic example — not a real business. Read the [one-page report](examples/acme-plumbing/one-page.md) or the [full audit](examples/acme-plumbing/full-report.md).*
 

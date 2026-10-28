@@ -1,10 +1,11 @@
 site_name: Website Scorecard
 site_description: Evidence-based website scorecard for local home-service businesses. Find where the site may be leaking leads, bookings, and revenue.
 site_url: https://thatguynef.github.io/website-scorecard/
+site_author: Radical Red Rocket
 repo_url: https://github.com/thatguynef/website-scorecard
 repo_name: thatguynef/website-scorecard
 edit_uri: edit/main/docs/
-copyright: Website Scorecard · MIT · maintained alongside Radical Red Rocket
+copyright: 'Website Scorecard · MIT · Family: <a href="https://thatguynef.github.io/local-visibility-scorecard/">Local Visibility Scorecard</a> · <a href="https://thatguynef.github.io/gbp-scorecard/">GBP Scorecard</a>'
 
 theme:
   name: material
@@ -113,3 +114,16 @@ extra_javascript:
 
 extra:
   generator: false
+  social:
+    - icon: material/github
+      link: https://github.com/thatguynef/website-scorecard
+      name: Website Scorecard on GitHub
+    - icon: material/map-search
+      link: https://thatguynef.github.io/local-visibility-scorecard/
+      name: Local Visibility Scorecard
+    - icon: material/storefront
+      link: https://thatguynef.github.io/gbp-scorecard/
+      name: GBP Scorecard
+    - icon: material/web
+      link: https://thatguynef.github.io/website-scorecard/
+      name: Website Scorecard

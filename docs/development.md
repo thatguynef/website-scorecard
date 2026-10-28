@@ -190,7 +190,7 @@ npm run check:assets
 
 `check_assets.mjs` enforces image existence, alt text, per-file budgets, a 2 MB total, and blocks references to `.audit/`, `audit-screens/`, `reports/`, or `evals/`.
 
-The site deploys from `.github/workflows/docs.yml`. Enable GitHub Pages with source **GitHub Actions** before the first deploy. Do not hand-edit `docs/assets/scorecard-preview.png` or `docs/assets/social-preview.png`; regenerate them.
+The site deploys from `.github/workflows/docs.yml`. Enable GitHub Pages with source **GitHub Actions** before the first deploy. The SVGs are canonical: `docs/assets/scorecard-preview.svg` and `docs/assets/social-preview.svg`. Run `npm run render:assets` to rasterize the PNGs. Do not edit the PNGs by hand.
 
 ## Error handling
 
