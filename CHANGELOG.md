@@ -13,6 +13,8 @@ All notable changes to the Website Scorecard are documented here.
 - `docs/style-guide.md` for voice, colour, typography, diagrams, and asset rules.
 - `docs/run-an-audit.md` — a step-by-step guide from website URL to one-page report, including judgment checks, `content.json`, rendering, verification, and troubleshooting.
 - A restrained, UTM-tagged CTA on the audience page, the audit guide, and the README for the optional done-for-you Scorecard review.
+- Root `AGENTS.md` with harness-neutral repository rules, verification expectations, and the deterministic/judgment boundary.
+- `npm run check:eval` and a CI mock-eval step; the real cross-model eval remains manual.
 
 ### Changed
 

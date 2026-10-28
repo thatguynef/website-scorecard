@@ -37,6 +37,7 @@ npm run check:rubric     # rubric structure and weights
 npm run check:schemas    # JSON Schema files parse
 npm run check:links      # relative Markdown and HTML image links resolve
 npm run check:assets     # image existence, alt text, and size budgets
+npm run check:eval       # mock eval harness (no model calls)
 npm run check:privacy    # tracked-file secret/PII scan
 npm run render:assets    # regenerate the sample and social previews
 npm run docs:build       # mkdocs build --strict (venv active)
@@ -212,6 +213,7 @@ The site deploys from `.github/workflows/docs.yml`. Enable GitHub Pages with sou
 - JSON Schema syntax
 - relative-link checks
 - image/asset checks
+- mock eval harness (no model calls)
 - privacy scan
 - the synthetic V2 example verification
 - the docs site build (`.github/workflows/docs.yml`, strict mode)

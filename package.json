@@ -25,7 +25,7 @@
     "type": "git",
     "url": "https://github.com/thatguynef/website-scorecard.git"
   },
-  "homepage": "https://radicalredrocket.com",
+  "homepage": "https://thatguynef.github.io/website-scorecard/",
   "bugs": {
     "url": "https://github.com/thatguynef/website-scorecard/issues"
   },
@@ -45,10 +45,11 @@
     "render:assets": "node scripts/render_docs_assets.mjs",
     "docs:build": "python3 -m mkdocs build --strict",
     "docs:serve": "python3 -m mkdocs serve",
-    "check": "npm test && npm run check:rubric && npm run check:generated && npm run check:schemas && npm run check:links && npm run check:assets && npm run check:privacy",
+    "check": "npm test && npm run check:rubric && npm run check:generated && npm run check:schemas && npm run check:links && npm run check:assets && npm run check:eval && npm run check:privacy",
     "verify:example": "node .opencode/skills/home-service-website-audit/scripts/verify.mjs --run examples/acme-plumbing --report examples/acme-plumbing/full-report.md --one-page examples/acme-plumbing/one-page.md --index examples/README.md --mutation --fixture --synthetic",
     "render:example": "npm run render -- --scores examples/acme-plumbing/scores.json --content examples/acme-plumbing/content.json --out examples/acme-plumbing/one-page.md && npm run render -- --mode full --scores examples/acme-plumbing/scores.json --content examples/acme-plumbing/content.json --out examples/acme-plumbing/full-report.md",
     "check:schemas": "python3 -m json.tool .opencode/skills/home-service-website-audit/references/schema/audit-v2.schema.json > /dev/null && python3 -m json.tool .opencode/skills/home-service-website-audit/references/schema/scores-v2.schema.json > /dev/null",
-    "check:links": "node scripts/check_links.mjs"
+    "check:links": "node scripts/check_links.mjs",
+    "check:eval": "node .opencode/skills/home-service-website-audit/scripts/eval.mjs --mock --snapshot examples/acme-plumbing --out /tmp/website-scorecard-eval-mock"
   }
 }

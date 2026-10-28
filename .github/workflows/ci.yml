@@ -57,6 +57,9 @@ jobs:
       - name: Asset check
         run: node scripts/check_assets.mjs
 
+      - name: Eval harness (mock)
+        run: npm run check:eval
+
       - name: Privacy scan
         run: node scripts/privacy_scan.mjs
 

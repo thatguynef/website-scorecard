@@ -204,6 +204,7 @@ Both are synthetic or sanitized. No real client data is published.
 ## Project structure
 
 ```text
+AGENTS.md                     agent instructions
 .opencode/skills/home-service-website-audit/
   SKILL.md                    audit workflow
   references/
@@ -241,6 +242,7 @@ npm test                 # scorer + pipeline tests
 npm run check            # tests, rubric, generated docs, schemas, links, assets, privacy
 npm run check:generated  # fail if generated docs are stale
 npm run check:assets     # image existence, alt text, and size budgets
+npm run check:eval       # mock eval harness (no model calls)
 npm run check:privacy    # secret/PII safety net
 npm run render:assets    # regenerate the sample and social previews (Chrome required)
 npm run eval -- --mock --snapshot examples/acme-plumbing --out /tmp/eval-mock
@@ -261,7 +263,7 @@ Read [docs/development.md](docs/development.md) before adding a check.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Documentation voice, colour, and asset rules are in [docs/style-guide.md](docs/style-guide.md). Repository description/topic recommendations are in [docs/github-settings.md](docs/github-settings.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Agent and maintainer rules are in [AGENTS.md](AGENTS.md). Documentation voice, colour, and asset rules are in [docs/style-guide.md](docs/style-guide.md). Repository description/topic recommendations are in [docs/github-settings.md](docs/github-settings.md).
 
 Every check must answer at least one of:
 

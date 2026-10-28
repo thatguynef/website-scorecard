@@ -4,6 +4,7 @@ Thanks for improving the Website Revenue Leak Scorecard. The project is delibera
 
 ## Before you start
 
+- Read [AGENTS.md](AGENTS.md); it applies to agents and human contributors.
 - Read [`docs/methodology.md`](docs/methodology.md) and [`docs/evidence.md`](docs/evidence.md).
 - Read [`docs/development.md`](docs/development.md) for setup and test commands.
 - Check the issue tracker for an existing discussion.
